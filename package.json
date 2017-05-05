@@ -15,12 +15,14 @@
     "moment": "^2.18.1",
     "node-sass": "^4.5.2",
     "react": "16.0.0-alpha.12",
+    "react-apollo": "^1.2.0",
     "react-dom": "16.0.0-alpha.12"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "scripts": {
+    "dev": "yarn start",
     "start": "cross-env NODE_PATH=./ react-scripts start",
     "build": "cross-env NODE_PATH=./ react-scripts build",
     "test": "react-scripts test --env=jsdom",
