@@ -1,0 +1,29 @@
+{
+  "name": "gw2w2w-cra",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "classnames": "^2.2.5",
+    "cross-env": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.5.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "node-sass": "^4.5.2",
+    "react": "16.0.0-alpha.12",
+    "react-dom": "16.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "cross-env NODE_PATH=./ react-scripts start",
+    "build": "cross-env NODE_PATH=./ react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

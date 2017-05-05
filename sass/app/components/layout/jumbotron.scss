@@ -1,0 +1,23 @@
+.jumbotron {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+
+    header {
+        height: 15rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 4rem;
+        line-height: 1;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 3rem;
+        }
+    }
+}
