@@ -5,38 +5,3 @@
 
 @import "./mixins";
 @import "./components/index";
-@import "./routes/index";
-@import "./routes/index";
-
-
-.alert-primary {
-  @include alert-variant($component-active-bg, $component-active-bg, $component-active-color);
-}
-
-.scroll-to-top {
-  i {
-    display: block;
-  }
-}
-
-.card, .alert {
-  @include paper(1);
-  margin-bottom: 1rem;
-
-  &:hover {
-    @include paper(2);
-  }
-}
-
-.card-header {
-  margin-top: 1rem;
-  background-color: #fff !important;
-}
-
-.gas-container {
-  @include paper(1);
-
-  &:hover {
-    @include paper(2);
-  }
-}
