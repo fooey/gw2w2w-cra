@@ -13,17 +13,27 @@ const DEFAULT_LANG = 'en';
 
 const App = () => (
 	<Layout>
-		<Route exact path="/" render={() => (
-			<Redirect to={`/${DEFAULT_LANG}`} />
-		)}/>
 
-		<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => (
-			<Overview langSlug={_.get(match, ['params', 'langSlug'])} />
-		)}/>
+		<Route path="/:langSlug([a-z]{2})" render={({ match }) => {
+			const langSlug = _.get(match, ['params', 'langSlug'], DEFAULT_LANG);
+			window.localStorage.setItem('langSlug', langSlug);
+			
+			return null;
+		}}/>
 
-		<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => (
-			<h1>world: {JSON.stringify(match.params)}</h1>
-		)}/>
+		<Route exact path="/" render={() => {
+			const myLangSlug = window.localStorage.getItem('langSlug') || DEFAULT_LANG;
+
+			return <Redirect to={`/${myLangSlug}`} />;
+		}}/>
+
+		<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
+			return <Overview langSlug={_.get(match, ['params', 'langSlug'])} />;
+		}}/>
+
+		<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
+			return <h1>world: {JSON.stringify(match.params)}</h1>;
+		}}/>
 	</Layout>
 );
 
