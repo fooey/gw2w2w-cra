@@ -21,20 +21,21 @@ const Langs = ({ data }) => {
 		<ul className="nav nav-tabs">
 
 			<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
-				const langSlug = match.params.langSlug;
-				const worldSlug = match.params.worldSlug;
+				const { langSlug, worldSlug } = match.params;
 
 				return (
 					_.map(langs, lang => <Lang key={lang.slug} lang={lang} langSlug={langSlug} worldSlug={worldSlug} />)
 				);
 			}}/>
+
 			<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
-				const langSlug = match.params.langSlug;
+				const { langSlug } = match.params;
 
 				return (
 					_.map(langs, lang => <Lang key={lang.slug} lang={lang} langSlug={langSlug}/>)
 				);
 			}}/>
+
 		</ul>
 	)
 };
@@ -57,6 +58,6 @@ const Lang = ({ lang, worldSlug }) => {
 };
 
 
-const LangsWithData = graphql(LangsQuery)(Langs);
+const LangsWithData = graphql(LangsQuery)(Langs, { options: { shouldBatch: true } });
 
 export default LangsWithData;
