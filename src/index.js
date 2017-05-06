@@ -10,10 +10,6 @@ const client = new ApolloClient({ networkInterface });
 
 import App from './App';
 
-import './index.css';
-import 'src/styles/bootstrap.css';
-import 'src/styles/app.css';
-
 ReactDOM.render(
     <ApolloProvider client={client}>
         <Router>

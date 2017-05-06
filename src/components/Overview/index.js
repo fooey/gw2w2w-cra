@@ -3,6 +3,8 @@ import { gql, graphql } from 'react-apollo';
 import { Link } from 'react-router-dom'
 import _ from 'lodash';
 
+import { Loading } from 'src/components/Util';
+
 
 const Overview = ({ langSlug }) => {
 	return (
@@ -31,7 +33,7 @@ const WorldsQuery = gql`
 const Worlds = ({ data, langSlug }) => {
 	const { worlds, isLoading } = data;
 
-	if (isLoading) { return <span>Loading...</span>; }
+	if (isLoading) { return <Loading />; }
 
 	return (
 		<div className="card">
