@@ -16,7 +16,7 @@ const sassOptionsDev = {
 
 gulp.task('app:dev', function() {
     return gulp
-        .src('./sass/app/index.scss')
+        .src('./src/index.scss')
     	.pipe(sourcemaps.init())
         .pipe(sass(sassOptionsDev).on('error', sass.logError))
         .pipe(rename({basename: 'app'}))
@@ -25,19 +25,23 @@ gulp.task('app:dev', function() {
         .pipe(gulp.dest(output));
 });
 gulp.task('app:watch', function() {
-    return gulp.watch('./sass/app/**/*.scss', ['app:dev']);
+    return gulp.watch('./src/**/*.scss', ['app:dev']);
 });
 
 
 gulp.task('bootstrap:dev', function() {
     return gulp
-        .src('./sass/bootstrap/index.scss')
+        .src('./src/bootstrap.scss')
         .pipe(sass(sassOptionsDev).on('error', sass.logError))
         .pipe(rename({basename: 'bootstrap'}))
         .pipe(gulp.dest(output));
 });
 gulp.task('bootstrap:watch', function() {
-    return gulp.watch('./sass/bootstrap/**/*.scss', ['bootstrap:dev']);
+    return gulp.watch([
+        './src/bootstrap.scss',
+        './src/_custom.scss',
+        './src/_mixins.scss',
+    ], ['bootstrap:dev']);
 });
 
 
