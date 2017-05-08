@@ -45,9 +45,10 @@ gulp.task('bootstrap:watch', function() {
 });
 
 
-gulp.task('sass:dev', ['bootstrap:dev', 'app:dev']);
-gulp.task('watch', ['bootstrap:watch', 'app:watch']);
-gulp.task('default', ['watch', 'sass:dev']);
+gulp.task('watch:css', ['bootstrap:watch', 'app:watch']);
+gulp.task('build:css', ['bootstrap:dev', 'app:dev']);
+gulp.task('dev:css', ['watch:css', 'build:css']);
+gulp.task('default', ['build:css']);
 
 
 
