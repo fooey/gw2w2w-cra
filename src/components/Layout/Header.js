@@ -6,33 +6,34 @@ import _ from 'lodash';
 import { Loading } from 'src/components/Util';
 
 
-const LangsQuery = gql`
-	query {
-		langs { name slug label }
-	}
-`;
+const SLUGS = ['en','fr','de','es','zh'];
 
-const Langs = ({ data }) => {
-	const { langs, isLoading } = data;
+// const LangsQuery = gql`
+// 	query {
+// 		langs { slug }
+// 	}
+// `;
 
-	if (isLoading) { return <Loading />; }
-
+const Langs = () => {
 	return (
 		<ul className="nav nav-tabs">
 
 			<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
-				const { langSlug, worldSlug } = match.params;
+				const {
+					// langSlug,
+					worldSlug,
+				 } = match.params;
 
 				return (
-					_.map(langs, lang => <Lang key={lang.slug} lang={lang} langSlug={langSlug} worldSlug={worldSlug} />)
+					_.map(SLUGS, slug => <LangWithData key={slug} slug={slug} worldSlug={worldSlug} />)
 				);
 			}}/>
 
 			<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
-				const { langSlug } = match.params;
+				// const { langSlug } = match.params;
 
 				return (
-					_.map(langs, lang => <Lang key={lang.slug} lang={lang} langSlug={langSlug}/>)
+					_.map(SLUGS, slug => <LangWithData key={slug} slug={slug}/>)
 				);
 			}}/>
 
@@ -41,7 +42,20 @@ const Langs = ({ data }) => {
 };
 
 
-const Lang = ({ lang, worldSlug }) => {
+const LangQuery = gql`
+	query lang($slug: ID!) {
+		lang(slug: $slug) {
+			name
+			slug
+			label
+		}
+	}
+`;
+const Lang = ({ data, slug, worldSlug }) => {
+	const { lang, loading } = data;
+
+	if (loading) { return <Loading />; }
+
 	const link = _.without([
 		'',
 		lang.slug,
@@ -56,8 +70,16 @@ const Lang = ({ lang, worldSlug }) => {
 		</li>
 	);
 };
+const LangWithData = graphql(LangQuery)(Lang, {
+	options: (props) => ({
+		shouldBatch: true,
+		variables: {
+			slug: props.slug
+		}
+	})
+});
 
 
-const LangsWithData = graphql(LangsQuery)(Langs, { options: { shouldBatch: true } });
+// const LangsWithData = graphql(LangsQuery)(Langs, { options: { shouldBatch: true } });
 
-export default LangsWithData;
+export default Langs;
