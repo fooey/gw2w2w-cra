@@ -20,7 +20,7 @@ const WorldsQuery = gql`
 		}
 	}
 `;
-const Worlds = ({ data, langSlug }) => {
+const Worlds = ({ data, currentLang }) => {
 	const { worlds, loading } = data;
 
 	if (loading) { return <Loading />; }
@@ -30,17 +30,19 @@ const Worlds = ({ data, langSlug }) => {
 			{_.map(['na', 'eu'], region => (
 				<div key={region} className="col-lg">
 					{/* <h1 className="region-title">{region}</h1> */}
-					<RegionWorlds worlds={worlds} langSlug={langSlug} region={region} />
+					<RegionWorlds worlds={worlds} currentLang={currentLang} region={region} />
 				</div>
 			))}
 		</div>
 	);
 }
 
-const WorldsWithData = graphql(WorldsQuery)(Worlds, { options: { shouldBatch: true } });
+const WorldsWithData = graphql(WorldsQuery, {
+	options: { shouldBatch: true }
+})(Worlds);
 
 
-const RegionWorlds = ({ worlds, langSlug, region }) => (
+const RegionWorlds = ({ worlds, currentLang, region }) => (
 	_.chain(worlds)
 		.filter({ region })
 		.sortBy('id')
@@ -48,7 +50,7 @@ const RegionWorlds = ({ worlds, langSlug, region }) => (
 		.map((langWorlds, worldsLangSlug) => (
 			<section key={worldsLangSlug} className="region-worlds">
 				{/* <h4 className="card-title lang-title">{worldsLangSlug} <small className="text-muted">{region}</small></h4> */}
-				<LangWorldsWithData langWorlds={langWorlds} region={region} langSlug={langSlug} worldsLangSlug={worldsLangSlug} />
+				<LangWorldsWithData langWorlds={langWorlds} region={region} currentLang={currentLang} worldsLangSlug={worldsLangSlug} />
 			</section>
 		))
 		.value()
@@ -64,7 +66,7 @@ const LangQuery = gql`
 		}
 	}
 `;
-const LangWorlds = ({ data, langWorlds, langSlug, region }) => {
+const LangWorlds = ({ data, langWorlds, currentLang, region }) => {
 	const { lang, loading } = data;
 
 	if (loading) { return <Loading />; }
@@ -75,12 +77,12 @@ const LangWorlds = ({ data, langWorlds, langSlug, region }) => {
 			<ul className="list-unstyled lang-worlds">
 				{_.chain(langWorlds)
 					.sortBy(world => {
-						return _.get(world, [langSlug, 'name']);
+						return _.get(world, [currentLang.slug, 'name']);
 					})
 					.map(world => {
-						const langWorld = _.get(world, [langSlug]);
+						const langWorld = _.get(world, [currentLang.slug]);
 
-						return <World key={world.id} langWorld={langWorld} langSlug={langSlug} />;
+						return <World key={world.id} langWorld={langWorld} currentLang={currentLang} />;
 					})
 					.value()}
 			</ul>
@@ -92,14 +94,14 @@ const LangWorldsWithData = graphql(LangQuery)(LangWorlds, {
 	options: (props) => ({
 		shouldBatch: true,
 		variables: {
-			langSlug: props.langSlug
+			slug: props.currentLang.slug
 		}
 	})
 });
 
-const World = ({  langWorld, langSlug }) => (
+const World = ({  langWorld, currentLang }) => (
 	<li className="world">
-		<Link to={`/${langSlug}/${langWorld.slug}`}>
+		<Link to={`/${currentLang.slug}/${langWorld.slug}`}>
 			{langWorld.name}
 		</Link>
 	</li>

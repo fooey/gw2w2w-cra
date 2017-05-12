@@ -17,7 +17,7 @@ const App = () => (
 		<Route path="/:langSlug([a-z]{2})" render={({ match }) => {
 			const langSlug = _.get(match, ['params', 'langSlug'], DEFAULT_LANG);
 			window.localStorage.setItem('langSlug', langSlug);
-			
+
 			return null;
 		}}/>
 
@@ -34,6 +34,7 @@ const App = () => (
 		<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
 			return <h1>world: {JSON.stringify(match.params)}</h1>;
 		}}/>
+
 	</Layout>
 );
 
