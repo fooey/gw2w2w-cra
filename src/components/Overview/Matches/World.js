@@ -28,8 +28,8 @@ class MatchWorld extends PureComponent {
 		const worldLink = ['', currentLang.slug, worldSlug].join('/');
 
 		return (
-			<div className={className}>
-				<Link to={worldLink}>{worldName}</Link>
+			<div>
+				<Link to={worldLink} className={className}>{worldName}</Link>
 			</div>
 		);
 	}

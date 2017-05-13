@@ -1,7 +1,19 @@
-.match-world {
+.matches {
 	width: 100%;
-}
 
-.match-scores {
-	text-align: right;
+	.match {
+		.match-pie {
+			img {
+				margin: 12px 24px;
+			}
+		}
+
+		.match-worlds {
+			width: 100%;
+		}
+
+		.match-scores {
+			text-align: right;
+		}
+	}
 }

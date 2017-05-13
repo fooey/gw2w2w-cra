@@ -13,7 +13,7 @@ const Matches = ({ matches, currentLang }) => (
 	<div className="row">
 		{_.map(REGIONS, region => (
 			<div className="col-md" key={region}>
-				<table className="table">
+				<table className="matches">
 					<tbody>
 						{_.chain(matches)
 							.filter({ region })
@@ -34,7 +34,7 @@ const Match = ({ match, currentLang }) =>  (
 	<tr key={match.id} className={`match`}>
 		<td className="match-pie"><Pie matchScores={match.scores} /></td>
 		<td className="match-worlds"><MatchWorlds matchWorlds={match.worlds} currentLang={currentLang} /></td>
-		<td className="match-scorest"><MatchScores matchScores={match.scores} /></td>
+		<td className="match-scores"><MatchScores matchScores={match.scores} /></td>
 	</tr>
 );
 
