@@ -1,12 +1,7 @@
 import { gql } from 'react-apollo';
 
 export default gql `
-	query overview($slug: ID!) {
-		lang(slug: $slug) {
-			name
-			slug
-			label
-		}
+	query {
 		matches {
 			id
 			region

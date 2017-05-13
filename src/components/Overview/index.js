@@ -11,11 +11,12 @@ import OverviewQuery from 'src/gql/overview';
 
 class Overview extends PureComponent {
     render() {
-		const { data, langSlug } = this.props;
-		const { loading, matches, lang } = data;
+		const { data, lang } = this.props;
+		const { loading, matches } = data;
 
 		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
-		if (_.isEmpty(matches)) return <h1>err</h1>;
+		if (_.isEmpty(matches)) return <h1>err, matchData not found</h1>;
+		if (_.isEmpty(lang)) return <h1>err, lang not found</h1>;
 
 		return (
 			<div className="overview container">
@@ -35,13 +36,10 @@ class Overview extends PureComponent {
 }
 
 const OverviewWithData = graphql(OverviewQuery, {
-	options: ({ langSlug }) => ({
+	options: {
 		shouldBatch: true,
 		pollInterval: 1000 * 4,
-        variables: {
-            slug: langSlug
-        }
-	})
+	}
 })(Overview);
 
 export default OverviewWithData;

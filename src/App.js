@@ -1,9 +1,13 @@
 import React from 'react';
+import { graphql } from 'react-apollo';
 import { Route, Redirect } from 'react-router-dom'
 import _ from 'lodash';
 
 import Layout from 'src/components/Layout';
 import Overview from 'src/components/Overview';
+import { Loading } from 'src/components/Util';
+
+import LangQuery from 'src/gql/lang';
 
 import 'src/styles/bootstrap.css';
 import 'src/styles/app.css';
@@ -28,7 +32,7 @@ const App = () => (
 		}}/>
 
 		<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
-			return <Overview langSlug={_.get(match, ['params', 'langSlug'])} />;
+			return <LangwWithData langSlug={_.get(match, ['params', 'langSlug'])} />;
 		}}/>
 
 		<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
@@ -37,5 +41,23 @@ const App = () => (
 
 	</Layout>
 );
+
+
+const Lang = ({ data }) => {
+	if (data.loading) return <Loading />;
+
+	return (
+		<Overview lang={data.lang} />
+	);
+};
+
+const LangwWithData = graphql(LangQuery, {
+	options: ({ langSlug }) => ({
+		shouldBatch: true,
+        variables: {
+            slug: langSlug
+        }
+	})
+})(Lang);
 
 export default App;

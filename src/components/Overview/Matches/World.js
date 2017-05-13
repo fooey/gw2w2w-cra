@@ -10,7 +10,7 @@ import WorldQuery from 'src/gql/world';
 
 class MatchWorld extends PureComponent {
     render() {
-        const { data, color, langSlug } = this.props;
+        const { data, color, currentLang } = this.props;
 		const { loading, world } = data;
 
 		const className = classnames({
@@ -22,7 +22,7 @@ class MatchWorld extends PureComponent {
 
         return (
 			<div className={className}>
-				{_.get(world, [langSlug,'name'], 'ERR')}
+				{_.get(world, [currentLang.slug, 'name'], 'ERR')}
 			</div>
 		);
     }
