@@ -1,6 +1,6 @@
 import React from 'react';
 import { gql, graphql } from 'react-apollo';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 import { Loading } from 'src/components/Util';
@@ -35,10 +35,10 @@ const Worlds = ({ data, currentLang }) => {
 			))}
 		</div>
 	);
-}
+};
 
 const WorldsWithData = graphql(WorldsQuery, {
-	options: { shouldBatch: true }
+	options: { shouldBatch: true },
 })(Worlds);
 
 
@@ -87,16 +87,14 @@ const LangWorlds = ({ data, langWorlds, currentLang, region }) => {
 					.value()}
 			</ul>
 		</div>
-	)
+	);
 };
 
 const LangWorldsWithData = graphql(LangQuery)(LangWorlds, {
 	options: (props) => ({
 		shouldBatch: true,
-		variables: {
-			slug: props.currentLang.slug
-		}
-	})
+		variables: { slug: props.currentLang.slug },
+	}),
 });
 
 const World = ({  langWorld, currentLang }) => (

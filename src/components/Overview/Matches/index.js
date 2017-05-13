@@ -13,11 +13,15 @@ const Matches = ({ matches, currentLang }) => (
 	<div className="row">
 		{_.map(REGIONS, region => (
 			<div className="col-md" key={region}>
-				{_.chain(matches)
-					.filter({ region })
-					.sortBy('id')
-					.map((match, i) => <Match key={match.id} i={i} match={match} currentLang={currentLang} />)
-					.value()}
+				<table className="table">
+					<tbody>
+						{_.chain(matches)
+							.filter({ region })
+							.sortBy('id')
+							.map((match, i) => <Match key={match.id} i={i} match={match} currentLang={currentLang} />)
+							.value()}
+					</tbody>
+				</table>
 			</div>
 		))}
 	</div>
@@ -26,12 +30,12 @@ const Matches = ({ matches, currentLang }) => (
 
 
 
-const Match = ({ match, i, currentLang }) =>  (
-	<div key={match.id} className={`match row align-items-center row-${i%2}`}>
-		<div className="col-md-auto text-center"><Pie matchScores={match.scores} /></div>
-		<div className="col"><MatchWorlds matchWorlds={match.worlds} currentLang={currentLang} /></div>
-		<div className="col-md-auto"><MatchScores matchScores={match.scores} /></div>
-	</div>
+const Match = ({ match, currentLang }) =>  (
+	<tr key={match.id} className={`match`}>
+		<td className="match-pie"><Pie matchScores={match.scores} /></td>
+		<td className="match-worlds"><MatchWorlds matchWorlds={match.worlds} currentLang={currentLang} /></td>
+		<td className="match-scorest"><MatchScores matchScores={match.scores} /></td>
+	</tr>
 );
 
 const MatchWorlds = ({ matchWorlds, currentLang }) => (

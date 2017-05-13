@@ -1,0 +1,42 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true,
+  },
+
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      generators: true,
+      experimentalObjectRestSpread: true,
+    },
+  },
+
+  settings: {
+    'import/ignore': ['node_modules'],
+    'import/extensions': ['.js'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.json'],
+      },
+    },
+  },
+
+  "rules": {
+    "no-console": "off",
+    "strict": ["error", "global"],
+	"comma-dangle": ["error", "always-multiline"],
+	"semi": ["error", "always"],
+	"react/display-name": "off",
+	"react/prop-types": "off"
+  },
+  "plugins": [
+    "react"
+  ]
+}

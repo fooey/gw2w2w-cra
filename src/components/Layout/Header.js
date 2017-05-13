@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom';
 import _ from 'lodash';
 
 import { Loading } from 'src/components/Util';
@@ -31,7 +31,7 @@ const Langs = () => {
 						<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
 							// const { langSlug } = match.params;
 
-							return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug}/>);
+							return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} match={match}/>);
 						}}/>
 
 					</ul>
@@ -40,10 +40,10 @@ const Langs = () => {
 				</div>
 			</div>
 		</div>
-	)
+	);
 };
 
-const Lang = ({ data, slug, worldSlug }) => {
+const Lang = ({ data, worldSlug }) => {
 	const { lang, loading } = data;
 
 	if (loading) { return <Loading />; }
@@ -64,9 +64,7 @@ const Lang = ({ data, slug, worldSlug }) => {
 };
 
 const LangWithData = graphql(LangQuery, {
-	options: (props) => ({
-		shouldBatch: true,
-	})
+	options: { shouldBatch: true },
 })(Lang);
 
 export default Langs;

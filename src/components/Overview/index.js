@@ -39,7 +39,7 @@ const OverviewWithData = graphql(OverviewQuery, {
 	options: {
 		shouldBatch: true,
 		pollInterval: 1000 * 4,
-	}
+	},
 })(Overview);
 
 export default OverviewWithData;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom';
 import _ from 'lodash';
 
 import Layout from 'src/components/Layout';
@@ -55,9 +55,9 @@ const LangwWithData = graphql(LangQuery, {
 	options: ({ langSlug }) => ({
 		shouldBatch: true,
         variables: {
-            slug: langSlug
-        }
-	})
+            slug: langSlug,
+        },
+	}),
 })(Lang);
 
 export default App;
