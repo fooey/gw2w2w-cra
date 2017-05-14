@@ -1,8 +1,8 @@
 import { gql } from 'react-apollo';
 
 export default gql`
-	query world($id: ID!) {
-	  world(id: $id) {
+	query worlds($ids: [ID]!) {
+	  worlds(ids: $ids) {
 	    id
 		region
 		lang

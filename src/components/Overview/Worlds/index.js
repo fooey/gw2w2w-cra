@@ -1,44 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 import { Loading } from 'src/components/Util';
 
-const WorldsQuery = gql`
-	query {
-		worlds {
-			id
-			region
-			lang
-			population
-			en { name slug }
-			es { name slug }
-			de { name slug }
-			fr { name slug }
-			zh { name slug }
-		}
+import WorldsQuery from 'src/gql/worlds';
+
+class Worlds extends Component {
+	shouldComponentUpdate(nextProps) {
+		const { data, currentLang, worldIds } = this.props;
+		const { data: nextData, currentLang: nextCurrentLang, worldIds: nextWorldIds } = nextProps;
+		
+		// console.log('nextProps', nextProps);
+		// console.log('data', _.isEqual(data, nextData), data, nextData);
+		// console.log('worlds', _.isEqual(worldIds, nextWorldIds), worldIds, nextWorldIds);
+		// console.log('lang', _.isEqual(currentLang, nextCurrentLang), currentLang.slug, nextCurrentLang.slug);
+		
+		const shouldUpdate = !_.isEqual(worldIds, nextWorldIds) 
+			|| !_.isEqual(currentLang, nextCurrentLang)
+			|| !_.isEqual(data.loading, nextData.loading);
+		
+		// console.log('shouldUpdate', shouldUpdate);
+		
+		return shouldUpdate;
 	}
-`;
-const Worlds = ({ data, currentLang }) => {
-	const { worlds, loading } = data;
+	
+    render() {
+		const { data, currentLang } = this.props;
+		const { worlds, loading } = data;
 
-	if (loading) { return <Loading />; }
+		if (loading) { return <Loading />; }
 
-	return (
-		<div className="row worlds">
-			{_.map(['na', 'eu'], region => (
-				<div key={region} className="col-lg">
-					{/* <h1 className="region-title">{region}</h1> */}
-					<RegionWorlds worlds={worlds} currentLang={currentLang} region={region} />
-				</div>
-			))}
-		</div>
-	);
-};
+		return (
+			<div className="row worlds">
+				{_.map(['na', 'eu'], region => (
+					<div key={region} className="col-lg">
+						{/* <h1 className="region-title">{region}</h1> */}
+						<RegionWorlds worlds={worlds} currentLang={currentLang} region={region} />
+					</div>
+				))}
+			</div>
+		);
+	}
+}
 
 const WorldsWithData = graphql(WorldsQuery, {
-	options: { shouldBatch: true },
+	options: ({ worldIds }) => ({ 
+		shouldBatch: true,
+		variables: {
+			ids: worldIds,
+		},
+	}),
 })(Worlds);
 
 

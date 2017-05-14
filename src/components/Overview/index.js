@@ -17,6 +17,13 @@ class Overview extends PureComponent {
 		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
 		if (_.isEmpty(matches)) return <h1>err, matchData not found</h1>;
 		if (_.isEmpty(lang)) return <h1>err, lang not found</h1>;
+		
+		const worldIds = _.chain(matches)
+			.map('world_ids')
+			.flatten()
+			.uniq()
+			.sort()
+			.value();
 
 		return (
 			<div className="overview container">
@@ -27,7 +34,9 @@ class Overview extends PureComponent {
 				</div>
 				<div className="row">
 					<div className="col">
-						<Worlds currentLang={lang} />
+						{(_.isEmpty(worldIds)) ? 
+							<h1>err, no worlds  found</h1> : 
+							<Worlds currentLang={lang} worldIds={worldIds} />}						
 					</div>
 				</div>
 			</div>
