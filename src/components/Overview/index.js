@@ -47,7 +47,7 @@ class Overview extends PureComponent {
 const OverviewWithData = graphql(OverviewQuery, {
 	options: {
 		shouldBatch: true,
-		pollInterval: 1000 * 4,
+		pollInterval: 1000 * 8,
 	},
 })(Overview);
 
