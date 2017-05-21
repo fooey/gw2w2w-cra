@@ -68,7 +68,7 @@ const MatchScores = ({ matchScores }) => (
 
 const Pie = ({ matchScores }) => {
 	const scores = _.values(_.pick(matchScores, ['red', 'blue', 'green']));
-	const pielySrc = `https://piely.net/${scores.join()}.svg`;
+	const pielySrc = `https://www.piely.net/${scores.join()}.svg`;
 
 	return <img className="match-scores-pie" src={pielySrc} width="64" alt="" />;
 };
