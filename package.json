@@ -19,12 +19,14 @@
 		"react": "16.0.0-alpha.12",
 		"react-apollo": "^1.2.0",
 		"react-dom": "16.0.0-alpha.12",
-		"react-router-dom": "^4.1.1"
+		"react-router-dom": "^4.1.1",
+		"react-scripts": "1.0.2"
 	},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",
+		"eslint": "^3.19.0",
 		"eslint-plugin-react": "^7.0.0",
-		"react-scripts": "0.9.5"
+		"eslint-watch": "^3.1.0"
 	},
 	"scripts": {
 		"dev": "yarn dev:cra",
@@ -34,6 +36,7 @@
 		"dev:css": "gulp dev:css",
 		"build:css": "gulp build:css",
 		"lint": "eslint src/**/*.js",
+		"dev:lint": "esw src --watch",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
 	}

@@ -10,7 +10,7 @@ import { Loading } from 'src/components/Util';
 import OverviewQuery from 'src/gql/overview';
 
 class Overview extends PureComponent {
-    render() {
+	render() {
 		const { data, lang } = this.props;
 		const { loading, matches } = data;
 

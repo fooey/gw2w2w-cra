@@ -26,7 +26,7 @@ class Worlds extends Component {
 		return shouldUpdate;
 	}
 	
-    render() {
+	render() {
 		const { data, currentLang } = this.props;
 		const { worlds, loading } = data;
 

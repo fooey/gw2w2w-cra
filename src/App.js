@@ -54,9 +54,9 @@ const Lang = ({ data }) => {
 const LangwWithData = graphql(LangQuery, {
 	options: ({ langSlug }) => ({
 		shouldBatch: true,
-        variables: {
-            slug: langSlug,
-        },
+		variables: {
+			slug: langSlug,
+		},
 	}),
 })(Lang);
 
