@@ -8,6 +8,7 @@ import Overview from 'src/components/Overview';
 import { Loading } from 'src/components/Util';
 
 import LangQuery from 'src/gql/lang';
+import WorldBySlugQuery from 'src/gql/worldBySlug';
 
 import 'src/styles/bootstrap.css';
 import 'src/styles/app.css';
@@ -31,27 +32,46 @@ const App = () => (
 			return <Redirect to={`/${myLangSlug}`} />;
 		}}/>
 
-		<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
-			return <LangwWithData langSlug={_.get(match, ['params', 'langSlug'])} />;
+		<Route path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)?" render={({ match }) => {
+			const { params } = match;
+			const { langSlug, worldSlug } = params;
+			console.log({ langSlug, worldSlug });
+			
+			return (
+				<LangWithData langSlug={langSlug}>
+					{_.isEmpty(worldSlug) ? 
+						<Overview /> : 
+						<WorldWithData worldSlug={worldSlug}>
+							<Match />
+						</WorldWithData>
+					}
+				</LangWithData>
+			);
 		}}/>
 
-		<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
-			return <h1>world: {JSON.stringify(match.params)}</h1>;
-		}}/>
+		{/* <Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
+			const { params } = match;
+			
+			console.log('params', params);
+			
+			return (
+				<LangWithData langSlug={_.get(params, 'langSlug')}>
+					<WorldWithData worldSlug={_.get(params, 'worldSlug')} />
+				</LangWithData>
+			);
+		}}/> */}
 
 	</Layout>
 );
 
 
-const Lang = ({ data }) => {
+const Lang = ({ data, children }) => {
 	if (data.loading) return <Loading />;
 
-	return (
-		<Overview lang={data.lang} />
-	);
+	return children && React.cloneElement(children, { lang: data.lang });
 };
 
-const LangwWithData = graphql(LangQuery, {
+const LangWithData = graphql(LangQuery, {
 	options: ({ langSlug }) => ({
 		shouldBatch: true,
 		variables: {
@@ -59,5 +79,28 @@ const LangwWithData = graphql(LangQuery, {
 		},
 	}),
 })(Lang);
+
+
+const World = ({ lang, data, children }) => {
+	if (data.loading) return <Loading />;
+	
+	return children && React.cloneElement(children, { lang, world: data.world });
+};
+
+const WorldWithData = graphql(WorldBySlugQuery, {
+	options: ({ worldSlug }) => ({
+		shouldBatch: true,
+		variables: {
+			slug: worldSlug,
+		},
+	}),
+})(World);
+
+const Match = ({ world, lang }) => (
+	<div> 		
+		<h1>{JSON.stringify(world)}</h1>
+		<h2>{JSON.stringify(lang)}</h2>
+	</div>
+);
 
 export default App;
