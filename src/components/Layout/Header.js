@@ -12,34 +12,30 @@ const SLUGS = ['en','fr','de','es','zh'];
 
 const Langs = () => {
 	return (
-		<div className="container">
-			<div className="row">
-				<div className="col">
-					<br />
+		<div className="container"><div className="row"><div className="col">
+			<br />
 
-					<ul className="nav nav-tabs">
+			<ul className="nav nav-tabs">
 
-						<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
-							const {
-								// langSlug,
-								worldSlug,
-							} = match.params;
+				<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
+					const {
+						// langSlug,
+						worldSlug,
+					} = match.params;
 
-							return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} worldSlug={worldSlug} />);
-						}}/>
+					return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} worldSlug={worldSlug} />);
+				}}/>
 
-						<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
-							// const { langSlug } = match.params;
+				<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
+					// const { langSlug } = match.params;
 
-							return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} match={match}/>);
-						}}/>
+					return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} match={match}/>);
+				}}/>
 
-					</ul>
+			</ul>
 
-					<br />
-				</div>
-			</div>
-		</div>
+			<br />
+		</div></div></div>
 	);
 };
 
