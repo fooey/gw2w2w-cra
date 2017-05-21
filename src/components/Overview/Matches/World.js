@@ -1,31 +1,24 @@
 import React, {PureComponent} from 'react';
-import {graphql} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import _ from 'lodash';
 import classnames from 'classnames';
 
-import WorldQuery from 'src/gql/world';
-
 class MatchWorld extends PureComponent {
 	render() {
-		const {data, color, currentLang} = this.props;
-		const {loading, world} = data;
+		const { GLOBALS, color, world } = this.props;
 
 		const className = classnames({
 			"match-worlds-world": true,
 			[`team-${color}`]: true,
 		});
-
-		if (loading) 
-			return <div>Loading</div>;
 		
 		const worldName = _.get(world, [
-			currentLang.slug, 'name',
+			GLOBALS.lang.slug, 'name',
 		], 'ERR');
 		const worldSlug = _.get(world, [
-			currentLang.slug, 'slug',
+			GLOBALS.lang.slug, 'slug',
 		], 'ERR');
-		const worldLink = ['', currentLang.slug, worldSlug].join('/');
+		const worldLink = ['', GLOBALS.lang.slug, worldSlug].join('/');
 
 		return (
 			<div>
@@ -35,8 +28,4 @@ class MatchWorld extends PureComponent {
 	}
 }
 
-export default graphql(WorldQuery, {
-	options: {
-		shouldBatch: true,
-	},
-})(MatchWorld);
+export default MatchWorld;

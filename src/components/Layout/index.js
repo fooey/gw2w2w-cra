@@ -3,10 +3,10 @@ import React from 'react';
 import Header from './Header';
 // import logo from 'src/img/logo/logo-512x192.png';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, GLOBALS }) => (
 
 	<div className="layout">
-		<Header />
+		<Header GLOBALS={GLOBALS} />
 
 		{/* <div className="row">
 			<div className="col text-center">

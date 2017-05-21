@@ -1,53 +1,34 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
-import { Route, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import _ from 'lodash';
 
-import { Loading } from 'src/components/Util';
 
-import LangQuery from 'src/gql/lang';
+const Langs = ({ GLOBALS }) => (
+	<nav className="navbar navbar-light bg-faded">
+		<div className="container"><div className="row">
+			<div className="col">
+				<ul className="nav nav-pills">
+					<li className="nav-item">
+						<Link to="/" title="Home" className="nav-link">gw2w2w</Link>
+					</li>
+				</ul>
+			</div>
+			<div className="col-md-auto">
+				<ul className="nav nav-pills">
+					{_.map(GLOBALS.langs, ixLang => 
+						<Lang key={ixLang.slug} lang={ixLang} world={GLOBALS.world} />
+					)}
+				</ul>
+			</div>
+		</div></div>
+	</nav>
+);
 
-const SLUGS = ['en','fr','de','es','zh'];
-
-
-const Langs = () => {
-	return (
-		<div className="container"><div className="row"><div className="col">
-			<br />
-
-			<ul className="nav nav-tabs">
-
-				<Route exact path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)" render={({ match }) => {
-					const {
-						// langSlug,
-						worldSlug,
-					} = match.params;
-
-					return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} worldSlug={worldSlug} />);
-				}}/>
-
-				<Route exact path="/:langSlug([a-z]{2})" render={({ match }) => {
-					// const { langSlug } = match.params;
-
-					return _.map(SLUGS, slug => <LangWithData key={slug} slug={slug} match={match}/>);
-				}}/>
-
-			</ul>
-
-			<br />
-		</div></div></div>
-	);
-};
-
-const Lang = ({ data, worldSlug }) => {
-	const { lang, loading } = data;
-
-	if (loading) { return <Loading />; }
-
+const Lang = ({ lang, world }) => {
 	const link = _.without([
 		'',
 		lang.slug,
-		worldSlug ? worldSlug : null,
+		world ? _.get(world, [lang.slug, 'slug']) : null,
 	], null);
 
 	return (
@@ -58,9 +39,5 @@ const Lang = ({ data, worldSlug }) => {
 		</li>
 	);
 };
-
-const LangWithData = graphql(LangQuery, {
-	options: { shouldBatch: true },
-})(Lang);
 
 export default Langs;

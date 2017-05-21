@@ -17,7 +17,7 @@ const client = new ApolloClient({ networkInterface });
 
 ReactDOM.render(
 	<ApolloProvider client={client}>
-		<Router>
+		<Router>			
 			<App />
 		</Router>
 	</ApolloProvider>,

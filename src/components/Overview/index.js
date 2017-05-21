@@ -11,32 +11,22 @@ import OverviewQuery from 'src/gql/overview';
 
 class Overview extends PureComponent {
 	render() {
-		const { data, lang } = this.props;
+		const { data, GLOBALS } = this.props;
 		const { loading, matches } = data;
 
 		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
 		if (_.isEmpty(matches)) return <h1>err, matchData not found</h1>;
-		if (_.isEmpty(lang)) return <h1>err, lang not found</h1>;
-		
-		const worldIds = _.chain(matches)
-			.map('world_ids')
-			.flatten()
-			.uniq()
-			.sort()
-			.value();
 
 		return (
 			<div className="overview container">
 				<div className="row">
 					<div className="col">
-						<Matches currentLang={lang} matches={matches} />
+						<Matches GLOBALS={GLOBALS} matches={matches} />
 					</div>
 				</div>
 				<div className="row">
 					<div className="col">
-						{(_.isEmpty(worldIds)) ? 
-							<h1>err, no worlds  found</h1> : 
-							<Worlds currentLang={lang} worldIds={worldIds} />}						
+						<Worlds GLOBALS={GLOBALS} />
 					</div>
 				</div>
 			</div>

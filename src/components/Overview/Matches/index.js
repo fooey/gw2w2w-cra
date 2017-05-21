@@ -9,7 +9,7 @@ const COLORS = ['red', 'blue', 'green'];
 const REGIONS = ['NA', 'EU'];
 // const LANG_SLUG = 'en';
 
-const Matches = ({ matches, currentLang }) => (
+const Matches = ({ matches, GLOBALS }) => (
 	<div className="row">
 		{_.map(REGIONS, region => (
 			<div className="col-md" key={region}>
@@ -18,7 +18,7 @@ const Matches = ({ matches, currentLang }) => (
 						{_.chain(matches)
 							.filter({ region })
 							.sortBy('id')
-							.map((match, i) => <Match key={match.id} i={i} match={match} currentLang={currentLang} />)
+							.map((match, i) => <Match key={match.id} i={i} match={match} GLOBALS={GLOBALS} />)
 							.value()}
 					</tbody>
 				</table>
@@ -30,22 +30,29 @@ const Matches = ({ matches, currentLang }) => (
 
 
 
-const Match = ({ match, currentLang }) =>  (
+const Match = ({ match, GLOBALS }) =>  (
 	<tr key={match.id} className={`match`}>
 		<td className="match-pie"><Pie matchScores={match.scores} /></td>
-		<td className="match-worlds"><MatchWorlds matchWorlds={match.worlds} currentLang={currentLang} /></td>
+		<td className="match-worlds"><MatchWorlds matchWorlds={match.worlds} GLOBALS={GLOBALS} /></td>
 		<td className="match-scores"><MatchScores matchScores={match.scores} /></td>
 	</tr>
 );
 
-const MatchWorlds = ({ matchWorlds, currentLang }) => (
+const MatchWorlds = ({ matchWorlds, GLOBALS }) => (
 	<div className="match-worlds">{
-		_.map(COLORS, color => <MatchWorld
-			key={color}
-			color={color}
-			currentLang={currentLang}
-			id={_.get(matchWorlds, `${color}_id`)}
-		/>)
+		_.map(COLORS, color => {
+			const worldId = _.get(matchWorlds, `${color}_id`);
+			const world = _.find(GLOBALS.worlds, { id: worldId });
+			
+			return (
+				<MatchWorld
+					key={color}
+					color={color}
+					GLOBALS={GLOBALS}
+					world={world}
+				/>
+			);
+		})
 	}</div>
 );
 
