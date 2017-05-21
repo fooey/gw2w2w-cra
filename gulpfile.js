@@ -10,6 +10,10 @@ const output = './src/styles';
 const sassOptionsDev = {
 	errLogToConsole: true,
 	outputStyle: 'expanded',
+	includePaths: [
+		'./node_modules',
+		'./',
+	],
 };
 
 

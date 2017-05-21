@@ -1,5 +1,5 @@
-// @import "../node_modules/bootstrap/scss/_variables";
-// @import "../node_modules/bootstrap/scss/_mixins";
+// @import "bootstrap/scss/_variables";
+// @import "bootstrap/scss/_mixins";
 
 $font-family-sans-serif: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 $font-family-serif: 'Lato';
@@ -15,8 +15,8 @@ $brand-warning: $yellow;
 $enable-rounded: false;
 
 
-@import '../node_modules/bootstrap/scss/variables';
-@import '../node_modules/bootstrap/scss/mixins';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
 
 
 
