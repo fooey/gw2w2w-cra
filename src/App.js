@@ -44,7 +44,7 @@ const App = ({ match }) => {
 const Globals = ({ data, langSlug, worldSlug }) => {
 	if (data.loading) return <Loading />;
 	
-	const { langs, worlds } = data;
+	const { langs, worlds, objectives } = data;
 	
 	const lang = _.isEmpty(langSlug) ? null : _.find(langs, { slug: langSlug });
 	const world = _.isEmpty(worldSlug) ? null : _.find(worlds, world => _.includes(world.slugs, worldSlug));
@@ -54,6 +54,7 @@ const Globals = ({ data, langSlug, worldSlug }) => {
 		world, 
 		langs, 
 		worlds,
+		objectives,
 	};
 	
 	if (GLOBALS.lang) {
