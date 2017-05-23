@@ -17,15 +17,6 @@ import 'src/styles/app.css';
 const DEFAULT_LANG = 'en';
 
 
-const Routes = () => (
-	<Switch>
-		<Route exact path="/" component={RedirectFromRoot}/>	
-		<Route path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)?" component={App}/>		
-		<Route component={NotFound} />	
-	</Switch>
-);
-
-
 const RedirectFromRoot = () => {
 	const myLangSlug = window.localStorage.getItem('langSlug') || DEFAULT_LANG;
 
@@ -39,6 +30,15 @@ const App = ({ match }) => {
 	
 	return <GlobalsWithData langSlug={langSlug} worldSlug={worldSlug} />;
 };
+
+
+const Routes = () => (
+	<Switch>
+		<Route exact path="/" component={RedirectFromRoot}/>	
+		<Route path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)?" component={App}/>		
+		<Route component={NotFound} />	
+	</Switch>
+);
 
 
 const Globals = ({ data, langSlug, worldSlug }) => {
