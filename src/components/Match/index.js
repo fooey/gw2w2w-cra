@@ -32,12 +32,12 @@ class Match extends PureComponent {
 						<Guilds GLOBALS={GLOBALS} objectives={objectives} />
 					</div>
 				</div>
-				<div className="row">
+				{/* <div className="row">
 					<div className="col">
 						<pre>{JSON.stringify(match, null, '\t')}</pre>
 						<pre>{JSON.stringify(GLOBALS)}</pre>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		);
 	}
