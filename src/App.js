@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 import Layout from 'src/components/Layout';
 import Overview from 'src/components/Overview';
+import Match from 'src/components/Match';
 import { Loading, NotFound } from 'src/components/Util';
 
 import GlobalsQuery from 'src/gql/globals';
@@ -55,25 +56,12 @@ const Globals = ({ data, langSlug, worldSlug }) => {
 		worlds,
 	};
 	
-	// save the current lang to local storage
-	if (lang) {
-		window.localStorage.setItem('langSlug', langSlug); 		
-	}
-	
-	console.log('Globals', { langSlug, worldSlug, GLOBALS });
-	
-	if (GLOBALS.world && GLOBALS.lang) {
-		return (
-			<div>
-				<h1>{JSON.stringify(lang)}</h1>
-				<h2>{JSON.stringify(world)}</h2>
-			</div>
-		);
-	}
-	else if (GLOBALS.lang) {
+	if (GLOBALS.lang) {
+		window.localStorage.setItem('langSlug', langSlug); // save the current lang to local storage
+		
 		return (
 			<Layout GLOBALS={GLOBALS}>
-				<Overview GLOBALS={GLOBALS} routeLang={lang} />
+				{GLOBALS.world ? <Match GLOBALS={GLOBALS} /> : <Overview GLOBALS={GLOBALS} />}
 			</Layout>
 		);
 	}
