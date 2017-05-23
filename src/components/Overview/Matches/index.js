@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import classnames from 'classnames';
 import numeral from 'numeral';
-
-import MatchWorld from './World';
 
 const COLORS = ['red', 'blue', 'green'];
 const REGIONS = ['NA', 'EU'];
@@ -55,6 +54,20 @@ const MatchWorlds = ({ matchWorlds, GLOBALS }) => (
 		})
 	}</div>
 );
+
+const MatchWorld = ({ GLOBALS, color, world }) => {
+	const className = classnames({
+		"d-block": true,
+		"match-worlds-world": true,
+		[`team-${color}`]: true,
+	});
+	
+	const worldName = _.get(world, [GLOBALS.lang.slug, 'name'], 'ERR');
+	const worldSlug = _.get(world, [GLOBALS.lang.slug, 'slug'], 'ERR');
+	const worldLink = ['', GLOBALS.lang.slug, worldSlug].join('/');
+
+	return <Link to={worldLink} className={className}>{worldName}</Link>;
+};
 
 const MatchScores = ({ matchScores }) => (
 	<div className="match-scores">{
