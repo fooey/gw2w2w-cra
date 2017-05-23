@@ -22,10 +22,14 @@ class Guilds extends Component {
 			.map((objectives, guildId) => {
 				const color = objectives[0].owner.toLowerCase();
 				
-				objectives = objectives.map(o => ({
-					id: o.id,
-					lastFlipped: o.last_flipped,
-				}));
+				objectives = _.chain(objectives)
+					.map(o => ({
+						id: o.id,
+						lastFlipped: o.last_flipped,
+					}))
+					.sortBy('lastFlipped')
+					.reverse()
+					.value();
 				
 				const lastFlippedMin = moment(_.minBy(objectives, 'lastFlipped').lastFlipped);
 				const lastFlippedMax = moment(_.maxBy(objectives, 'lastFlipped').lastFlipped);
