@@ -4,9 +4,10 @@ import _ from 'lodash';
 import classnames from 'classnames';
 import numeral from 'numeral';
 
+
 const COLORS = ['red', 'blue', 'green'];
 const REGIONS = ['NA', 'EU'];
-// const LANG_SLUG = 'en';
+
 
 const Matches = ({ matches, GLOBALS }) => (
 	<div className="row">
@@ -27,8 +28,6 @@ const Matches = ({ matches, GLOBALS }) => (
 );
 
 
-
-
 const Match = ({ match, GLOBALS }) =>  (
 	<tr key={match.id} className={`match`}>
 		<td className="match-pie"><Pie matchScores={match.scores} /></td>
@@ -36,6 +35,7 @@ const Match = ({ match, GLOBALS }) =>  (
 		<td className="match-scores"><MatchScores matchScores={match.scores} /></td>
 	</tr>
 );
+
 
 const MatchWorlds = ({ matchWorlds, GLOBALS }) => (
 	<div className="match-worlds">{
@@ -55,6 +55,7 @@ const MatchWorlds = ({ matchWorlds, GLOBALS }) => (
 	}</div>
 );
 
+
 const MatchWorld = ({ GLOBALS, color, world }) => {
 	const className = classnames({
 		"d-block": true,
@@ -68,6 +69,7 @@ const MatchWorld = ({ GLOBALS, color, world }) => {
 
 	return <Link to={worldLink} className={className}>{worldName}</Link>;
 };
+
 
 const MatchScores = ({ matchScores }) => (
 	<div className="match-scores">{
@@ -85,6 +87,7 @@ const MatchScores = ({ matchScores }) => (
 		})
 	}</div>
 );
+
 
 const Pie = ({ matchScores }) => {
 	const scores = _.values(_.pick(matchScores, ['red', 'blue', 'green']));
