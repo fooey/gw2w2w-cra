@@ -31,11 +31,11 @@
   "rules": {
     "no-console": "off",
     "strict": ["error", "global"],
-	"comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", "always-multiline"],
     "indent": ["error", "tab", { "SwitchCase": 1 }],
-	"semi": ["error", "always"],
-	"react/display-name": "off",
-	"react/prop-types": "off"
+    "semi": ["error", "always"],
+    "react/display-name": "off",
+    "react/prop-types": "off"
   },
   "plugins": [
     "react"
