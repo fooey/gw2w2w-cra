@@ -5,6 +5,8 @@ import moment from 'moment-twitter';
 // import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
+import { getRefreshInterval } from 'src/lib/time';
+
 // import Matches from './Matches/index';
 // import Worlds from './Worlds/index';
 
@@ -12,40 +14,49 @@ import _ from 'lodash';
 
 // import MatchQuery from 'src/gql/match';
 
+
+function generateGuildsFromObjectives(objectives) {
+	return _.chain(objectives)
+		.filter(o => o.claimed_by)
+		.groupBy('claimed_by')
+		.map((objectives, guildId) => generateGuild(objectives, guildId))
+		.sortBy('lastFlippedMax')
+		.reverse()
+		.keyBy('id')
+		.value();
+}
+
+
+function generateGuild(objectives, guildId) {
+	const color = objectives[0].owner.toLowerCase();
+	
+	const guildObjectives = _.chain(objectives)
+		.map(o => ({
+			id: o.id,
+			lastFlipped: o.last_flipped,
+		}))
+		.sortBy(o => o.lastFlipped)
+		.reverse()
+		.value();
+	
+	const lastFlippedMin = moment(_.minBy(guildObjectives, 'lastFlipped').lastFlipped);
+	const lastFlippedMax = moment(_.maxBy(guildObjectives, 'lastFlipped').lastFlipped);
+	
+	return {
+		id: guildId,
+		objectives: guildObjectives,
+		color,
+		lastFlippedMin,
+		lastFlippedMax,
+	};
+}
+
+
 class Guilds extends Component {	
 	render() {
 		const { objectives, GLOBALS } = this.props;
-		
-		const guilds = _.chain(objectives)
-			.filter(o => o.claimed_by)
-			.groupBy('claimed_by')
-			.map((objectives, guildId) => {
-				const color = objectives[0].owner.toLowerCase();
-				
-				objectives = _.chain(objectives)
-					.map(o => ({
-						id: o.id,
-						lastFlipped: o.last_flipped,
-					}))
-					.sortBy('lastFlipped')
-					.reverse()
-					.value();
-				
-				const lastFlippedMin = moment(_.minBy(objectives, 'lastFlipped').lastFlipped);
-				const lastFlippedMax = moment(_.maxBy(objectives, 'lastFlipped').lastFlipped);
-				
-				return {
-					id: guildId,
-					color,
-					lastFlippedMin,
-					lastFlippedMax,
-					objectives,
-				};
-			})
-			.sortBy('lastFlippedMax')
-			.reverse()
-			.keyBy('id')
-			.value();
+
+		const guilds = generateGuildsFromObjectives(objectives);
 
 		return (
 			<div className="overview container">
@@ -58,6 +69,7 @@ class Guilds extends Component {
 		);
 	}
 }
+
 
 class GuildsList extends PureComponent {
 	render() {
@@ -72,35 +84,12 @@ class GuildsList extends PureComponent {
 	}
 }
 
-class Guild extends Component {
-	constructor() {
-		super();
-		
-		this.state = {
-			now: moment(),
-		};
-	} 
-	
+class Guild extends PureComponent {
 	render() {
 		const { guild, GLOBALS } = this.props;
-		const { now } = this.state;
-		
-		const ageInSeconds = now.diff(guild.lastFlippedMax, 'seconds');
-		
-		let interval = 1 * 1000;
-		
-		if (ageInSeconds < 60) {
-			interval = 1 * 1000;
-		} else if (ageInSeconds < 60 * 10) {
-			interval = 10 * 1000;
-		} else {
-			interval = 60 * 1000;
-		}
 		
 		return (
 			<div className={`row team-${guild.color}`}>
-				<ReactInterval timeout={interval} enabled={true} callback={() => this.setState({ now: moment() })} />
-				
 				<div className="col-sm-auto" style={{width: 128}}>
 					<img src={`https://guilds.gw2w2w.com/${guild.id}.svg`} width="128" height="128" alt={guild.id} /> 						
 				</div>
@@ -110,24 +99,58 @@ class Guild extends Component {
 						{' '}
 						<small>[{guild.id.split('-')[1]}]</small>
 					</h1>
-					<ul className="list-unstyled">
-						{_.map(guild.objectives, guildObjective => {
-							const objective = _.find(GLOBALS.objectives, { id: guildObjective.id });
-							
-							return (
-								<li key={objective.id}>
-									{moment(guildObjective.lastFlipped).twitter()}
-									{' '}
-									{_.get(objective, [GLOBALS.lang.slug, 'name'])}
-								</li>
-							);
-						})}
-					</ul>
+					<h5>
+						{guild.id}
+					</h5>
+					
+					<GuildObjectives guildObjectives={guild.objectives} GLOBALS={GLOBALS}/>
 				</div>
 			</div>
 		);
 	}
 }
+
+
+const GuildObjectives = ({ guildObjectives, GLOBALS }) => {	
+	return (
+		<ul className="list-unstyled">
+			{_.map(guildObjectives, guildObjective =>
+				<GuildObjective key={guildObjective.id} GLOBALS={GLOBALS} guildObjective={guildObjective} />
+			)}
+		</ul>
+	);
+};
+
+
+class GuildObjective extends Component {
+	constructor() {
+		super();
+		
+		this.state = {
+			now: moment(),
+		};
+	} 
+	
+	render() {
+		const { guildObjective, GLOBALS } = this.props;
+		const { now } = this.state;
+		
+		const objective = _.find(GLOBALS.objectives, { id: guildObjective.id });
+		const ageInSeconds = now.diff(guildObjective.lastFlipped, 'seconds');		
+		const refreshInterval = getRefreshInterval(ageInSeconds);
+		
+		return (
+			<li key={objective.id}>
+				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
+				
+				{moment(guildObjective.lastFlipped).twitter()}
+				{' '}
+				{_.get(objective, [GLOBALS.lang.slug, 'name'])}
+			</li>
+		);
+	}
+}
+
 
 // const MatchWithData = graphql(MatchQuery, {
 // 	options: ({ GLOBALS }) => ({
