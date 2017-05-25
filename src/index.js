@@ -9,7 +9,7 @@ import App from './App';
 const networkInterface = createBatchingNetworkInterface ({
 	uri: 'https://graphql.gw2w2w.com/graphql',
 	// uri: 'http://localhost:4000/graphql',
-	batchInterval: 10,
+	batchInterval: 1, // only batch same tick
 });
 const client = new ApolloClient({ networkInterface });
 

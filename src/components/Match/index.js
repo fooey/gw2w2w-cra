@@ -46,7 +46,8 @@ class Match extends PureComponent {
 const MatchWithData = graphql(MatchQuery, {
 	options: ({ GLOBALS }) => ({
 		shouldBatch: true,
-		pollInterval: 1000 * 1,
+		'network-only': true,
+		pollInterval: 1000 * 8,
 		variables: {
 			worldId: GLOBALS.world.id,
 		},

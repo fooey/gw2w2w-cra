@@ -36,6 +36,7 @@ class Overview extends PureComponent {
 
 const OverviewWithData = graphql(OverviewQuery, {
 	options: {
+		'network-only': true,
 		shouldBatch: true,
 		pollInterval: 1000 * 8,
 	},
