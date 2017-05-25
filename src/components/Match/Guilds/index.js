@@ -2,7 +2,7 @@ import React, { Component, PureComponent } from 'react';
 // import moment from 'moment';
 import ReactInterval from 'react-interval';
 import moment from 'moment-twitter';
-// import { graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
 import { getRefreshInterval } from 'src/lib/time';
@@ -10,9 +10,9 @@ import { getRefreshInterval } from 'src/lib/time';
 // import Matches from './Matches/index';
 // import Worlds from './Worlds/index';
 
-// import { Loading } from 'src/components/Util';
+import { Loading } from 'src/components/Util';
 
-// import MatchQuery from 'src/gql/match';
+import GuildQuery from 'src/gql/guild';
 
 
 function generateGuildsFromObjectives(objectives) {
@@ -77,35 +77,42 @@ class GuildsList extends PureComponent {
 		// console.log('GuildsList');
 		// console.log('guild', guilds);
 		return (
-			<ul className="list-unstyled">
-				{_.map(guilds, guild => <Guild key={guild.id} GLOBALS={GLOBALS} guild={guild} />)}
-			</ul>
+			<table className="table"><tbody>
+				{_.map(guilds, objectivesGuild => 
+					<GuildWithData 
+						key={objectivesGuild.id} 
+						GLOBALS={GLOBALS} 
+						id={objectivesGuild.id} 
+						color={objectivesGuild.color} 
+						objectives={objectivesGuild.objectives} 
+					/>)}
+			</tbody></table>
 		);
 	}
 }
 
 class Guild extends PureComponent {
 	render() {
-		const { guild, GLOBALS } = this.props;
+		const { data, id, color, objectives, GLOBALS } = this.props; 		
+		const { guild } = data;
 		
 		return (
-			<div className={`row team-${guild.color}`}>
-				<div className="col-sm-auto" style={{width: 128}}>
-					<img src={`https://guilds.gw2w2w.com/${guild.id}.svg`} width="128" height="128" alt={guild.id} /> 						
-				</div>
-				<div className="col align-self-center">
-					<h1>
-						{guild.id.split('-')[0]}
-						{' '}
-						<small>[{guild.id.split('-')[1]}]</small>
-					</h1>
-					<h5>
-						{guild.id}
-					</h5>
+			<tr className={`row team-${color}`}>
+				<td className="text-center" style={{width: 172}}>
+					<img src={`https://guilds.gw2w2w.com/${id}.svg`} width="160" height="160" alt={id} /> 						
+				</td>
+				<td className="" valign="center">
+					{guild ? (
+						<h4>
+							{guild.name}
+							{' '}
+							<small>[{guild.tag}]</small>
+						</h4>
+					) : <Loading />}
 					
-					<GuildObjectives guildObjectives={guild.objectives} GLOBALS={GLOBALS}/>
-				</div>
-			</div>
+					<GuildObjectives guildObjectives={objectives} GLOBALS={GLOBALS}/>
+				</td>
+			</tr>
 		);
 	}
 }
@@ -140,26 +147,21 @@ class GuildObjective extends Component {
 		const refreshInterval = getRefreshInterval(ageInSeconds);
 		
 		return (
-			<li key={objective.id}>
+			<li key={objective.id} className="guild-objective">
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
 				
-				{moment(guildObjective.lastFlipped).twitter()}
-				{' '}
-				{_.get(objective, [GLOBALS.lang.slug, 'name'])}
+				<span className="objective-timer">{moment(guildObjective.lastFlipped).twitter()}</span>
+				<span className="objective-name">{_.get(objective, [GLOBALS.lang.slug, 'name'])}</span>
 			</li>
 		);
 	}
 }
 
 
-// const MatchWithData = graphql(MatchQuery, {
-// 	options: ({ GLOBALS }) => ({
-// 		shouldBatch: true,
-// 		pollInterval: 1000 * 8,
-// 		variables: {
-// 			worldId: GLOBALS.world.id,
-// 		},
-// 	}),
-// })(Match);
+const GuildWithData = graphql(GuildQuery, {
+	options: {
+		shouldBatch: false,
+	},
+})(Guild);
 
 export default Guilds;

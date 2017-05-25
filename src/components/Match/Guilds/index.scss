@@ -1,0 +1,16 @@
+
+.guild-objective {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: flex-start;
+	padding: .1em 0;
+	font-size: .8rem;
+
+	.objective-timer {
+		width: 4em;
+		padding-right: 1em;
+		text-align: right;
+	}
+
+}
