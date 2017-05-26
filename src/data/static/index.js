@@ -11,8 +11,11 @@ const worldsById = _.keyBy(worlds, 'id');
 const worldSlugMap = generateWorldSlugsMap(worlds);
 
 export default {
+	defaultLang: 'en',
+	
 	colors: ['red', 'blue', 'green'],
 	regions: ['NA', 'EU'],
+	
 	langs,
 	langsBySlug,
 	objectives,
