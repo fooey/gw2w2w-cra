@@ -1,0 +1,7 @@
+[
+	{ "name" : "English", "slug" : "en", "label" : "EN" },
+	{ "name" : "Deutsch", "slug" : "de", "label" : "DE" },
+	{ "name" : "Español", "slug" : "es", "label" : "ES" },
+	{ "name" : "Français", "slug" : "fr", "label" : "FR" }, 
+	{ "name" : "中文", "slug" : "zh", "label" : "中文" }
+]

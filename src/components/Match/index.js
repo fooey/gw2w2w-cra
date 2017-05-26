@@ -13,7 +13,7 @@ class Match extends PureComponent {
 	render() {
 		console.log('Match');
 	
-		const { data, GLOBALS } = this.props;
+		const { data, ROUTE } = this.props;
 		const { loading, match } = data;
 
 		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
@@ -29,13 +29,13 @@ class Match extends PureComponent {
 			<div className="overview container">
 				<div className="row">
 					<div className="col">
-						<Guilds GLOBALS={GLOBALS} objectives={objectives} />
+						<Guilds ROUTE={ROUTE} objectives={objectives} />
 					</div>
 				</div>
 				{/* <div className="row">
 					<div className="col">
 						<pre>{JSON.stringify(match, null, '\t')}</pre>
-						<pre>{JSON.stringify(GLOBALS)}</pre>
+						<pre>{JSON.stringify(ROUTE)}</pre>
 					</div>
 				</div> */}
 			</div>
@@ -44,12 +44,12 @@ class Match extends PureComponent {
 }
 
 const MatchWithData = graphql(MatchQuery, {
-	options: ({ GLOBALS }) => ({
+	options: ({ ROUTE }) => ({
 		shouldBatch: true,
 		'network-only': true,
 		pollInterval: 1000 * 8,
 		variables: {
-			worldId: GLOBALS.world.id,
+			worldId: ROUTE.world.id,
 		},
 	}),
 })(Match);

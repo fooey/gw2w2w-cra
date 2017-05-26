@@ -6,6 +6,7 @@ import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
 import { getRefreshInterval } from 'src/lib/time';
+import { getObjective } from 'src/lib/objective';
 
 // import Matches from './Matches/index';
 // import Worlds from './Worlds/index';
@@ -54,7 +55,7 @@ function generateGuild(objectives, guildId) {
 
 class Guilds extends Component {	
 	render() {
-		const { objectives, GLOBALS } = this.props;
+		const { objectives, ROUTE } = this.props;
 
 		const guilds = generateGuildsFromObjectives(objectives);
 
@@ -62,7 +63,7 @@ class Guilds extends Component {
 			<div className="overview container">
 				<div className="row">
 					<div className="col"> 						
-						<GuildsList GLOBALS={GLOBALS} guilds={guilds} />
+						<GuildsList ROUTE={ROUTE} guilds={guilds} />
 					</div>
 				</div>
 			</div>
@@ -73,7 +74,7 @@ class Guilds extends Component {
 
 class GuildsList extends PureComponent {
 	render() {
-		const { guilds, GLOBALS } = this.props;
+		const { guilds, ROUTE } = this.props;
 		// console.log('GuildsList');
 		// console.log('guild', guilds);
 		return (
@@ -81,7 +82,7 @@ class GuildsList extends PureComponent {
 				{_.map(guilds, objectivesGuild => 
 					<GuildWithData 
 						key={objectivesGuild.id} 
-						GLOBALS={GLOBALS} 
+						ROUTE={ROUTE} 
 						id={objectivesGuild.id} 
 						color={objectivesGuild.color} 
 						objectives={objectivesGuild.objectives} 
@@ -93,7 +94,7 @@ class GuildsList extends PureComponent {
 
 class Guild extends PureComponent {
 	render() {
-		const { data, id, color, objectives, GLOBALS } = this.props; 		
+		const { data, id, color, objectives, ROUTE } = this.props; 		
 		const { guild } = data;
 		
 		return (
@@ -101,7 +102,7 @@ class Guild extends PureComponent {
 				<td className="text-center" style={{width: 172}}>
 					<img src={`https://guilds.gw2w2w.com/${id}.svg`} width="160" height="160" alt={id} /> 						
 				</td>
-				<td className="" valign="center">
+				<td className="" style={{verticalAlign: "center"}}>
 					{guild ? (
 						<h4>
 							{guild.name}
@@ -110,7 +111,7 @@ class Guild extends PureComponent {
 						</h4>
 					) : <Loading />}
 					
-					<GuildObjectives guildObjectives={objectives} GLOBALS={GLOBALS}/>
+					<GuildObjectives guildObjectives={objectives} ROUTE={ROUTE}/>
 				</td>
 			</tr>
 		);
@@ -118,11 +119,11 @@ class Guild extends PureComponent {
 }
 
 
-const GuildObjectives = ({ guildObjectives, GLOBALS }) => {	
+const GuildObjectives = ({ guildObjectives, ROUTE }) => {	
 	return (
 		<ul className="list-unstyled">
 			{_.map(guildObjectives, guildObjective =>
-				<GuildObjective key={guildObjective.id} GLOBALS={GLOBALS} guildObjective={guildObjective} />
+				<GuildObjective key={guildObjective.id} ROUTE={ROUTE} guildObjective={guildObjective} />
 			)}
 		</ul>
 	);
@@ -139,10 +140,10 @@ class GuildObjective extends Component {
 	} 
 	
 	render() {
-		const { guildObjective, GLOBALS } = this.props;
+		const { guildObjective, ROUTE } = this.props;
 		const { now } = this.state;
 		
-		const objective = _.find(GLOBALS.objectives, { id: guildObjective.id });
+		const objective = getObjective(guildObjective.id);
 		const ageInSeconds = now.diff(guildObjective.lastFlipped, 'seconds');		
 		const refreshInterval = getRefreshInterval(ageInSeconds);
 		
@@ -151,7 +152,7 @@ class GuildObjective extends Component {
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
 				
 				<span className="objective-timer">{moment(guildObjective.lastFlipped).twitter()}</span>
-				<span className="objective-name">{_.get(objective, [GLOBALS.lang.slug, 'name'])}</span>
+				<span className="objective-name">{_.get(objective, [ROUTE.lang.slug, 'name'])}</span>
 			</li>
 		);
 	}

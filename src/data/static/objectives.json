@@ -1,0 +1,1693 @@
+[
+	{
+		"id" : "1099-99",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Hamm's Lab", "slug": "hamms-lab" },
+		"es": { "name": "Laboratorio de Hamm", "slug": "laboratorio-de-hamm" },
+		"de": { "name": "Hamms Labor", "slug": "hamms-labor" },
+		"fr": { "name": "Laboratoire de Hamm", "slug": "laboratoire-de-hamm" },
+		"zh": { "name": "汉姆的实验室", "slug": "汉姆的实验室" }
+	}, {
+		"id" : "1143-99",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Zakk's Lab", "slug": "zakks-lab" },
+		"es": { "name": "Laboratorio de Zakk", "slug": "laboratorio-de-zakk" },
+		"de": { "name": "Zakks Labor", "slug": "zakks-labor" },
+		"fr": { "name": "Laboratoire de Zakk", "slug": "laboratoire-de-zakk" },
+		"zh": { "name": "扎科的实验室", "slug": "扎科的实验室" }
+	}, {
+		"id" : "1102-99",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Lesh's Lab", "slug": "leshs-lab" },
+		"es": { "name": "Laboratorio de Lesh", "slug": "laboratorio-de-lesh" },
+		"de": { "name": "Leshs Labor", "slug": "leshs-labor" },
+		"fr": { "name": "Laboratoire de Lesh", "slug": "laboratoire-de-lesh" },
+		"zh": { "name": "莱希的实验室", "slug": "莱希的实验室" }
+	}, {
+		"id" : "1099-100",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Bauer Farmstead", "slug": "bauer-farmstead" },
+		"es": { "name": "Hacienda de Bauer", "slug": "hacienda-de-bauer" },
+		"de": { "name": "Bauer-Gehöft", "slug": "bauer-gehoft" },
+		"fr": { "name": "Ferme Bauer", "slug": "ferme-bauer" },
+		"zh": { "name": "鲍尔的农场", "slug": "鲍尔的农场" }
+	}, {
+		"id" : "1143-100",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Gee Farmstead", "slug": "gee-farmstead" },
+		"es": { "name": "Hacienda de Gee", "slug": "hacienda-de-gee" },
+		"de": { "name": "Gee-Gehöft", "slug": "gee-gehoft" },
+		"fr": { "name": "Ferme Gee", "slug": "ferme-gee" },
+		"zh": { "name": "基的农场", "slug": "基的农场" }
+	}, {
+		"id" : "1102-100",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Barrett Farmstead", "slug": "barrett-farmstead" },
+		"es": { "name": "Hacienda de Barrett", "slug": "hacienda-de-barrett" },
+		"de": { "name": "Barrett-Gehöft", "slug": "barrett-gehoft" },
+		"fr": { "name": "Ferme Barrett", "slug": "ferme-barrett" },
+		"zh": { "name": "巴里特的农场", "slug": "巴里特的农场" }
+	}, {
+		"id" : "1099-101",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "McLain's Encampment", "slug": "mc-lains-encampment" },
+		"es": { "name": "Campamento de McLain", "slug": "campamento-de-mc-lain" },
+		"de": { "name": "McLains Lager", "slug": "mc-lains-lager" },
+		"fr": { "name": "Campement de McLain", "slug": "campement-de-mc-lain" },
+		"zh": { "name": "麦克莱恩的营地", "slug": "麦克莱恩的营地" }
+	}, {
+		"id" : "1143-101",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Habib's Encampment", "slug": "habibs-encampment" },
+		"es": { "name": "Campamento de Habib", "slug": "campamento-de-habib" },
+		"de": { "name": "Habibs Lager", "slug": "habibs-lager" },
+		"fr": { "name": "Campement d'Habib", "slug": "campement-d-habib" },
+		"zh": { "name": "哈比伯的营地", "slug": "哈比伯的营地" }
+	}, {
+		"id" : "1102-101",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Patrick's Encampment", "slug": "patricks-encampment" },
+		"es": { "name": "Campamento de Patrick", "slug": "campamento-de-patrick" },
+		"de": { "name": "Patricks Lager", "slug": "patricks-lager" },
+		"fr": { "name": "Campement de Patrick", "slug": "campement-de-patrick" },
+		"zh": { "name": "帕特里克的营地", "slug": "帕特里克的营地" }
+	}, {
+		"id" : "1099-102",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "O'del Academy", "slug": "odel-academy" },
+		"es": { "name": "Academia O'del", "slug": "academia-odel" },
+		"de": { "name": "O'del-Akademie", "slug": "odel-akademie" },
+		"fr": { "name": "Académie de O'del", "slug": "academie-de-odel" },
+		"zh": { "name": "欧黛学院", "slug": "欧黛学院" }
+	}, {
+		"id" : "1143-102",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Kay'li Academy", "slug": "kayli-academy" },
+		"es": { "name": "Academia Kay'li", "slug": "academia-kayli" },
+		"de": { "name": "Kay'li-Akademie", "slug": "kayli-akademie" },
+		"fr": { "name": "Académie de Kay'li", "slug": "academie-de-kayli" },
+		"zh": { "name": "凯立学院", "slug": "凯立学院" }
+	}, {
+		"id" : "1102-102",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Y'lan Academy", "slug": "ylan-academy" },
+		"es": { "name": "Academia Y'lan", "slug": "academia-ylan" },
+		"de": { "name": "Y'lan-Akademie", "slug": "ylan-akademie" },
+		"fr": { "name": "Académie de Y'lan", "slug": "academie-de-ylan" },
+		"zh": { "name": "依兰学院", "slug": "依兰学院" }
+	}, {
+		"id" : "1099-104",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Eternal Necropolis", "slug": "eternal-necropolis" },
+		"es": { "name": "Necrópolis Eterna", "slug": "necropolis-eterna" },
+		"de": { "name": "Ewige Nekropole", "slug": "ewige-nekropole" },
+		"fr": { "name": "Nécropole éternelle", "slug": "necropole-eternelle" },
+		"zh": { "name": "永恒魂都", "slug": "永恒魂都" }
+	}, {
+		"id" : "1143-104",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Undying Necropolis", "slug": "undying-necropolis" },
+		"es": { "name": "Necrópolis Imperecedera", "slug": "necropolis-imperecedera" },
+		"de": { "name": "Unsterbliche Nekropole", "slug": "unsterbliche-nekropole" },
+		"fr": { "name": "Nécropole impérissable", "slug": "necropole-imperissable" },
+		"zh": { "name": "不朽魂都", "slug": "不朽魂都" }
+	}, {
+		"id" : "1102-104",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Deathless Necropolis", "slug": "deathless-necropolis" },
+		"es": { "name": "Necrópolis Inmortal", "slug": "necropolis-inmortal" },
+		"de": { "name": "Todlose Nekropole", "slug": "todlose-nekropole" },
+		"fr": { "name": "Nécropole immortelle", "slug": "necropole-immortelle" },
+		"zh": { "name": "不死魂都", "slug": "不死魂都" }
+	}, {
+		"id" : "1099-105",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Crankshaft Depot", "slug": "crankshaft-depot" },
+		"es": { "name": "Depósito de Palancamanijas", "slug": "deposito-de-palancamanijas" },
+		"de": { "name": "Kurbelwellen-Depot", "slug": "kurbelwellen-depot" },
+		"fr": { "name": "Dépôt Vilebrequin", "slug": "depot-vilebrequin" },
+		"zh": { "name": "机轴补给站", "slug": "机轴补给站" }
+	}, {
+		"id" : "1143-105",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Flywheel Depot", "slug": "flywheel-depot" },
+		"es": { "name": "Depósito de Volantes", "slug": "deposito-de-volantes" },
+		"de": { "name": "Schwungrad-Depot", "slug": "schwungrad-depot" },
+		"fr": { "name": "Dépôt Engrenage", "slug": "depot-engrenage" },
+		"zh": { "name": "飞轮补给站", "slug": "飞轮补给站" }
+	}, {
+		"id" : "1102-105",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Sparkplug Depot", "slug": "sparkplug-depot" },
+		"es": { "name": "Depósito de Bujías", "slug": "deposito-de-bujias" },
+		"de": { "name": "Zündfunken-Depot", "slug": "zundfunken-depot" },
+		"fr": { "name": "Dépôt Bougie", "slug": "depot-bougie" },
+		"zh": { "name": "火塞补给站", "slug": "火塞补给站" }
+	}, {
+		"id" : "1099-106",
+		"type" : "Keep",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Blistering Undercroft", "slug": "blistering-undercroft" },
+		"es": { "name": "Sótano Achicharrante", "slug": "sotano-achicharrante" },
+		"de": { "name": "Brennende Gruft", "slug": "brennende-gruft" },
+		"fr": { "name": "Crypte embrasée", "slug": "crypte-embrasee" },
+		"zh": { "name": "沸腾墓穴", "slug": "沸腾墓穴" }
+	}, {
+		"id" : "1143-106",
+		"type" : "Keep",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Torrid Undercroft", "slug": "torrid-undercroft" },
+		"es": { "name": "Sótano Sofocante", "slug": "sotano-sofocante" },
+		"de": { "name": "Glühende Gruft", "slug": "gluhende-gruft" },
+		"fr": { "name": "Crypte torride", "slug": "crypte-torride" },
+		"zh": { "name": "酷热墓穴", "slug": "酷热墓穴" }
+	}, {
+		"id" : "1102-106",
+		"type" : "Keep",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Scorching Undercroft", "slug": "scorching-undercroft" },
+		"es": { "name": "Sótano Abrasador", "slug": "sotano-abrasador" },
+		"de": { "name": "Versengende Gruft", "slug": "versengende-gruft" },
+		"fr": { "name": "Crypte cuisante", "slug": "crypte-cuisante" },
+		"zh": { "name": "焦热墓穴", "slug": "焦热墓穴" }
+	}, {
+		"id" : "1099-118",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Higgins's Ascent", "slug": "higginss-ascent" },
+		"es": { "name": "Ascenso de Higgins", "slug": "ascenso-de-higgins" },
+		"de": { "name": "Higgins' Aufstieg", "slug": "higgins-aufstieg" },
+		"fr": { "name": "Ascension d'Higgins", "slug": "ascension-d-higgins" },
+		"zh": { "name": "希金斯坡道", "slug": "希金斯坡道" }
+	}, {
+		"id" : "1143-118",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Higgins's Ascent", "slug": "higginss-ascent" },
+		"es": { "name": "Ascenso de Higgins", "slug": "ascenso-de-higgins" },
+		"de": { "name": "Higgins' Aufstieg", "slug": "higgins-aufstieg" },
+		"fr": { "name": "Ascension d'Higgins", "slug": "ascension-d-higgins" },
+		"zh": { "name": "希金斯坡道", "slug": "希金斯坡道" }
+	}, {
+		"id" : "1102-118",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Higgins's Ascent", "slug": "higginss-ascent" },
+		"es": { "name": "Ascenso de Higgins", "slug": "ascenso-de-higgins" },
+		"de": { "name": "Higgins' Aufstieg", "slug": "higgins-aufstieg" },
+		"fr": { "name": "Ascension d'Higgins", "slug": "ascension-d-higgins" },
+		"zh": { "name": "希金斯坡道", "slug": "希金斯坡道" }
+	}, {
+		"id" : "1099-107",
+		"type" : "Spawn",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "1143-107",
+		"type" : "Spawn",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "1102-107",
+		"type" : "Spawn",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "1099-119",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Bearce's Dwelling", "slug": "bearces-dwelling" },
+		"es": { "name": "Morada de Bearce", "slug": "morada-de-bearce" },
+		"de": { "name": "Bearces Behausung", "slug": "bearces-behausung" },
+		"fr": { "name": "Habitation de Bearce", "slug": "habitation-de-bearce" },
+		"zh": { "name": "巴雷斯的住所", "slug": "巴雷斯的住所" }
+	}, {
+		"id" : "1143-119",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Bearce's Dwelling", "slug": "bearces-dwelling" },
+		"es": { "name": "Morada de Bearce", "slug": "morada-de-bearce" },
+		"de": { "name": "Bearces Behausung", "slug": "bearces-behausung" },
+		"fr": { "name": "Habitation de Bearce", "slug": "habitation-de-bearce" },
+		"zh": { "name": "巴雷斯的住所", "slug": "巴雷斯的住所" }
+	}, {
+		"id" : "1102-119",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Bearce's Dwelling", "slug": "bearces-dwelling" },
+		"es": { "name": "Morada de Bearce", "slug": "morada-de-bearce" },
+		"de": { "name": "Bearces Behausung", "slug": "bearces-behausung" },
+		"fr": { "name": "Habitation de Bearce", "slug": "habitation-de-bearce" },
+		"zh": { "name": "巴雷斯的住所", "slug": "巴雷斯的住所" }
+	}, {
+		"id" : "1099-108",
+		"type" : "Spawn",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "1143-108",
+		"type" : "Spawn",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "1102-108",
+		"type" : "Spawn",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "1099-109",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Roy's Refuge", "slug": "roys-refuge" },
+		"es": { "name": "Refugio de Roy", "slug": "refugio-de-roy" },
+		"de": { "name": "Roys Zuflucht", "slug": "roys-zuflucht" },
+		"fr": { "name": "Refuge de Roy", "slug": "refuge-de-roy" },
+		"zh": { "name": "罗伊的避难所", "slug": "罗伊的避难所" }
+	}, {
+		"id" : "1143-109",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Olivier's Refuge", "slug": "oliviers-refuge" },
+		"es": { "name": "Refugio de Olivier", "slug": "refugio-de-olivier" },
+		"de": { "name": "Oliviers Zuflucht", "slug": "oliviers-zuflucht" },
+		"fr": { "name": "Refuge d'Olivier", "slug": "refuge-d-olivier" },
+		"zh": { "name": "奥立弗的避难所", "slug": "奥立弗的避难所" }
+	}, {
+		"id" : "1102-109",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Norfolk's Refuge", "slug": "norfolks-refuge" },
+		"es": { "name": "Refugio de Norfolk", "slug": "refugio-de-norfolk" },
+		"de": { "name": "Norfolks Zuflucht", "slug": "norfolks-zuflucht" },
+		"fr": { "name": "Refuge de Norfolk", "slug": "refuge-de-norfolk" },
+		"zh": { "name": "诺弗克的避难所", "slug": "诺弗克的避难所" }
+	}, {
+		"id" : "1099-120",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Zak's Overlook", "slug": "zaks-overlook" },
+		"es": { "name": "Mirador de Zak", "slug": "mirador-de-zak" },
+		"de": { "name": "Zaks Aussichtspunkt", "slug": "zaks-aussichtspunkt" },
+		"fr": { "name": "Belvédère de Zak", "slug": "belvedere-de-zak" },
+		"zh": { "name": "扎科瞭望台", "slug": "扎科瞭望台" }
+	}, {
+		"id" : "1143-120",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Zak's Overlook", "slug": "zaks-overlook" },
+		"es": { "name": "Mirador de Zak", "slug": "mirador-de-zak" },
+		"de": { "name": "Zaks Aussichtspunkt", "slug": "zaks-aussichtspunkt" },
+		"fr": { "name": "Belvédère de Zak", "slug": "belvedere-de-zak" },
+		"zh": { "name": "扎科瞭望台", "slug": "扎科瞭望台" }
+	}, {
+		"id" : "1102-120",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Zak's Overlook", "slug": "zaks-overlook" },
+		"es": { "name": "Mirador de Zak", "slug": "mirador-de-zak" },
+		"de": { "name": "Zaks Aussichtspunkt", "slug": "zaks-aussichtspunkt" },
+		"fr": { "name": "Belvédère de Zak", "slug": "belvedere-de-zak" },
+		"zh": { "name": "扎科瞭望台", "slug": "扎科瞭望台" }
+	}, {
+		"id" : "1099-110",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Parched Outpost", "slug": "parched-outpost" },
+		"es": { "name": "Puesto Avanzado Abrasado", "slug": "puesto-avanzado-abrasado" },
+		"de": { "name": "Verdörrter Außenposten", "slug": "verdorrter-aussenposten" },
+		"fr": { "name": "Avant-poste dévasté", "slug": "avant-poste-devaste" },
+		"zh": { "name": "焦枯前哨", "slug": "焦枯前哨" }
+	}, {
+		"id" : "1143-110",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Barren Outpost", "slug": "barren-outpost" },
+		"es": { "name": "Puesto Avanzado Abandonado", "slug": "puesto-avanzado-abandonado" },
+		"de": { "name": "Öder Außenposten", "slug": "oder-aussenposten" },
+		"fr": { "name": "Avant-poste délabré", "slug": "avant-poste-delabre" },
+		"zh": { "name": "贫瘠前哨", "slug": "贫瘠前哨" }
+	}, {
+		"id" : "1102-110",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Withered Outpost", "slug": "withered-outpost" },
+		"es": { "name": "Puesto Avanzado Desolado", "slug": "puesto-avanzado-desolado" },
+		"de": { "name": "Welker Außenposten", "slug": "welker-aussenposten" },
+		"fr": { "name": "Avant-poste ravagé", "slug": "avant-poste-ravage" },
+		"zh": { "name": "凋零前哨", "slug": "凋零前哨" }
+	}, {
+		"id" : "1099-113",
+		"type" : "Keep",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Stoic Rampart", "slug": "stoic-rampart" },
+		"es": { "name": "Muralla Estoica", "slug": "muralla-estoica" },
+		"de": { "name": "Stoischer Festungswall", "slug": "stoischer-festungswall" },
+		"fr": { "name": "Rempart stoïque", "slug": "rempart-stoique" },
+		"zh": { "name": "坚忍壁垒", "slug": "坚忍壁垒" }
+	}, {
+		"id" : "1143-113",
+		"type" : "Keep",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Hardened Rampart", "slug": "hardened-rampart" },
+		"es": { "name": "Muralla Endurecida", "slug": "muralla-endurecida" },
+		"de": { "name": "Stahlharter Festungswall", "slug": "stahlharter-festungswall" },
+		"fr": { "name": "Rempart durci", "slug": "rempart-durci" },
+		"zh": { "name": "防护壁垒", "slug": "防护壁垒" }
+	}, {
+		"id" : "1102-113",
+		"type" : "Keep",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Impassive Rampart", "slug": "impassive-rampart" },
+		"es": { "name": "Muralla Imperturbable", "slug": "muralla-imperturbable" },
+		"de": { "name": "Unbeeindruckter Festungswall", "slug": "unbeeindruckter-festungswall" },
+		"fr": { "name": "Rempart impassible", "slug": "rempart-impassible" },
+		"zh": { "name": "无情壁垒", "slug": "无情壁垒" }
+	}, {
+		"id" : "1099-114",
+		"type" : "Keep",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Osprey's Palace", "slug": "ospreys-palace" },
+		"es": { "name": "Palacio del Águila Pescadora", "slug": "palacio-del-aguila-pescadora" },
+		"de": { "name": "Fischadler-Palast", "slug": "fischadler-palast" },
+		"fr": { "name": "Palais du balbuzard", "slug": "palais-du-balbuzard" },
+		"zh": { "name": "鱼鹰宫殿", "slug": "鱼鹰宫殿" }
+	}, {
+		"id" : "1143-114",
+		"type" : "Keep",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Shrike's Palace", "slug": "shrikes-palace" },
+		"es": { "name": "Palacio del Alcaudón", "slug": "palacio-del-alcaudon" },
+		"de": { "name": "Würger-Palast", "slug": "wurger-palast" },
+		"fr": { "name": "Palais de la pie-grièche", "slug": "palais-de-la-pie-grieche" },
+		"zh": { "name": "乌鸫宫殿", "slug": "乌鸫宫殿" }
+	}, {
+		"id" : "1102-114",
+		"type" : "Keep",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Harrier's Palace", "slug": "harriers-palace" },
+		"es": { "name": "Palacio del Aguilucho", "slug": "palacio-del-aguilucho" },
+		"de": { "name": "Weihen-Palast", "slug": "weihen-palast" },
+		"fr": { "name": "Palais du circaète", "slug": "palais-du-circaete" },
+		"zh": { "name": "鹞鹰宫殿", "slug": "鹞鹰宫殿" }
+	}, {
+		"id" : "1099-121",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Darra's Maze", "slug": "darras-maze" },
+		"es": { "name": "Laberinto de Darra", "slug": "laberinto-de-darra" },
+		"de": { "name": "Darras Labyrinth", "slug": "darras-labyrinth" },
+		"fr": { "name": "Labyrinthe de Darra", "slug": "labyrinthe-de-darra" },
+		"zh": { "name": "达拉的迷宫", "slug": "达拉的迷宫" }
+	}, {
+		"id" : "1143-121",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Darra's Maze", "slug": "darras-maze" },
+		"es": { "name": "Laberinto de Darra", "slug": "laberinto-de-darra" },
+		"de": { "name": "Darras Labyrinth", "slug": "darras-labyrinth" },
+		"fr": { "name": "Labyrinthe de Darra", "slug": "labyrinthe-de-darra" },
+		"zh": { "name": "达拉的迷宫", "slug": "达拉的迷宫" }
+	}, {
+		"id" : "1102-121",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Darra's Maze", "slug": "darras-maze" },
+		"es": { "name": "Laberinto de Darra", "slug": "laberinto-de-darra" },
+		"de": { "name": "Darras Labyrinth", "slug": "darras-labyrinth" },
+		"fr": { "name": "Labyrinthe de Darra", "slug": "labyrinthe-de-darra" },
+		"zh": { "name": "达拉的迷宫", "slug": "达拉的迷宫" }
+	}, {
+		"id" : "1099-115",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Boettiger's Hideaway", "slug": "boettigers-hideaway" },
+		"es": { "name": "Escondrijo de Boettiger", "slug": "escondrijo-de-boettiger" },
+		"de": { "name": "Boettigers Versteck", "slug": "boettigers-versteck" },
+		"fr": { "name": "Antre de Boettiger", "slug": "antre-de-boettiger" },
+		"zh": { "name": "波提加的藏匿点", "slug": "波提加的藏匿点" }
+	}, {
+		"id" : "1143-115",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Berdrow's Hideaway", "slug": "berdrows-hideaway" },
+		"es": { "name": "Escondrijo de Berdrow", "slug": "escondrijo-de-berdrow" },
+		"de": { "name": "Berdrows Versteck", "slug": "berdrows-versteck" },
+		"fr": { "name": "Antre de Berdrow", "slug": "antre-de-berdrow" },
+		"zh": { "name": "贝德罗的藏匿点", "slug": "贝德罗的藏匿点" }
+	}, {
+		"id" : "1102-115",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Hughe's Hideaway", "slug": "hughes-hideaway" },
+		"es": { "name": "Escondrijo de Hughe", "slug": "escondrijo-de-hughe" },
+		"de": { "name": "Hughes Versteck", "slug": "hughes-versteck" },
+		"fr": { "name": "Antre de Hughe", "slug": "antre-de-hughe" },
+		"zh": { "name": "休赫的藏匿点", "slug": "休赫的藏匿点" }
+	}, {
+		"id" : "1099-122",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Tilly's Encampment", "slug": "tillys-encampment" },
+		"es": { "name": "Campamento de Tilly", "slug": "campamento-de-tilly" },
+		"de": { "name": "Tillys Lager", "slug": "tillys-lager" },
+		"fr": { "name": "Campement de Tilly", "slug": "campement-de-tilly" },
+		"zh": { "name": "提利的营地", "slug": "提利的营地" }
+	}, {
+		"id" : "1143-122",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Tilly's Encampment", "slug": "tillys-encampment" },
+		"es": { "name": "Campamento de Tilly", "slug": "campamento-de-tilly" },
+		"de": { "name": "Tillys Lager", "slug": "tillys-lager" },
+		"fr": { "name": "Campement de Tilly", "slug": "campement-de-tilly" },
+		"zh": { "name": "提利的营地", "slug": "提利的营地" }
+	}, {
+		"id" : "1102-122",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Tilly's Encampment", "slug": "tillys-encampment" },
+		"es": { "name": "Campamento de Tilly", "slug": "campamento-de-tilly" },
+		"de": { "name": "Tillys Lager", "slug": "tillys-lager" },
+		"fr": { "name": "Campement de Tilly", "slug": "campement-de-tilly" },
+		"zh": { "name": "提利的营地", "slug": "提利的营地" }
+	}, {
+		"id" : "1099-116",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Dustwhisper Well", "slug": "dustwhisper-well" },
+		"es": { "name": "Pozo del Murmullo de Polvo", "slug": "pozo-del-murmullo-de-polvo" },
+		"de": { "name": "Brunnen des Staubflüsterns", "slug": "brunnen-des-staubflusterns" },
+		"fr": { "name": "Puits du Souffle-poussière", "slug": "puits-du-souffle-poussiere" },
+		"zh": { "name": "尘语之井", "slug": "尘语之井" }
+	}, {
+		"id" : "1143-116",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Lastgasp Well", "slug": "lastgasp-well" },
+		"es": { "name": "Pozo del Último Suspiro", "slug": "pozo-del-ultimo-suspiro" },
+		"de": { "name": "Brunnen des Letzten Schnaufers", "slug": "brunnen-des-letzten-schnaufers" },
+		"fr": { "name": "Puits du Dernier-soupir", "slug": "puits-du-dernier-soupir" },
+		"zh": { "name": "濒死之井", "slug": "濒死之井" }
+	}, {
+		"id" : "1102-116",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Smashedhope Well", "slug": "smashedhope-well" },
+		"es": { "name": "Pozo Tragaesperanza", "slug": "pozo-tragaesperanza" },
+		"de": { "name": "Brunnen der Zerschlagenen Hoffnung", "slug": "brunnen-der-zerschlagenen-hoffnung" },
+		"fr": { "name": "Puits du Rêve-brisé", "slug": "puits-du-reve-brise" },
+		"zh": { "name": "绝望之井", "slug": "绝望之井" }
+	}, {
+		"id" : "1099-117",
+		"type" : "Spawn",
+		"map_type" : "RedHome",
+		"map_id" : "1099",
+		"en": { "name": "Citadel", "slug": "citadel" },
+		"es": { "name": "Ciudadela", "slug": "ciudadela" },
+		"de": { "name": "Zitadelle von", "slug": "zitadelle-von" },
+		"fr": { "name": "- Citadelle", "slug": "citadelle" },
+		"zh": { "name": "堡垒", "slug": "堡垒" }
+	}, {
+		"id" : "1143-117",
+		"type" : "Spawn",
+		"map_type" : "BlueHome",
+		"map_id" : "1143",
+		"en": { "name": "Citadel", "slug": "citadel" },
+		"es": { "name": "Ciudadela", "slug": "ciudadela" },
+		"de": { "name": "Zitadelle von", "slug": "zitadelle-von" },
+		"fr": { "name": "- Citadelle", "slug": "citadelle" },
+		"zh": { "name": "堡垒", "slug": "堡垒" }
+	}, {
+		"id" : "1102-117",
+		"type" : "Spawn",
+		"map_type" : "GreenHome",
+		"map_id" : "1102",
+		"en": { "name": "Citadel", "slug": "citadel" },
+		"es": { "name": "Ciudadela", "slug": "ciudadela" },
+		"de": { "name": "Zitadelle von", "slug": "zitadelle-von" },
+		"fr": { "name": "- Citadelle", "slug": "citadelle" },
+		"zh": { "name": "堡垒", "slug": "堡垒" }
+	}, {
+		"id" : "96-62",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Temple of Lost Prayers", "slug": "temple-of-lost-prayers" },
+		"es": { "name": "Templo de las Plegarias Perdidas", "slug": "templo-de-las-plegarias-perdidas" },
+		"de": { "name": "Tempel der Verlorenen Gebete", "slug": "tempel-der-verlorenen-gebete" },
+		"fr": { "name": "Temple des prières perdues", "slug": "temple-des-prieres-perdues" },
+		"zh": { "name": "迷途祷告者神殿", "slug": "迷途祷告者神殿" }
+	}, {
+		"id" : "94-62",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Temple of Lost Prayers", "slug": "temple-of-lost-prayers" },
+		"es": { "name": "Templo de las Plegarias Perdidas", "slug": "templo-de-las-plegarias-perdidas" },
+		"de": { "name": "Tempel der Verlorenen Gebete", "slug": "tempel-der-verlorenen-gebete" },
+		"fr": { "name": "Temple des prières perdues", "slug": "temple-des-prieres-perdues" },
+		"zh": { "name": "迷途祷告者神殿", "slug": "迷途祷告者神殿" }
+	}, {
+		"id" : "95-62",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Temple of the Fallen", "slug": "temple-of-the-fallen" },
+		"es": { "name": "Templo de los Caídos", "slug": "templo-de-los-caidos" },
+		"de": { "name": "Tempel der Gefallenen", "slug": "tempel-der-gefallenen" },
+		"fr": { "name": "Temple des défunts", "slug": "temple-des-defunts" },
+		"zh": { "name": "逝者神殿", "slug": "逝者神殿" }
+	}, {
+		"id" : "94-35",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Greenbriar", "slug": "greenbriar" },
+		"es": { "name": "Zarzaverde", "slug": "zarzaverde" },
+		"de": { "name": "Grünstrauch", "slug": "grunstrauch" },
+		"fr": { "name": "Vert-bruyère", "slug": "vert-bruyere" },
+		"zh": { "name": "绿荆地", "slug": "绿荆地" }
+	}, {
+		"id" : "96-35",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Redbriar", "slug": "redbriar" },
+		"es": { "name": "Zarzarroja", "slug": "zarzarroja" },
+		"de": { "name": "Rotstrauch", "slug": "rotstrauch" },
+		"fr": { "name": "Bruyerouge", "slug": "bruyerouge" },
+		"zh": { "name": "红荆地", "slug": "红荆地" }
+	}, {
+		"id" : "95-35",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Bluebriar", "slug": "bluebriar" },
+		"es": { "name": "Zarzazul", "slug": "zarzazul" },
+		"de": { "name": "Blaustrauch", "slug": "blaustrauch" },
+		"fr": { "name": "Bruyazur", "slug": "bruyazur" },
+		"zh": { "name": "蓝荆地", "slug": "蓝荆地" }
+	}, {
+		"id" : "94-103",
+		"type" : "Spawn",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "96-103",
+		"type" : "Spawn",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "95-103",
+		"type" : "Spawn",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "94-32",
+		"type" : "Keep",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Etheron Hills", "slug": "etheron-hills" },
+		"es": { "name": "Colinas Etheron", "slug": "colinas-etheron" },
+		"de": { "name": "Etheron-Hügel", "slug": "etheron-hugel" },
+		"fr": { "name": "Collines d'Etheron", "slug": "collines-d-etheron" },
+		"zh": { "name": "伊瑟隆丘陵", "slug": "伊瑟隆丘陵" }
+	}, {
+		"id" : "96-32",
+		"type" : "Keep",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Askalion Hills", "slug": "askalion-hills" },
+		"es": { "name": "Colinas Askalion", "slug": "colinas-askalion" },
+		"de": { "name": "Askalion-Hügel", "slug": "askalion-hugel" },
+		"fr": { "name": "Collines d'Askalion", "slug": "collines-d-askalion" },
+		"zh": { "name": "阿斯卡里昂丘陵", "slug": "阿斯卡里昂丘陵" }
+	}, {
+		"id" : "95-32",
+		"type" : "Keep",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Shadaran Hills", "slug": "shadaran-hills" },
+		"es": { "name": "Colinas Shadaran", "slug": "colinas-shadaran" },
+		"de": { "name": "Shadaran-Hügel", "slug": "shadaran-hugel" },
+		"fr": { "name": "Collines Shadaran", "slug": "collines-shadaran" },
+		"zh": { "name": "夏达然丘陵", "slug": "夏达然丘陵" }
+	}, {
+		"id" : "94-33",
+		"type" : "Keep",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Dreaming Bay", "slug": "dreaming-bay" },
+		"es": { "name": "Bahía Onírica", "slug": "bahia-onirica" },
+		"de": { "name": "Traumbucht", "slug": "traumbucht" },
+		"fr": { "name": "Baie des rêves", "slug": "baie-des-reves" },
+		"zh": { "name": "入梦港", "slug": "入梦港" }
+	}, {
+		"id" : "96-33",
+		"type" : "Keep",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Ascension Bay", "slug": "ascension-bay" },
+		"es": { "name": "Bahía de la Ascensión", "slug": "bahia-de-la-ascension" },
+		"de": { "name": "Aufstiegsbucht", "slug": "aufstiegsbucht" },
+		"fr": { "name": "Baie de l'Ascension", "slug": "baie-de-l-ascension" },
+		"zh": { "name": "攀天海湾", "slug": "攀天海湾" }
+	}, {
+		"id" : "95-33",
+		"type" : "Keep",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Dreadfall Bay", "slug": "dreadfall-bay" },
+		"es": { "name": "Bahía Salto Aciago", "slug": "bahia-salto-aciago" },
+		"de": { "name": "Schreckensfall-Bucht", "slug": "schreckensfall-bucht" },
+		"fr": { "name": "Baie du Noir déclin", "slug": "baie-du-noir-declin" },
+		"zh": { "name": "恐惧海湾", "slug": "恐惧海湾" }
+	}, {
+		"id" : "96-65",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Orchard Overlook", "slug": "orchard-overlook" },
+		"es": { "name": "Mirador del Huerto", "slug": "mirador-del-huerto" },
+		"de": { "name": "Obstgarten-Aussichtspunkt", "slug": "obstgarten-aussichtspunkt" },
+		"fr": { "name": "Belvédère du Verger", "slug": "belvedere-du-verger" },
+		"zh": { "name": "果园瞭望台", "slug": "果园瞭望台" }
+	}, {
+		"id" : "94-65",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Orchard Overlook", "slug": "orchard-overlook" },
+		"es": { "name": "Mirador del Huerto", "slug": "mirador-del-huerto" },
+		"de": { "name": "Obstgarten-Aussichtspunkt", "slug": "obstgarten-aussichtspunkt" },
+		"fr": { "name": "Belvédère du Verger", "slug": "belvedere-du-verger" },
+		"zh": { "name": "果园瞭望台", "slug": "果园瞭望台" }
+	}, {
+		"id" : "95-65",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Cohen's Overlook", "slug": "cohens-overlook" },
+		"es": { "name": "Mirador de Cohen", "slug": "mirador-de-cohen" },
+		"de": { "name": "Cohens Aussichtspunkt", "slug": "cohens-aussichtspunkt" },
+		"fr": { "name": "Belvédère de Cohen", "slug": "belvedere-de-cohen" },
+		"zh": { "name": "科亨瞭望台", "slug": "科亨瞭望台" }
+	}, {
+		"id" : "94-38",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Longview", "slug": "longview" },
+		"es": { "name": "Vistaluenga", "slug": "vistaluenga" },
+		"de": { "name": "Weitsicht", "slug": "weitsicht" },
+		"fr": { "name": "Longuevue", "slug": "longuevue" },
+		"zh": { "name": "远眺之地", "slug": "远眺之地" }
+	}, {
+		"id" : "96-38",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Woodhaven", "slug": "woodhaven" },
+		"es": { "name": "Refugio Forestal", "slug": "refugio-forestal" },
+		"de": { "name": "Wald-Freistatt", "slug": "wald-freistatt" },
+		"fr": { "name": "Boisrefuge", "slug": "boisrefuge" },
+		"zh": { "name": "荒木岗", "slug": "荒木岗" }
+	}, {
+		"id" : "95-38",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Sunnyhill", "slug": "sunnyhill" },
+		"es": { "name": "Colina Soleada", "slug": "colina-soleada" },
+		"de": { "name": "Sonnenhügel", "slug": "sonnenhugel" },
+		"fr": { "name": "Colline ensoleillée", "slug": "colline-ensoleillee" },
+		"zh": { "name": "旭光之丘", "slug": "旭光之丘" }
+	}, {
+		"id" : "94-39",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "The Godsword", "slug": "the-godsword" },
+		"es": { "name": "La Hoja Divina", "slug": "la-hoja-divina" },
+		"de": { "name": "Das Gottesschwert", "slug": "das-gottesschwert" },
+		"fr": { "name": "L'Epée divine", "slug": "l-epee-divine" },
+		"zh": { "name": "神语之地", "slug": "神语之地" }
+	}, {
+		"id" : "96-39",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "The Spiritholme", "slug": "the-spiritholme" },
+		"es": { "name": "La Isleta Espiritual", "slug": "la-isleta-espiritual" },
+		"de": { "name": "Der Geistholm", "slug": "der-geistholm" },
+		"fr": { "name": "Le Heaume spirituel", "slug": "le-heaume-spirituel" },
+		"zh": { "name": "灵魂沙洲", "slug": "灵魂沙洲" }
+	}, {
+		"id" : "95-39",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "The Titanpaw", "slug": "the-titanpaw" },
+		"es": { "name": "La Garra del Titán", "slug": "la-garra-del-titan" },
+		"de": { "name": "Die Titanenpranke", "slug": "die-titanenpranke" },
+		"fr": { "name": "Bras du Titan", "slug": "bras-du-titan" },
+		"zh": { "name": "泰坦之爪", "slug": "泰坦之爪" }
+	}, {
+		"id" : "96-64",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Bauer's Estate", "slug": "bauers-estate" },
+		"es": { "name": "Hacienda de Bauer", "slug": "hacienda-de-bauer" },
+		"de": { "name": "Bauers Anwesen", "slug": "bauers-anwesen" },
+		"fr": { "name": "Domaine de Bauer", "slug": "domaine-de-bauer" },
+		"zh": { "name": "鲍尔庄园", "slug": "鲍尔庄园" }
+	}, {
+		"id" : "94-64",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Bauer's Estate", "slug": "bauers-estate" },
+		"es": { "name": "Hacienda de Bauer", "slug": "hacienda-de-bauer" },
+		"de": { "name": "Bauers Anwesen", "slug": "bauers-anwesen" },
+		"fr": { "name": "Domaine de Bauer", "slug": "domaine-de-bauer" },
+		"zh": { "name": "鲍尔庄园", "slug": "鲍尔庄园" }
+	}, {
+		"id" : "95-64",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Gertzz's Estate", "slug": "gertzzs-estate" },
+		"es": { "name": "Hacienda de Gertzz", "slug": "hacienda-de-gertzz" },
+		"de": { "name": "Gertzz' Anwesen", "slug": "gertzz-anwesen" },
+		"fr": { "name": "Domaine de Gertzz", "slug": "domaine-de-gertzz" },
+		"zh": { "name": "格兹庄园", "slug": "格兹庄园" }
+	}, {
+		"id" : "94-37",
+		"type" : "Keep",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Garrison", "slug": "garrison" },
+		"es": { "name": "Fuerte", "slug": "fuerte" },
+		"de": { "name": "Festung von", "slug": "festung-von" },
+		"fr": { "name": "- Garnison", "slug": "garnison" },
+		"zh": { "name": "要塞", "slug": "要塞" }
+	}, {
+		"id" : "96-37",
+		"type" : "Keep",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Garrison", "slug": "garrison" },
+		"es": { "name": "Fuerte", "slug": "fuerte" },
+		"de": { "name": "Festung von", "slug": "festung-von" },
+		"fr": { "name": "- Garnison", "slug": "garnison" },
+		"zh": { "name": "要塞", "slug": "要塞" }
+	}, {
+		"id" : "95-37",
+		"type" : "Keep",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Garrison", "slug": "garrison" },
+		"es": { "name": "Fuerte", "slug": "fuerte" },
+		"de": { "name": "Festung von", "slug": "festung-von" },
+		"fr": { "name": "- Garnison", "slug": "garnison" },
+		"zh": { "name": "要塞", "slug": "要塞" }
+	}, {
+		"id" : "94-53",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Greenvale Refuge", "slug": "greenvale-refuge" },
+		"es": { "name": "Refugio Valleverde", "slug": "refugio-valleverde" },
+		"de": { "name": "Grüntal-Zuflucht", "slug": "gruntal-zuflucht" },
+		"fr": { "name": "Refuge de Valvert", "slug": "refuge-de-valvert" },
+		"zh": { "name": "绿谷避难所", "slug": "绿谷避难所" }
+	}, {
+		"id" : "96-53",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Redvale Refuge", "slug": "redvale-refuge" },
+		"es": { "name": "Refugio Vallerrojo", "slug": "refugio-vallerrojo" },
+		"de": { "name": "Rottal-Zuflucht", "slug": "rottal-zuflucht" },
+		"fr": { "name": "Refuge de Valrouge", "slug": "refuge-de-valrouge" },
+		"zh": { "name": "红谷避难所", "slug": "红谷避难所" }
+	}, {
+		"id" : "95-53",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Bluevale Refuge", "slug": "bluevale-refuge" },
+		"es": { "name": "Refugio Valleazul", "slug": "refugio-valleazul" },
+		"de": { "name": "Blautal-Zuflucht", "slug": "blautal-zuflucht" },
+		"fr": { "name": "Refuge de Bleuval", "slug": "refuge-de-bleuval" },
+		"zh": { "name": "蓝谷避难所", "slug": "蓝谷避难所" }
+	}, {
+		"id" : "94-111",
+		"type" : "Spawn",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Citadel", "slug": "citadel" },
+		"es": { "name": "Ciudadela", "slug": "ciudadela" },
+		"de": { "name": "Zitadelle von", "slug": "zitadelle-von" },
+		"fr": { "name": "- Citadelle", "slug": "citadelle" },
+		"zh": { "name": "堡垒", "slug": "堡垒" }
+	}, {
+		"id" : "96-111",
+		"type" : "Spawn",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Citadel", "slug": "citadel" },
+		"es": { "name": "Ciudadela", "slug": "ciudadela" },
+		"de": { "name": "Zitadelle von", "slug": "zitadelle-von" },
+		"fr": { "name": "- Citadelle", "slug": "citadelle" },
+		"zh": { "name": "堡垒", "slug": "堡垒" }
+	}, {
+		"id" : "95-111",
+		"type" : "Spawn",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Citadel", "slug": "citadel" },
+		"es": { "name": "Ciudadela", "slug": "ciudadela" },
+		"de": { "name": "Zitadelle von", "slug": "zitadelle-von" },
+		"fr": { "name": "- Citadelle", "slug": "citadelle" },
+		"zh": { "name": "堡垒", "slug": "堡垒" }
+	}, {
+		"id" : "94-112",
+		"type" : "Spawn",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "96-112",
+		"type" : "Spawn",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "95-112",
+		"type" : "Spawn",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Border", "slug": "border" },
+		"es": { "name": "Frontera", "slug": "frontera" },
+		"de": { "name": "Grenze von", "slug": "grenze-von" },
+		"fr": { "name": "- Frontière", "slug": "frontiere" },
+		"zh": { "name": "边境", "slug": "边境" }
+	}, {
+		"id" : "94-52",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Arah's Hope", "slug": "arahs-hope" },
+		"es": { "name": "Esperanza de Arah", "slug": "esperanza-de-arah" },
+		"de": { "name": "Arahs Hoffnung", "slug": "arahs-hoffnung" },
+		"fr": { "name": "Espoir d'Arah", "slug": "espoir-d-arah" },
+		"zh": { "name": "亚拉之冀", "slug": "亚拉之冀" }
+	}, {
+		"id" : "96-52",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Godslore", "slug": "godslore" },
+		"es": { "name": "Sabiduría de los Dioses", "slug": "sabiduria-de-los-dioses" },
+		"de": { "name": "Gottessage", "slug": "gottessage" },
+		"fr": { "name": "Savoir divin", "slug": "savoir-divin" },
+		"zh": { "name": "神学之地", "slug": "神学之地" }
+	}, {
+		"id" : "95-52",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Faithleap", "slug": "faithleap" },
+		"es": { "name": "Salto de Fe", "slug": "salto-de-fe" },
+		"de": { "name": "Glaubenssprung", "slug": "glaubenssprung" },
+		"fr": { "name": "Saut de la Foi", "slug": "saut-de-la-foi" },
+		"zh": { "name": "信仰之跃", "slug": "信仰之跃" }
+	}, {
+		"id" : "94-51",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Astralholme", "slug": "astralholme" },
+		"es": { "name": "Isleta Astral", "slug": "isleta-astral" },
+		"de": { "name": "Astralholm", "slug": "astralholm" },
+		"fr": { "name": "Heaume astral", "slug": "heaume-astral" },
+		"zh": { "name": "群星岛", "slug": "群星岛" }
+	}, {
+		"id" : "96-51",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Stargrove", "slug": "stargrove" },
+		"es": { "name": "Arboleda de las Estrellas", "slug": "arboleda-de-las-estrellas" },
+		"de": { "name": "Sternhain", "slug": "sternhain" },
+		"fr": { "name": "Bosquet étoilé", "slug": "bosquet-etoile" },
+		"zh": { "name": "辰星之林", "slug": "辰星之林" }
+	}, {
+		"id" : "95-51",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Foghaven", "slug": "foghaven" },
+		"es": { "name": "Refugio Neblinoso", "slug": "refugio-neblinoso" },
+		"de": { "name": "Nebel-Freistatt", "slug": "nebel-freistatt" },
+		"fr": { "name": "Havre gris", "slug": "havre-gris" },
+		"zh": { "name": "迷雾避难所", "slug": "迷雾避难所" }
+	}, {
+		"id" : "96-66",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Carver's Ascent", "slug": "carvers-ascent" },
+		"es": { "name": "Ascenso del Trinchador", "slug": "ascenso-del-trinchador" },
+		"de": { "name": "Aufstieg des Schnitzers", "slug": "aufstieg-des-schnitzers" },
+		"fr": { "name": "Côte du couteau", "slug": "cote-du-couteau" },
+		"zh": { "name": "雕塑者之坡", "slug": "雕塑者之坡" }
+	}, {
+		"id" : "94-66",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Carver's Ascent", "slug": "carvers-ascent" },
+		"es": { "name": "Ascenso del Trinchador", "slug": "ascenso-del-trinchador" },
+		"de": { "name": "Aufstieg des Schnitzers", "slug": "aufstieg-des-schnitzers" },
+		"fr": { "name": "Côte du couteau", "slug": "cote-du-couteau" },
+		"zh": { "name": "雕塑者之坡", "slug": "雕塑者之坡" }
+	}, {
+		"id" : "95-66",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Patrick's Ascent", "slug": "patricks-ascent" },
+		"es": { "name": "Ascenso de Patrick", "slug": "ascenso-de-patrick" },
+		"de": { "name": "Patricks Aufstieg", "slug": "patricks-aufstieg" },
+		"fr": { "name": "Ascension de Patrick", "slug": "ascension-de-patrick" },
+		"zh": { "name": "派崔克坡道", "slug": "派崔克坡道" }
+	}, {
+		"id" : "94-34",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Victor's Lodge", "slug": "victors-lodge" },
+		"es": { "name": "Albergue del Vencedor", "slug": "albergue-del-vencedor" },
+		"de": { "name": "Sieger-Halle", "slug": "sieger-halle" },
+		"fr": { "name": "Pavillon du Vainqueur", "slug": "pavillon-du-vainqueur" },
+		"zh": { "name": "胜利酒馆", "slug": "胜利酒馆" }
+	}, {
+		"id" : "96-34",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Champion's Demesne", "slug": "champions-demesne" },
+		"es": { "name": "Patrimonio del Campeón", "slug": "patrimonio-del-campeon" },
+		"de": { "name": "Champions Landsitz", "slug": "champions-landsitz" },
+		"fr": { "name": "Fief du Champion", "slug": "fief-du-champion" },
+		"zh": { "name": "冠军领土", "slug": "冠军领土" }
+	}, {
+		"id" : "95-34",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Hero's Lodge", "slug": "heros-lodge" },
+		"es": { "name": "Albergue del Héroe", "slug": "albergue-del-heroe" },
+		"de": { "name": "Heldenhalle", "slug": "heldenhalle" },
+		"fr": { "name": "Pavillon du Héros", "slug": "pavillon-du-heros" },
+		"zh": { "name": "英雄酒馆", "slug": "英雄酒馆" }
+	}, {
+		"id" : "94-36",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Bluelake", "slug": "bluelake" },
+		"es": { "name": "Lagoazul", "slug": "lagoazul" },
+		"de": { "name": "Blausee", "slug": "blausee" },
+		"fr": { "name": "Lac bleu", "slug": "lac-bleu" },
+		"zh": { "name": "澄蓝之湖", "slug": "澄蓝之湖" }
+	}, {
+		"id" : "96-36",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Greenlake", "slug": "greenlake" },
+		"es": { "name": "Lagoverde", "slug": "lagoverde" },
+		"de": { "name": "Grünsee", "slug": "grunsee" },
+		"fr": { "name": "Lac vert", "slug": "lac-vert" },
+		"zh": { "name": "翠绿之湖", "slug": "翠绿之湖" }
+	}, {
+		"id" : "95-36",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Redlake", "slug": "redlake" },
+		"es": { "name": "Lagorrojo", "slug": "lagorrojo" },
+		"de": { "name": "Rotsee", "slug": "rotsee" },
+		"fr": { "name": "Lac rouge", "slug": "lac-rouge" },
+		"zh": { "name": "血红之湖", "slug": "血红之湖" }
+	}, {
+		"id" : "94-50",
+		"type" : "Camp",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Bluewater Lowlands", "slug": "bluewater-lowlands" },
+		"es": { "name": "Tierras Bajas de Aguazul", "slug": "tierras-bajas-de-aguazul" },
+		"de": { "name": "Blauwasser-Tiefland", "slug": "blauwasser-tiefland" },
+		"fr": { "name": "Basses terres d'Eau-Azur", "slug": "basses-terres-d-eau-azur" },
+		"zh": { "name": "蓝水低地", "slug": "蓝水低地" }
+	}, {
+		"id" : "96-50",
+		"type" : "Camp",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Greenwater Lowlands", "slug": "greenwater-lowlands" },
+		"es": { "name": "Tierras bajas de Aguaverde", "slug": "tierras-bajas-de-aguaverde" },
+		"de": { "name": "Grünwasser-Tiefland", "slug": "grunwasser-tiefland" },
+		"fr": { "name": "Basses terres d'Eau-Verdoyante", "slug": "basses-terres-d-eau-verdoyante" },
+		"zh": { "name": "绿水低地", "slug": "绿水低地" }
+	}, {
+		"id" : "95-50",
+		"type" : "Camp",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Redwater Lowlands", "slug": "redwater-lowlands" },
+		"es": { "name": "Tierras Bajas de Aguarroja", "slug": "tierras-bajas-de-aguarroja" },
+		"de": { "name": "Rotwasser-Tiefland", "slug": "rotwasser-tiefland" },
+		"fr": { "name": "Basses terres de Rubicon", "slug": "basses-terres-de-rubicon" },
+		"zh": { "name": "赤水低地", "slug": "赤水低地" }
+	}, {
+		"id" : "96-63",
+		"type" : "Ruins",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Battle's Hollow", "slug": "battles-hollow" },
+		"es": { "name": "Hondonada de la Batalla", "slug": "hondonada-de-la-batalla" },
+		"de": { "name": "Schlachten-Senke", "slug": "schlachten-senke" },
+		"fr": { "name": "Vallon de bataille", "slug": "vallon-de-bataille" },
+		"zh": { "name": "战斗山谷", "slug": "战斗山谷" }
+	}, {
+		"id" : "94-63",
+		"type" : "Ruins",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Battle's Hollow", "slug": "battles-hollow" },
+		"es": { "name": "Hondonada de la Batalla", "slug": "hondonada-de-la-batalla" },
+		"de": { "name": "Schlachten-Senke", "slug": "schlachten-senke" },
+		"fr": { "name": "Vallon de bataille", "slug": "vallon-de-bataille" },
+		"zh": { "name": "战斗山谷", "slug": "战斗山谷" }
+	}, {
+		"id" : "95-63",
+		"type" : "Ruins",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Norfolk's Hollow", "slug": "norfolks-hollow" },
+		"es": { "name": "Hondonada de Norfolk", "slug": "hondonada-de-norfolk" },
+		"de": { "name": "Norfolks Senke", "slug": "norfolks-senke" },
+		"fr": { "name": "Vallon de Norfolk", "slug": "vallon-de-norfolk" },
+		"zh": { "name": "诺弗克山谷", "slug": "诺弗克山谷" }
+	}, {
+		"id" : "94-40",
+		"type" : "Tower",
+		"map_type" : "RedHome",
+		"map_id" : "94",
+		"en": { "name": "Cliffside", "slug": "cliffside" },
+		"es": { "name": "Despeñadero", "slug": "despenadero" },
+		"de": { "name": "Felswand", "slug": "felswand" },
+		"fr": { "name": "Flanc de falaise", "slug": "flanc-de-falaise" },
+		"zh": { "name": "崖壁", "slug": "崖壁" }
+	}, {
+		"id" : "96-40",
+		"type" : "Tower",
+		"map_type" : "BlueHome",
+		"map_id" : "96",
+		"en": { "name": "Dawn's Eyrie", "slug": "dawns-eyrie" },
+		"es": { "name": "Aguilera del Alba", "slug": "aguilera-del-alba" },
+		"de": { "name": "Horst der Morgendämmerung", "slug": "horst-der-morgendammerung" },
+		"fr": { "name": "Repaire de l'aube", "slug": "repaire-de-laube" },
+		"zh": { "name": "破晓高地", "slug": "破晓高地" }
+	}, {
+		"id" : "95-40",
+		"type" : "Tower",
+		"map_type" : "GreenHome",
+		"map_id" : "95",
+		"en": { "name": "Cragtop", "slug": "cragtop" },
+		"es": { "name": "Cumbrepeñasco", "slug": "cumbrepenasco" },
+		"de": { "name": "Schroffgipfel", "slug": "schroffgipfel" },
+		"fr": { "name": "Sommet de Hautcrag", "slug": "sommet-de-hautcrag" },
+		"zh": { "name": "崖顶", "slug": "崖顶" }
+	}, {
+		"id" : "968-98",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Wurm Tunnel", "slug": "wurm-tunnel" },
+		"es": { "name": "Túnel de la Sierpe", "slug": "tunel-de-la-sierpe" },
+		"de": { "name": "Wurmtunnel", "slug": "wurmtunnel" },
+		"fr": { "name": "Tunnel de guivre", "slug": "tunnel-de-guivre" },
+		"zh": { "name": "地虫隧道", "slug": "地虫隧道" }
+	}, {
+		"id" : "968-96",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Airport", "slug": "airport" },
+		"es": { "name": "Aeropuerto", "slug": "aeropuerto" },
+		"de": { "name": "Flughafen", "slug": "flughafen" },
+		"fr": { "name": "Aéroport", "slug": "aeroport" },
+		"zh": { "name": "空港", "slug": "空港" }
+	}, {
+		"id" : "968-82",
+		"type" : "Resource",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Thunder Hollow Reactor", "slug": "thunder-hollow-reactor" },
+		"es": { "name": "Reactor de Hondonada del Trueno", "slug": "reactor-de-hondonada-del-trueno" },
+		"de": { "name": "Donnersenkenreaktor", "slug": "donnersenkenreaktor" },
+		"fr": { "name": "Réacteur de Tonnecrevasse", "slug": "reacteur-de-tonnecrevasse" },
+		"zh": { "name": "雷霆山谷反应堆", "slug": "雷霆山谷反应堆" }
+	}, {
+		"id" : "968-93",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Forge", "slug": "forge" },
+		"es": { "name": "Forja", "slug": "forja" },
+		"de": { "name": "Schmiede", "slug": "schmiede" },
+		"fr": { "name": "Forge", "slug": "forge" },
+		"zh": { "name": "熔炉", "slug": "熔炉" }
+	}, {
+		"id" : "968-80",
+		"type" : "Resource",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Overgrown Fane Reactor", "slug": "overgrown-fane-reactor" },
+		"es": { "name": "Reactor de Fano Gigante", "slug": "reactor-de-fano-gigante" },
+		"de": { "name": "Überwucherter Gotteshaus-Reaktor", "slug": "uberwucherter-gotteshaus-reaktor" },
+		"fr": { "name": "Réacteur du Temple surdimensionné", "slug": "reacteur-du-temple-surdimensionne" },
+		"zh": { "name": "野性神庙反应堆", "slug": "野性神庙反应堆" }
+	}, {
+		"id" : "968-94",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Shrine", "slug": "shrine" },
+		"es": { "name": "Santuario", "slug": "santuario" },
+		"de": { "name": "Schrein", "slug": "schrein" },
+		"fr": { "name": "Sanctuaire", "slug": "sanctuaire" },
+		"zh": { "name": "圣坛", "slug": "圣坛" }
+	}, {
+		"id" : "968-90",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Altar", "slug": "altar" },
+		"es": { "name": "Altar", "slug": "altar" },
+		"de": { "name": "Altar", "slug": "altar" },
+		"fr": { "name": "Autel", "slug": "autel" },
+		"zh": { "name": "祭坛", "slug": "祭坛" }
+	}, {
+		"id" : "968-97",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Workshop", "slug": "workshop" },
+		"es": { "name": "Taller", "slug": "taller" },
+		"de": { "name": "Werkstatt", "slug": "werkstatt" },
+		"fr": { "name": "Atelier", "slug": "atelier" },
+		"zh": { "name": "工场", "slug": "工场" }
+	}, {
+		"id" : "968-81",
+		"type" : "Resource",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Arid Fortress Reactor", "slug": "arid-fortress-reactor" },
+		"es": { "name": "Reactor de Fortaleza Árida", "slug": "reactor-de-fortaleza-arida" },
+		"de": { "name": "Dürrefestungreaktor", "slug": "durrefestungreaktor" },
+		"fr": { "name": "Réacteur de la Forteresse aride", "slug": "reacteur-de-la-forteresse-aride" },
+		"zh": { "name": "蛮荒堡垒反应堆", "slug": "蛮荒堡垒反应堆" }
+	}, {
+		"id" : "968-83",
+		"type" : "Resource",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Stonegaze Spire Reactor", "slug": "stonegaze-spire-reactor" },
+		"es": { "name": "Reactor de Aguja de Mirapiedras", "slug": "reactor-de-aguja-de-mirapiedras" },
+		"de": { "name": "Steinblick-Zackenstabreaktor", "slug": "steinblick-zackenstabreaktor" },
+		"fr": { "name": "Réacteur du Pic de Pierregard", "slug": "reacteur-du-pic-de-pierregard" },
+		"zh": { "name": "石望尖塔反应堆", "slug": "石望尖塔反应堆" }
+	}, {
+		"id" : "968-95",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Bell Tower", "slug": "bell-tower" },
+		"es": { "name": "Campanario", "slug": "campanario" },
+		"de": { "name": "Glockenturm", "slug": "glockenturm" },
+		"fr": { "name": "Clocher", "slug": "clocher" },
+		"zh": { "name": "钟楼", "slug": "钟楼" }
+	}, {
+		"id" : "968-91",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Observatory", "slug": "observatory" },
+		"es": { "name": "Observatorio", "slug": "observatorio" },
+		"de": { "name": "Observatorium", "slug": "observatorium" },
+		"fr": { "name": "Observatoire", "slug": "observatoire" },
+		"zh": { "name": "观测台", "slug": "观测台" }
+	}, {
+		"id" : "968-78",
+		"type" : "Keep",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Overgrown Fane", "slug": "overgrown-fane" },
+		"es": { "name": "Fano Gigante", "slug": "fano-gigante" },
+		"de": { "name": "Überwuchertes Gotteshaus", "slug": "uberwuchertes-gotteshaus" },
+		"fr": { "name": "Temple surdimensionné", "slug": "temple-surdimensionne" },
+		"zh": { "name": "野性神庙", "slug": "野性神庙" }
+	}, {
+		"id" : "968-88",
+		"type" : "Keep",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Arid Fortress", "slug": "arid-fortress" },
+		"es": { "name": "Fortaleza Árida", "slug": "fortaleza-arida" },
+		"de": { "name": "Dürrefestung", "slug": "durrefestung" },
+		"fr": { "name": "Forteresse aride", "slug": "forteresse-aride" },
+		"zh": { "name": "蛮荒堡垒", "slug": "蛮荒堡垒" }
+	}, {
+		"id" : "968-89",
+		"type" : "Tower",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Tytone Perch", "slug": "tytone-perch" },
+		"es": { "name": "Percha de Tytone", "slug": "percha-de-tytone" },
+		"de": { "name": "Tytonenwarte", "slug": "tytonenwarte" },
+		"fr": { "name": "Perchoir de Tytone", "slug": "perchoir-de-tytone" },
+		"zh": { "name": "钛金高台", "slug": "钛金高台" }
+	}, {
+		"id" : "968-79",
+		"type" : "Keep",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Thunder Hollow", "slug": "thunder-hollow" },
+		"es": { "name": "Hondonada del Trueno", "slug": "hondonada-del-trueno" },
+		"de": { "name": "Donnersenke", "slug": "donnersenke" },
+		"fr": { "name": "Tonnecrevasse", "slug": "tonnecrevasse" },
+		"zh": { "name": "雷霆山谷", "slug": "雷霆山谷" }
+	}, {
+		"id" : "968-85",
+		"type" : "Resource",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Tytone Perch Reactor", "slug": "tytone-perch-reactor" },
+		"es": { "name": "Reactor de Percha de Tytone", "slug": "reactor-de-percha-de-tytone" },
+		"de": { "name": "Tytonenwarte-Reaktor", "slug": "tytonenwarte-reaktor" },
+		"fr": { "name": "Réacteur du Perchoir de Tytone", "slug": "reacteur-du-perchoir-de-tytone" },
+		"zh": { "name": "钛金高台反应堆", "slug": "钛金高台反应堆" }
+	}, {
+		"id" : "968-77",
+		"type" : "Tower",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Inferno's Needle", "slug": "infernos-needle" },
+		"es": { "name": "Aguja del Infierno", "slug": "aguja-del-infierno" },
+		"de": { "name": "Infernonadel", "slug": "infernonadel" },
+		"fr": { "name": "Aiguille infernale", "slug": "aiguille-infernale" },
+		"zh": { "name": "狱火极峰", "slug": "狱火极峰" }
+	}, {
+		"id" : "968-87",
+		"type" : "Tower",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Stonegaze Spire", "slug": "stonegaze-spire" },
+		"es": { "name": "Aguja de Mirapiedras", "slug": "aguja-de-mirapiedras" },
+		"de": { "name": "Steinblick-Zackenstab", "slug": "steinblick-zackenstab" },
+		"fr": { "name": "Pic de Pierregard", "slug": "pic-de-pierregard" },
+		"zh": { "name": "石望尖塔", "slug": "石望尖塔" }
+	}, {
+		"id" : "968-84",
+		"type" : "Resource",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Inferno's Needle Reactor", "slug": "infernos-needle-reactor" },
+		"es": { "name": "Reactor de Aguja del Infierno", "slug": "reactor-de-aguja-del-infierno" },
+		"de": { "name": "Infernonadel-Reaktor", "slug": "infernonadel-reaktor" },
+		"fr": { "name": "Réacteur de l'Aiguille infernale", "slug": "reacteur-de-l-aiguille-infernale" },
+		"zh": { "name": "狱火极峰反应堆", "slug": "狱火极峰反应堆" }
+	}, {
+		"id" : "968-92",
+		"type" : "Generic",
+		"map_type" : "EdgeOfTheMists",
+		"map_id" : "968",
+		"en": { "name": "Statuary", "slug": "statuary" },
+		"es": { "name": "Estatuario", "slug": "estatuario" },
+		"de": { "name": "Statue", "slug": "statue" },
+		"fr": { "name": "Statue", "slug": "statue" },
+		"zh": { "name": "雕像", "slug": "雕像" }
+	}, {
+		"id" : "38-11",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Aldon's Ledge", "slug": "aldons-ledge" },
+		"es": { "name": "Cornisa de Aldon", "slug": "cornisa-de-aldon" },
+		"de": { "name": "Aldons Vorsprung", "slug": "aldons-vorsprung" },
+		"fr": { "name": "Corniche d'Aldon", "slug": "corniche-d-aldon" },
+		"zh": { "name": "阿尔丹暗礁", "slug": "阿尔丹暗礁" }
+	}, {
+		"id" : "38-1",
+		"type" : "Keep",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Overlook", "slug": "overlook" },
+		"es": { "name": "Mirador", "slug": "mirador" },
+		"de": { "name": "Aussichtspunkt von", "slug": "aussichtspunkt-von" },
+		"fr": { "name": "- Belvédère", "slug": "belvedere" },
+		"zh": { "name": "眺望台", "slug": "眺望台" }
+	}, {
+		"id" : "38-15",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Langor Gulch", "slug": "langor-gulch" },
+		"es": { "name": "Barranco Langor", "slug": "barranco-langor" },
+		"de": { "name": "Langor-Schlucht", "slug": "langor-schlucht" },
+		"fr": { "name": "Ravin de Langor", "slug": "ravin-de-langor" },
+		"zh": { "name": "朗格尔峡谷", "slug": "朗格尔峡谷" }
+	}, {
+		"id" : "38-3",
+		"type" : "Keep",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Lowlands", "slug": "lowlands" },
+		"es": { "name": "Tierras bajas", "slug": "tierras-bajas" },
+		"de": { "name": "Tiefland von", "slug": "tiefland-von" },
+		"fr": { "name": "- Basses terres", "slug": "basses-terres" },
+		"zh": { "name": "低地", "slug": "低地" }
+	}, {
+		"id" : "38-17",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Mendon's Gap", "slug": "mendons-gap" },
+		"es": { "name": "Zanja de Mendon", "slug": "zanja-de-mendon" },
+		"de": { "name": "Mendons Spalt", "slug": "mendons-spalt" },
+		"fr": { "name": "Faille de Mendon", "slug": "faille-de-mendon" },
+		"zh": { "name": "曼敦峡谷", "slug": "曼敦峡谷" }
+	}, {
+		"id" : "38-7",
+		"type" : "Camp",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Danelon Passage", "slug": "danelon-passage" },
+		"es": { "name": "Pasaje Danelon", "slug": "pasaje-danelon" },
+		"de": { "name": "Danelon-Passage", "slug": "danelon-passage" },
+		"fr": { "name": "Passage Danelon", "slug": "passage-danelon" },
+		"zh": { "name": "丹隆之廊", "slug": "丹隆之廊" }
+	}, {
+		"id" : "38-9",
+		"type" : "Castle",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Stonemist Castle", "slug": "stonemist-castle" },
+		"es": { "name": "Castillo Piedraniebla", "slug": "castillo-piedraniebla" },
+		"de": { "name": "Schloss Steinnebel", "slug": "schloss-steinnebel" },
+		"fr": { "name": "Château Brumepierre", "slug": "chateau-brumepierre" },
+		"zh": { "name": "石云堡", "slug": "石云堡" }
+	}, {
+		"id" : "38-5",
+		"type" : "Camp",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Pangloss Rise", "slug": "pangloss-rise" },
+		"es": { "name": "Colina Pangloss", "slug": "colina-pangloss" },
+		"de": { "name": "Pangloss-Anhöhe", "slug": "pangloss-anhohe" },
+		"fr": { "name": "Montée de Pangloss", "slug": "montee-de-pangloss" },
+		"zh": { "name": "潘乐高地", "slug": "潘乐高地" }
+	}, {
+		"id" : "38-21",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Durios Gulch", "slug": "durios-gulch" },
+		"es": { "name": "Barranco Durios", "slug": "barranco-durios" },
+		"de": { "name": "Durios-Schlucht", "slug": "durios-schlucht" },
+		"fr": { "name": "Ravin de Durios", "slug": "ravin-de-durios" },
+		"zh": { "name": "德里尤斯峡谷", "slug": "德里尤斯峡谷" }
+	}, {
+		"id" : "38-20",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Veloka Slope", "slug": "veloka-slope" },
+		"es": { "name": "Pendiente Veloka", "slug": "pendiente-veloka" },
+		"de": { "name": "Veloka-Hang", "slug": "veloka-hang" },
+		"fr": { "name": "Flanc de Veloka", "slug": "flanc-de-veloka" },
+		"zh": { "name": "维罗卡斜坡", "slug": "维罗卡斜坡" }
+	}, {
+		"id" : "38-14",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Klovan Gully", "slug": "klovan-gully" },
+		"es": { "name": "Barranco Klovan", "slug": "barranco-klovan" },
+		"de": { "name": "Klovan-Senke", "slug": "klovan-senke" },
+		"fr": { "name": "Petit ravin de Klovan", "slug": "petit-ravin-de-klovan" },
+		"zh": { "name": "科洛文水渠", "slug": "科洛文水渠" }
+	}, {
+		"id" : "38-13",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Jerrifer's Slough", "slug": "jerrifers-slough" },
+		"es": { "name": "Cenagal de Jerrifer", "slug": "cenagal-de-jerrifer" },
+		"de": { "name": "Jerrifers Sumpfloch", "slug": "jerrifers-sumpfloch" },
+		"fr": { "name": "Bourbier de Jerrifer", "slug": "bourbier-de-jerrifer" },
+		"zh": { "name": "杰里弗泥潭", "slug": "杰里弗泥潭" }
+	}, {
+		"id" : "38-6",
+		"type" : "Camp",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Speldan Clearcut", "slug": "speldan-clearcut" },
+		"es": { "name": "Claro Espeldia", "slug": "claro-espeldia" },
+		"de": { "name": "Speldan-Kahlschlag", "slug": "speldan-kahlschlag" },
+		"fr": { "name": "Forêt rasée de Speldan", "slug": "foret-rasee-de-speldan" },
+		"zh": { "name": "斯佩尔丹营地", "slug": "斯佩尔丹营地" }
+	}, {
+		"id" : "38-2",
+		"type" : "Keep",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Valley", "slug": "valley" },
+		"es": { "name": "Valle", "slug": "valle" },
+		"de": { "name": "Tal von", "slug": "tal-von" },
+		"fr": { "name": "- Vallée", "slug": "vallee" },
+		"zh": { "name": "溪谷", "slug": "溪谷" }
+	}, {
+		"id" : "38-12",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Wildcreek Run", "slug": "wildcreek-run" },
+		"es": { "name": "Pista Arroyosalvaje", "slug": "pista-arroyosalvaje" },
+		"de": { "name": "Wildbach-Strecke", "slug": "wildbach-strecke" },
+		"fr": { "name": "Piste du ruisseau sauvage", "slug": "piste-du-ruisseau-sauvage" },
+		"zh": { "name": "野溪急道", "slug": "野溪急道" }
+	}, {
+		"id" : "38-16",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Quentin Lake", "slug": "quentin-lake" },
+		"es": { "name": "Lago Quentin", "slug": "lago-quentin" },
+		"de": { "name": "Quentin-See", "slug": "quentin-see" },
+		"fr": { "name": "Lac Quentin", "slug": "lac-quentin" },
+		"zh": { "name": "昆汀湖", "slug": "昆汀湖" }
+	}, {
+		"id" : "38-22",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Bravost Escarpment", "slug": "bravost-escarpment" },
+		"es": { "name": "Escarpadura Bravost", "slug": "escarpadura-bravost" },
+		"de": { "name": "Bravost-Abhang", "slug": "bravost-abhang" },
+		"fr": { "name": "Falaise de Bravost", "slug": "falaise-de-bravost" },
+		"zh": { "name": "斗胆悬崖", "slug": "斗胆悬崖" }
+	}, {
+		"id" : "38-19",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Ogrewatch Cut", "slug": "ogrewatch-cut" },
+		"es": { "name": "Tajo de la Guardia del Ogro", "slug": "tajo-de-la-guardia-del-ogro" },
+		"de": { "name": "Ogerwacht-Kanal", "slug": "ogerwacht-kanal" },
+		"fr": { "name": "Percée de Gardogre", "slug": "percee-de-gardogre" },
+		"zh": { "name": "食人魔山路", "slug": "食人魔山路" }
+	}, {
+		"id" : "38-4",
+		"type" : "Camp",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Golanta Clearing", "slug": "golanta-clearing" },
+		"es": { "name": "Claro Golanta", "slug": "claro-golanta" },
+		"de": { "name": "Golanta-Lichtung", "slug": "golanta-lichtung" },
+		"fr": { "name": "Clairière de Golanta", "slug": "clairiere-de-golanta" },
+		"zh": { "name": "格兰塔空地", "slug": "格兰塔空地" }
+	}, {
+		"id" : "38-8",
+		"type" : "Camp",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Umberglade Woods", "slug": "umberglade-woods" },
+		"es": { "name": "Bosques Clarosombra", "slug": "bosques-clarosombra" },
+		"de": { "name": "Umberlichtung-Forst", "slug": "umberlichtung-forst" },
+		"fr": { "name": "Bois d'Ombreclair", "slug": "bois-d-ombreclair" },
+		"zh": { "name": "褐沼树林", "slug": "褐沼树林" }
+	}, {
+		"id" : "38-10",
+		"type" : "Camp",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Rogue's Quarry", "slug": "rogues-quarry" },
+		"es": { "name": "Cantera del Pícaro", "slug": "cantera-del-picaro" },
+		"de": { "name": "Schurkenbruch", "slug": "schurkenbruch" },
+		"fr": { "name": "Carrière du voleur", "slug": "carriere-du-voleur" },
+		"zh": { "name": "盗贼采石场", "slug": "盗贼采石场" }
+	}, {
+		"id" : "38-18",
+		"type" : "Tower",
+		"map_type" : "Center",
+		"map_id" : "38",
+		"en": { "name": "Anzalias Pass", "slug": "anzalias-pass" },
+		"es": { "name": "Paso Anzalias", "slug": "paso-anzalias" },
+		"de": { "name": "Anzalias-Pass", "slug": "anzalias-pass" },
+		"fr": { "name": "Col d'Anzalias", "slug": "col-d-anzalias" },
+		"zh": { "name": "真语小径", "slug": "真语小径" }
+	}
+]

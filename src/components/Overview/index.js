@@ -11,7 +11,7 @@ import OverviewQuery from 'src/gql/overview';
 
 class Overview extends PureComponent {
 	render() {
-		const { data, GLOBALS } = this.props;
+		const { data, ROUTE } = this.props;
 		const { loading, matches } = data;
 
 		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
@@ -21,12 +21,12 @@ class Overview extends PureComponent {
 			<div className="overview container">
 				<div className="row">
 					<div className="col">
-						<Matches GLOBALS={GLOBALS} matches={matches} />
+						<Matches ROUTE={ROUTE} matches={matches} />
 					</div>
 				</div>
 				<div className="row">
 					<div className="col">
-						<Worlds GLOBALS={GLOBALS} />
+						<Worlds ROUTE={ROUTE} />
 					</div>
 				</div>
 			</div>

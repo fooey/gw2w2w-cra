@@ -2,8 +2,10 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import _ from 'lodash';
 
+import STATIC from 'src/data/static';
 
-const Langs = ({ GLOBALS }) => (
+
+const Langs = ({ ROUTE }) => (
 	<nav className="navbar navbar-light bg-faded">
 		<div className="container"><div className="row">
 			<div className="col">
@@ -15,8 +17,8 @@ const Langs = ({ GLOBALS }) => (
 			</div>
 			<div className="col-md-auto">
 				<ul className="nav nav-pills">
-					{_.map(GLOBALS.langs, ixLang => 
-						<Lang key={ixLang.slug} lang={ixLang} world={GLOBALS.world} />
+					{_.map(STATIC.langs, ixLang => 
+						<Lang key={ixLang.slug} lang={ixLang} world={ROUTE.world} />
 					)}
 				</ul>
 			</div>

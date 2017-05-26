@@ -1,14 +1,15 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import _ from 'lodash';
 
 import Layout from 'src/components/Layout';
 import Overview from 'src/components/Overview';
 import Match from 'src/components/Match';
-import { Loading, NotFound } from 'src/components/Util';
+import { NotFound } from 'src/components/Util';
 
-import GlobalsQuery from 'src/gql/globals';
+import { getLangBySlug } from 'src/lib/lang';
+import { getWorldBySlug } from 'src/lib/world';
+
+// import STATIC from 'src/data/static';
 
 import 'src/styles/bootstrap.css';
 import 'src/styles/app.css';
@@ -28,7 +29,7 @@ const App = ({ match }) => {
 	const { params } = match;
 	const { langSlug, worldSlug } = params;
 	
-	return <GlobalsWithData langSlug={langSlug} worldSlug={worldSlug} />;
+	return <Globals langSlug={langSlug} worldSlug={worldSlug} />;
 };
 
 
@@ -41,28 +42,21 @@ const Routes = () => (
 );
 
 
-const Globals = ({ data, langSlug, worldSlug }) => {
-	if (data.loading) return <Loading />;
+const Globals = ({ langSlug, worldSlug }) => {	
+	const lang = getLangBySlug(langSlug);
+	const world = getWorldBySlug(worldSlug);
 	
-	const { langs, worlds, objectives } = data;
-	
-	const lang = _.isEmpty(langSlug) ? null : _.find(langs, { slug: langSlug });
-	const world = _.isEmpty(worldSlug) ? null : _.find(worlds, world => _.includes(world.slugs, worldSlug));
-	
-	const GLOBALS = { 
-		lang, 
-		world, 
-		langs, 
-		worlds,
-		objectives,
+	const ROUTE = {
+		lang,
+		world,
 	};
 	
-	if (GLOBALS.lang) {
+	if (lang) {
 		window.localStorage.setItem('langSlug', langSlug); // save the current lang to local storage
 		
 		return (
-			<Layout GLOBALS={GLOBALS}>
-				{GLOBALS.world ? <Match GLOBALS={GLOBALS} /> : <Overview GLOBALS={GLOBALS} />}
+			<Layout ROUTE={ROUTE}>
+				{ROUTE.world ? <Match ROUTE={ROUTE} /> : <Overview ROUTE={ROUTE} />}
 			</Layout>
 		);
 	}
@@ -71,8 +65,8 @@ const Globals = ({ data, langSlug, worldSlug }) => {
 	}
 };
 
-const GlobalsWithData = graphql(GlobalsQuery, {
-	options:{ shouldBatch: true },
-})(Globals);
+// const GlobalsWithData = graphql(GlobalsQuery, {
+// 	options:{ shouldBatch: true },
+// })(Globals);
 
 export default Routes;

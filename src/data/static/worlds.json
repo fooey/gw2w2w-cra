@@ -1,0 +1,513 @@
+[
+	{
+		"id" : "1001",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "anvil-rock", "amboss-stein", "roca-del-yunque", "rocher-de-lenclume", "铁砧石" ],
+		"en": { "name": "Anvil Rock", "slug": "anvil-rock" },
+		"es": { "name": "Roca del Yunque", "slug": "roca-del-yunque" },
+		"de": { "name": "Amboss-Stein", "slug": "amboss-stein" },
+		"fr": { "name": "Rocher de l'enclume", "slug": "rocher-de-lenclume" },
+		"zh": { "name": "铁砧石", "slug": "铁砧石" }
+	}, {
+		"id" : "1002",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "borlis-pass", "borlis-pass", "paso-de-borlis", "passage-de-borlis", "波里斯小径" ],
+		"en": { "name": "Borlis Pass", "slug": "borlis-pass" },
+		"es": { "name": "Paso de Borlis", "slug": "paso-de-borlis" },
+		"de": { "name": "Borlis-Pass", "slug": "borlis-pass" },
+		"fr": { "name": "Passage de Borlis", "slug": "passage-de-borlis" },
+		"zh": { "name": "波里斯小径", "slug": "波里斯小径" }
+	}, {
+		"id" : "1003",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "yaks-bend", "yakbiegung", "declive-del-yak", "courbe-du-yak", "牦牛拐角" ],
+		"en": { "name": "Yak's Bend", "slug": "yaks-bend" },
+		"es": { "name": "Declive del Yak", "slug": "declive-del-yak" },
+		"de": { "name": "Yakbiegung", "slug": "yakbiegung" },
+		"fr": { "name": "Courbe du Yak", "slug": "courbe-du-yak" },
+		"zh": { "name": "牦牛拐角", "slug": "牦牛拐角" }
+	}, {
+		"id" : "1004",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "henge-of-denravi", "steinkreis-von-denravi", "circulo-de-denravi", "cromlech-de-denravi", "德拉维石阵" ],
+		"en": { "name": "Henge of Denravi", "slug": "henge-of-denravi" },
+		"es": { "name": "Círculo de Denravi", "slug": "circulo-de-denravi" },
+		"de": { "name": "Steinkreis von Denravi", "slug": "steinkreis-von-denravi" },
+		"fr": { "name": "Cromlech de Denravi", "slug": "cromlech-de-denravi" },
+		"zh": { "name": "德拉维石阵", "slug": "德拉维石阵" }
+	}, {
+		"id" : "1005",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "maguuma", "maguuma", "maguuma", "maguuma", "迈古玛" ],
+		"en": { "name": "Maguuma", "slug": "maguuma" },
+		"es": { "name": "Maguuma", "slug": "maguuma" },
+		"de": { "name": "Maguuma", "slug": "maguuma" },
+		"fr": { "name": "Maguuma", "slug": "maguuma" },
+		"zh": { "name": "迈古玛", "slug": "迈古玛" }
+	}, {
+		"id" : "1006",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "sorrows-furnace", "hochofen-der-betrubnis", "fragua-del-pesar", "fournaise-des-lamentations", "悲伤熔炉" ],
+		"en": { "name": "Sorrow's Furnace", "slug": "sorrows-furnace" },
+		"es": { "name": "Fragua del Pesar", "slug": "fragua-del-pesar" },
+		"de": { "name": "Hochofen der Betrübnis", "slug": "hochofen-der-betrubnis" },
+		"fr": { "name": "Fournaise des lamentations", "slug": "fournaise-des-lamentations" },
+		"zh": { "name": "悲伤熔炉", "slug": "悲伤熔炉" }
+	}, {
+		"id" : "1007",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "gate-of-madness", "tor-des-wahnsinns", "puerta-de-la-locura", "porte-de-la-folie", "疯狂之门" ],
+		"en": { "name": "Gate of Madness", "slug": "gate-of-madness" },
+		"es": { "name": "Puerta de la Locura", "slug": "puerta-de-la-locura" },
+		"de": { "name": "Tor des Wahnsinns", "slug": "tor-des-wahnsinns" },
+		"fr": { "name": "Porte de la folie", "slug": "porte-de-la-folie" },
+		"zh": { "name": "疯狂之门", "slug": "疯狂之门" }
+	}, {
+		"id" : "1008",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "jade-quarry", "jade-steinbruch", "cantera-de-jade", "carriere-de-jade", "翠玉矿洞" ],
+		"en": { "name": "Jade Quarry", "slug": "jade-quarry" },
+		"es": { "name": "Cantera de Jade", "slug": "cantera-de-jade" },
+		"de": { "name": "Jade-Steinbruch", "slug": "jade-steinbruch" },
+		"fr": { "name": "Carrière de jade", "slug": "carriere-de-jade" },
+		"zh": { "name": "翠玉矿洞", "slug": "翠玉矿洞" }
+	}, {
+		"id" : "1009",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "fort-aspenwood", "fort-espenwald", "fuerte-aspenwood", "fort-trembleforet", "白杨堡垒" ],
+		"en": { "name": "Fort Aspenwood", "slug": "fort-aspenwood" },
+		"es": { "name": "Fuerte Aspenwood", "slug": "fuerte-aspenwood" },
+		"de": { "name": "Fort Espenwald", "slug": "fort-espenwald" },
+		"fr": { "name": "Fort Trembleforêt", "slug": "fort-trembleforet" },
+		"zh": { "name": "白杨堡垒", "slug": "白杨堡垒" }
+	}, {
+		"id" : "1010",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "ehmry-bay", "ehmry-bucht", "bahia-de-ehmry", "baie-d-ehmry", "艾玛海湾" ],
+		"en": { "name": "Ehmry Bay", "slug": "ehmry-bay" },
+		"es": { "name": "Bahía de Ehmry", "slug": "bahia-de-ehmry" },
+		"de": { "name": "Ehmry-Bucht", "slug": "ehmry-bucht" },
+		"fr": { "name": "Baie d'Ehmry", "slug": "baie-d-ehmry" },
+		"zh": { "name": "艾玛海湾", "slug": "艾玛海湾" }
+	}, {
+		"id" : "1011",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "stormbluff-isle", "sturmklippen-insel", "isla-cimatormenta", "ile-de-la-falaise-tumultueuse", "暴风崖岛" ],
+		"en": { "name": "Stormbluff Isle", "slug": "stormbluff-isle" },
+		"es": { "name": "Isla Cimatormenta", "slug": "isla-cimatormenta" },
+		"de": { "name": "Sturmklippen-Insel", "slug": "sturmklippen-insel" },
+		"fr": { "name": "Ile de la Falaise tumultueuse", "slug": "ile-de-la-falaise-tumultueuse" },
+		"zh": { "name": "暴风崖岛", "slug": "暴风崖岛" }
+	}, {
+		"id" : "1012",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "darkhaven", "finsterfreistatt", "refugio-oscuro", "refuge-noir", "暗黑庇护所" ],
+		"en": { "name": "Darkhaven", "slug": "darkhaven" },
+		"es": { "name": "Refugio Oscuro", "slug": "refugio-oscuro" },
+		"de": { "name": "Finsterfreistatt", "slug": "finsterfreistatt" },
+		"fr": { "name": "Refuge noir", "slug": "refuge-noir" },
+		"zh": { "name": "暗黑庇护所", "slug": "暗黑庇护所" }
+	}, {
+		"id" : "1013",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "sanctum-of-rall", "heilige-halle-von-rall", "sagrario-de-rall", "sanctuaire-de-rall", "罗尔圣所" ],
+		"en": { "name": "Sanctum of Rall", "slug": "sanctum-of-rall" },
+		"es": { "name": "Sagrario de Rall", "slug": "sagrario-de-rall" },
+		"de": { "name": "Heilige Halle von Rall", "slug": "heilige-halle-von-rall" },
+		"fr": { "name": "Sanctuaire de Rall", "slug": "sanctuaire-de-rall" },
+		"zh": { "name": "罗尔圣所", "slug": "罗尔圣所" }
+	}, {
+		"id" : "1014",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "crystal-desert", "kristallwuste", "desierto-de-cristal", "desert-de-cristal", "水晶沙漠" ],
+		"en": { "name": "Crystal Desert", "slug": "crystal-desert" },
+		"es": { "name": "Desierto de Cristal", "slug": "desierto-de-cristal" },
+		"de": { "name": "Kristallwüste", "slug": "kristallwuste" },
+		"fr": { "name": "Désert de cristal", "slug": "desert-de-cristal" },
+		"zh": { "name": "水晶沙漠", "slug": "水晶沙漠" }
+	}, {
+		"id" : "1015",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "isle-of-janthir", "janthir-insel", "isla-de-janthir", "ile-de-janthir", "珍瑟之岛" ],
+		"en": { "name": "Isle of Janthir", "slug": "isle-of-janthir" },
+		"es": { "name": "Isla de Janthir", "slug": "isla-de-janthir" },
+		"de": { "name": "Janthir-Insel", "slug": "janthir-insel" },
+		"fr": { "name": "Ile de Janthir", "slug": "ile-de-janthir" },
+		"zh": { "name": "珍瑟之岛", "slug": "珍瑟之岛" }
+	}, {
+		"id" : "1016",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "sea-of-sorrows", "meer-des-leids", "mar-de-los-pesares", "mer-des-lamentations", "悲伤之海" ],
+		"en": { "name": "Sea of Sorrows", "slug": "sea-of-sorrows" },
+		"es": { "name": "Mar de los Pesares", "slug": "mar-de-los-pesares" },
+		"de": { "name": "Meer des Leids", "slug": "meer-des-leids" },
+		"fr": { "name": "Mer des lamentations", "slug": "mer-des-lamentations" },
+		"zh": { "name": "悲伤之海", "slug": "悲伤之海" }
+	}, {
+		"id" : "1017",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "tarnished-coast", "befleckte-kuste", "costa-de-bronce", "cote-ternie", "晦暗海岸" ],
+		"en": { "name": "Tarnished Coast", "slug": "tarnished-coast" },
+		"es": { "name": "Costa de Bronce", "slug": "costa-de-bronce" },
+		"de": { "name": "Befleckte Küste", "slug": "befleckte-kuste" },
+		"fr": { "name": "Côte ternie", "slug": "cote-ternie" },
+		"zh": { "name": "晦暗海岸", "slug": "晦暗海岸" }
+	}, {
+		"id" : "1018",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "northern-shiverpeaks", "nordliche-zittergipfel", "picosescalofriantes-del-norte", "cimefroides-du-nord", "北席瓦雪山" ],
+		"en": { "name": "Northern Shiverpeaks", "slug": "northern-shiverpeaks" },
+		"es": { "name": "Picosescalofriantes del Norte", "slug": "picosescalofriantes-del-norte" },
+		"de": { "name": "Nördliche Zittergipfel", "slug": "nordliche-zittergipfel" },
+		"fr": { "name": "Cimefroides du nord", "slug": "cimefroides-du-nord" },
+		"zh": { "name": "北席瓦雪山", "slug": "北席瓦雪山" }
+	}, {
+		"id" : "1019",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "blackgate", "schwarztor", "puertanegra", "portenoire", "黑暗之门" ],
+		"en": { "name": "Blackgate", "slug": "blackgate" },
+		"es": { "name": "Puertanegra", "slug": "puertanegra" },
+		"de": { "name": "Schwarztor", "slug": "schwarztor" },
+		"fr": { "name": "Portenoire", "slug": "portenoire" },
+		"zh": { "name": "黑暗之门", "slug": "黑暗之门" }
+	}, {
+		"id" : "1020",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "fergusons-crossing", "fergusons-kreuzung", "encrucijada-de-ferguson", "croisee-de-ferguson", "弗格森渡口" ],
+		"en": { "name": "Ferguson's Crossing", "slug": "fergusons-crossing" },
+		"es": { "name": "Encrucijada de Ferguson", "slug": "encrucijada-de-ferguson" },
+		"de": { "name": "Fergusons Kreuzung", "slug": "fergusons-kreuzung" },
+		"fr": { "name": "Croisée de Ferguson", "slug": "croisee-de-ferguson" },
+		"zh": { "name": "弗格森渡口", "slug": "弗格森渡口" }
+	}, {
+		"id" : "1021",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "dragonbrand", "drachenbrand", "marca-del-dragon", "stigmate-du-dragon", "烙印之地" ],
+		"en": { "name": "Dragonbrand", "slug": "dragonbrand" },
+		"es": { "name": "Marca del Dragón", "slug": "marca-del-dragon" },
+		"de": { "name": "Drachenbrand", "slug": "drachenbrand" },
+		"fr": { "name": "Stigmate du dragon", "slug": "stigmate-du-dragon" },
+		"zh": { "name": "烙印之地", "slug": "烙印之地" }
+	}, {
+		"id" : "1022",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "kaineng", "kaineng", "kaineng", "kaineng", "凯宁" ],
+		"en": { "name": "Kaineng", "slug": "kaineng" },
+		"es": { "name": "Kaineng", "slug": "kaineng" },
+		"de": { "name": "Kaineng", "slug": "kaineng" },
+		"fr": { "name": "Kaineng", "slug": "kaineng" },
+		"zh": { "name": "凯宁", "slug": "凯宁" }
+	}, {
+		"id" : "1023",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "devonas-rest", "devonas-ruh", "descanso-de-devona", "repos-de-devona", "德佛娜之眠" ],
+		"en": { "name": "Devona's Rest", "slug": "devonas-rest" },
+		"es": { "name": "Descanso de Devona", "slug": "descanso-de-devona" },
+		"de": { "name": "Devonas Ruh", "slug": "devonas-ruh" },
+		"fr": { "name": "Repos de Devona", "slug": "repos-de-devona" },
+		"zh": { "name": "德佛娜之眠", "slug": "德佛娜之眠" }
+	}, {
+		"id" : "1024",
+		"region" : "na",
+		"lang" : "en",
+		"slugs" : [ "eredon-terrace", "eredon-terrasse", "terraza-de-eredon", "plateau-d-eredon", "伊雷登平台" ],
+		"en": { "name": "Eredon Terrace", "slug": "eredon-terrace" },
+		"es": { "name": "Terraza de Eredon", "slug": "terraza-de-eredon" },
+		"de": { "name": "Eredon-Terrasse", "slug": "eredon-terrasse" },
+		"fr": { "name": "Plateau d'Eredon", "slug": "plateau-d-eredon" },
+		"zh": { "name": "伊雷登平台", "slug": "伊雷登平台" }
+	}, {
+		"id" : "2001",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "fissure-of-woe", "riss-des-kummers", "fisura-de-la-afliccion", "fissure-du-malheur", "悲叹缝隙" ],
+		"en": { "name": "Fissure of Woe", "slug": "fissure-of-woe" },
+		"es": { "name": "Fisura de la Aflicción", "slug": "fisura-de-la-afliccion" },
+		"de": { "name": "Riss des Kummers", "slug": "riss-des-kummers" },
+		"fr": { "name": "Fissure du malheur", "slug": "fissure-du-malheur" },
+		"zh": { "name": "悲叹缝隙", "slug": "悲叹缝隙" }
+	}, {
+		"id" : "2002",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "desolation", "odnis", "desolacion", "desolation", "荒芜废墟" ],
+		"en": { "name": "Desolation", "slug": "desolation" },
+		"es": { "name": "Desolación", "slug": "desolacion" },
+		"de": { "name": "Ödnis", "slug": "odnis" },
+		"fr": { "name": "Désolation", "slug": "desolation" },
+		"zh": { "name": "荒芜废墟", "slug": "荒芜废墟" }
+	}, {
+		"id" : "2003",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "gandara", "gandara", "gandara", "gandara", "甘达拉" ],
+		"en": { "name": "Gandara", "slug": "gandara" },
+		"es": { "name": "Gandara", "slug": "gandara" },
+		"de": { "name": "Gandara", "slug": "gandara" },
+		"fr": { "name": "Gandara", "slug": "gandara" },
+		"zh": { "name": "甘达拉", "slug": "甘达拉" }
+	}, {
+		"id" : "2004",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "blacktide", "schwarzwasser", "marea-negra", "noirflot", "黑潮" ],
+		"en": { "name": "Blacktide", "slug": "blacktide" },
+		"es": { "name": "Marea Negra", "slug": "marea-negra" },
+		"de": { "name": "Schwarzwasser", "slug": "schwarzwasser" },
+		"fr": { "name": "Noirflot", "slug": "noirflot" },
+		"zh": { "name": "黑潮", "slug": "黑潮" }
+	}, {
+		"id" : "2005",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "ring-of-fire", "feuerring", "anillo-de-fuego", "cercle-de-feu", "火焰之环" ],
+		"en": { "name": "Ring of Fire", "slug": "ring-of-fire" },
+		"es": { "name": "Anillo de fuego", "slug": "anillo-de-fuego" },
+		"de": { "name": "Feuerring", "slug": "feuerring" },
+		"fr": { "name": "Cercle de feu", "slug": "cercle-de-feu" },
+		"zh": { "name": "火焰之环", "slug": "火焰之环" }
+	}, {
+		"id" : "2006",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "underworld", "unterwelt", "inframundo", "outre-monde", "地下世界" ],
+		"en": { "name": "Underworld", "slug": "underworld" },
+		"es": { "name": "Inframundo", "slug": "inframundo" },
+		"de": { "name": "Unterwelt", "slug": "unterwelt" },
+		"fr": { "name": "Outre-monde", "slug": "outre-monde" },
+		"zh": { "name": "地下世界", "slug": "地下世界" }
+	}, {
+		"id" : "2007",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "far-shiverpeaks", "ferne-zittergipfel", "lejanas-picosescalofriantes", "lointaines-cimefroides", "席瓦雪山远境" ],
+		"en": { "name": "Far Shiverpeaks", "slug": "far-shiverpeaks" },
+		"es": { "name": "Lejanas Picosescalofriantes", "slug": "lejanas-picosescalofriantes" },
+		"de": { "name": "Ferne Zittergipfel", "slug": "ferne-zittergipfel" },
+		"fr": { "name": "Lointaines Cimefroides", "slug": "lointaines-cimefroides" },
+		"zh": { "name": "席瓦雪山远境", "slug": "席瓦雪山远境" }
+	}, {
+		"id" : "2008",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "whiteside-ridge", "weissflankgrat", "cadena-laderablanca", "crete-de-verseblanc", "白际山脊" ],
+		"en": { "name": "Whiteside Ridge", "slug": "whiteside-ridge" },
+		"es": { "name": "Cadena Laderablanca", "slug": "cadena-laderablanca" },
+		"de": { "name": "Weißflankgrat", "slug": "weissflankgrat" },
+		"fr": { "name": "Crête de Verseblanc", "slug": "crete-de-verseblanc" },
+		"zh": { "name": "白际山脊", "slug": "白际山脊" }
+	}, {
+		"id" : "2009",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "ruins-of-surmia", "ruinen-von-surmia", "ruinas-de-surmia", "ruines-de-surmia", "瑟米亚废墟" ],
+		"en": { "name": "Ruins of Surmia", "slug": "ruins-of-surmia" },
+		"es": { "name": "Ruinas de Surmia", "slug": "ruinas-de-surmia" },
+		"de": { "name": "Ruinen von Surmia", "slug": "ruinen-von-surmia" },
+		"fr": { "name": "Ruines de Surmia", "slug": "ruines-de-surmia" },
+		"zh": { "name": "瑟米亚废墟", "slug": "瑟米亚废墟" }
+	}, {
+		"id" : "2010",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "seafarers-rest", "seemannsruh", "refugio-del-viajante", "repos-du-marin", "航海者之宁" ],
+		"en": { "name": "Seafarer's Rest", "slug": "seafarers-rest" },
+		"es": { "name": "Refugio del Viajante", "slug": "refugio-del-viajante" },
+		"de": { "name": "Seemannsruh", "slug": "seemannsruh" },
+		"fr": { "name": "Repos du Marin", "slug": "repos-du-marin" },
+		"zh": { "name": "航海者之宁", "slug": "航海者之宁" }
+	}, {
+		"id" : "2011",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "vabbi", "vaabi", "vabbi", "vabbi", "瓦比" ],
+		"en": { "name": "Vabbi", "slug": "vabbi" },
+		"es": { "name": "Vabbi", "slug": "vabbi" },
+		"de": { "name": "Vaabi", "slug": "vaabi" },
+		"fr": { "name": "Vabbi", "slug": "vabbi" },
+		"zh": { "name": "瓦比", "slug": "瓦比" }
+	}, {
+		"id" : "2012",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "piken-square", "piken-platz", "plaza-de-piken", "place-piken", "派肯广场" ],
+		"en": { "name": "Piken Square", "slug": "piken-square" },
+		"es": { "name": "Plaza de Piken", "slug": "plaza-de-piken" },
+		"de": { "name": "Piken-Platz", "slug": "piken-platz" },
+		"fr": { "name": "Place Piken", "slug": "place-piken" },
+		"zh": { "name": "派肯广场", "slug": "派肯广场" }
+	}, {
+		"id" : "2013",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "aurora-glade", "auroralichtung", "claro-de-la-aurora", "clairiere-de-laurore", "曙光林地" ],
+		"en": { "name": "Aurora Glade", "slug": "aurora-glade" },
+		"es": { "name": "Claro de la Aurora", "slug": "claro-de-la-aurora" },
+		"de": { "name": "Auroralichtung", "slug": "auroralichtung" },
+		"fr": { "name": "Clairière de l'aurore", "slug": "clairiere-de-laurore" },
+		"zh": { "name": "曙光林地", "slug": "曙光林地" }
+	}, {
+		"id" : "2014",
+		"region" : "eu",
+		"lang" : "en",
+		"slugs" : [ "gunnars-hold", "gunnars-feste", "fuerte-de-gunnar", "campement-de-gunnar", "纳尔要塞" ],
+		"en": { "name": "Gunnar's Hold", "slug": "gunnars-hold" },
+		"es": { "name": "Fuerte de Gunnar", "slug": "fuerte-de-gunnar" },
+		"de": { "name": "Gunnars Feste", "slug": "gunnars-feste" },
+		"fr": { "name": "Campement de Gunnar", "slug": "campement-de-gunnar" },
+		"zh": { "name": "纳尔要塞", "slug": "纳尔要塞" }
+	}, {
+		"id" : "2101",
+		"region" : "eu",
+		"lang" : "fr",
+		"slugs" : [ "jade-sea-fr", "jademeer-fr", "mar-de-jade-fr", "mer-de-jade-fr", "翠玉之海-fr" ],
+		"en": { "name": "Jade Sea [FR]", "slug": "jade-sea-fr" },
+		"es": { "name": "Mar de Jade [FR]", "slug": "mar-de-jade-fr" },
+		"de": { "name": "Jademeer [FR]", "slug": "jademeer-fr" },
+		"fr": { "name": "Mer de Jade [FR]", "slug": "mer-de-jade-fr" },
+		"zh": { "name": "翠玉之海[ FR ]", "slug": "翠玉之海-fr" }
+	}, {
+		"id" : "2102",
+		"region" : "eu",
+		"lang" : "fr",
+		"slugs" : [ "fort-ranik-fr", "fort-ranik-fr", "fuerte-ranik-fr", "fort-ranik-fr", "拉尼克堡-fr" ],
+		"en": { "name": "Fort Ranik [FR]", "slug": "fort-ranik-fr" },
+		"es": { "name": "Fuerte Ranik [FR]", "slug": "fuerte-ranik-fr" },
+		"de": { "name": "Fort Ranik [FR]", "slug": "fort-ranik-fr" },
+		"fr": { "name": "Fort Ranik [FR]", "slug": "fort-ranik-fr" },
+		"zh": { "name": "拉尼克堡[ FR ]", "slug": "拉尼克堡-fr" }
+	}, {
+		"id" : "2103",
+		"region" : "eu",
+		"lang" : "fr",
+		"slugs" : [ "augury-rock-fr", "fels-der-weissagung-fr", "roca-del-augurio-fr", "roche-de-l-augure-fr", "预言之石-fr" ],
+		"en": { "name": "Augury Rock [FR]", "slug": "augury-rock-fr" },
+		"es": { "name": "Roca del Augurio [FR]", "slug": "roca-del-augurio-fr" },
+		"de": { "name": "Fels der Weissagung [FR]", "slug": "fels-der-weissagung-fr" },
+		"fr": { "name": "Roche de l'Augure [FR]", "slug": "roche-de-l-augure-fr" },
+		"zh": { "name": "预言之石[ FR ]", "slug": "预言之石-fr" }
+	}, {
+		"id" : "2104",
+		"region" : "eu",
+		"lang" : "fr",
+		"slugs" : [ "vizunah-square-fr", "vizunah-platz-fr", "plaza-de-vizunah-fr", "place-de-vizunah-fr", "薇茹广场-fr" ],
+		"en": { "name": "Vizunah Square [FR]", "slug": "vizunah-square-fr" },
+		"es": { "name": "Plaza de Vizunah [FR]", "slug": "plaza-de-vizunah-fr" },
+		"de": { "name": "Vizunah-Platz [FR]", "slug": "vizunah-platz-fr" },
+		"fr": { "name": "Place de Vizunah [FR]", "slug": "place-de-vizunah-fr" },
+		"zh": { "name": "薇茹广场[ FR]", "slug": "薇茹广场-fr" }
+	}, {
+		"id" : "2105",
+		"region" : "eu",
+		"lang" : "fr",
+		"slugs" : [ "arborstone-fr", "arborstein-fr", "piedra-arborea-fr", "pierre-arborea-fr", "亚博之石-fr" ],
+		"en": { "name": "Arborstone [FR]", "slug": "arborstone-fr" },
+		"es": { "name": "Piedra Arbórea [FR]", "slug": "piedra-arborea-fr" },
+		"de": { "name": "Arborstein [FR]", "slug": "arborstein-fr" },
+		"fr": { "name": "Pierre Arborea [FR]", "slug": "pierre-arborea-fr" },
+		"zh": { "name": "亚博之石 [ FR ]", "slug": "亚博之石-fr" }
+	}, {
+		"id" : "2201",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "kodash-de", "kodasch-de", "kodash-de", "kodash-de", "圣洁之石-de" ],
+		"en": { "name": "Kodash [DE]", "slug": "kodash-de" },
+		"es": { "name": "Kodash [DE]", "slug": "kodash-de" },
+		"de": { "name": "Kodasch [DE]", "slug": "kodasch-de" },
+		"fr": { "name": "Kodash [DE]", "slug": "kodash-de" },
+		"zh": { "name": "圣洁之石 [ DE ]", "slug": "圣洁之石-de" }
+	}, {
+		"id" : "2202",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "riverside-de", "flussufer-de", "ribera-de", "provinces-fluviales-de", "河畔-de" ],
+		"en": { "name": "Riverside [DE]", "slug": "riverside-de" },
+		"es": { "name": "Ribera [DE]", "slug": "ribera-de" },
+		"de": { "name": "Flussufer [DE]", "slug": "flussufer-de" },
+		"fr": { "name": "Provinces fluviales [DE]", "slug": "provinces-fluviales-de" },
+		"zh": { "name": "河畔[ DE ]", "slug": "河畔-de" }
+	}, {
+		"id" : "2203",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "elona-reach-de", "elonaspitze-de", "canon-de-elona-de", "bief-d-elona-de", "伊伦娜海岸-de" ],
+		"en": { "name": "Elona Reach [DE]", "slug": "elona-reach-de" },
+		"es": { "name": "Cañón de Elona [DE]", "slug": "canon-de-elona-de" },
+		"de": { "name": "Elonaspitze [DE]", "slug": "elonaspitze-de" },
+		"fr": { "name": "Bief d'Elona [DE]", "slug": "bief-d-elona-de" },
+		"zh": { "name": "伊伦娜海岸[DE]", "slug": "伊伦娜海岸-de" }
+	}, {
+		"id" : "2204",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "abaddons-mouth-de", "abaddons-maul-de", "boca-de-abaddon-de", "bouche-d-abaddon-de", "阿伯顿之口-de" ],
+		"en": { "name": "Abaddon's Mouth [DE]", "slug": "abaddons-mouth-de" },
+		"es": { "name": "Boca de Abaddon [DE]", "slug": "boca-de-abaddon-de" },
+		"de": { "name": "Abaddons Maul [DE]", "slug": "abaddons-maul-de" },
+		"fr": { "name": "Bouche d'Abaddon [DE]", "slug": "bouche-d-abaddon-de" },
+		"zh": { "name": "阿伯顿之口[ DE ]", "slug": "阿伯顿之口-de" }
+	}, {
+		"id" : "2205",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "drakkar-lake-de", "drakkar-see-de", "lago-drakkar-de", "lac-drakkar-de", "德拉克湖-de" ],
+		"en": { "name": "Drakkar Lake [DE]", "slug": "drakkar-lake-de" },
+		"es": { "name": "Lago Drakkar [DE]", "slug": "lago-drakkar-de" },
+		"de": { "name": "Drakkar-See [DE]", "slug": "drakkar-see-de" },
+		"fr": { "name": "Lac Drakkar [DE]", "slug": "lac-drakkar-de" },
+		"zh": { "name": "德拉克湖[DE]", "slug": "德拉克湖-de" }
+	}, {
+		"id" : "2206",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "millers-sound-de", "millersund-de", "estrecho-de-miller-de", "detroit-de-miller-de", "米勒之声-de" ],
+		"en": { "name": "Miller's Sound [DE]", "slug": "millers-sound-de" },
+		"es": { "name": "Estrecho de Miller [DE]", "slug": "estrecho-de-miller-de" },
+		"de": { "name": "Millersund [DE]", "slug": "millersund-de" },
+		"fr": { "name": "Détroit de Miller [DE]", "slug": "detroit-de-miller-de" },
+		"zh": { "name": "米勒之声[ DE ]", "slug": "米勒之声-de" }
+	}, {
+		"id" : "2207",
+		"region" : "eu",
+		"lang" : "de",
+		"slugs" : [ "dzagonur-de", "dzagonur-de", "dzagonur-de", "dzagonur-de", "扎格诺-de" ],
+		"en": { "name": "Dzagonur [DE]", "slug": "dzagonur-de" },
+		"es": { "name": "Dzagonur [DE]", "slug": "dzagonur-de" },
+		"de": { "name": "Dzagonur [DE]", "slug": "dzagonur-de" },
+		"fr": { "name": "Dzagonur [DE]", "slug": "dzagonur-de" },
+		"zh": { "name": "扎格诺 [ DE ]", "slug": "扎格诺-de" }
+	}, {
+		"id" : "2301",
+		"region" : "eu",
+		"lang" : "es",
+		"slugs" : [ "baruch-bay-sp", "baruch-bucht-es", "bahia-de-baruch-es", "baie-de-baruch-sp", "巴鲁克海湾-sp" ],
+		"en": { "name": "Baruch Bay [SP]", "slug": "baruch-bay-sp" },
+		"es": { "name": "Bahía de Baruch [ES]", "slug": "bahia-de-baruch-es" },
+		"de": { "name": "Baruch-Bucht [ES]", "slug": "baruch-bucht-es" },
+		"fr": { "name": "Baie de Baruch [SP]", "slug": "baie-de-baruch-sp" },
+		"zh": { "name": "巴鲁克海湾[ SP ]", "slug": "巴鲁克海湾-sp" }
+	}
+]
