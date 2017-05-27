@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import _ from 'lodash';
@@ -7,11 +7,11 @@ import { getWorldBySlug } from 'src/lib/world';
 
 import STATIC from 'src/data/static';
 
-class Langs extends Component {		
+class Langs extends PureComponent {		
 	render() {
 		const { langSlug, worldSlug } = this.props;
 		
-		console.log('Langs', { langSlug, worldSlug });
+		// console.log('Langs', { langSlug, worldSlug });
 		
 		return (
 			<nav className="navbar navbar-light bg-faded">
@@ -40,7 +40,7 @@ class Lang extends PureComponent {
 	render() {	
 		const { lang, langSlug, worldSlug } = this.props;
 		
-		console.log('Lang', { langSlug, worldSlug });
+		// console.log('Lang', { langSlug, worldSlug });
 		
 		const world = getWorldBySlug(worldSlug);
 		
