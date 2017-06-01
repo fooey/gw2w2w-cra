@@ -43,11 +43,11 @@ class App extends Component {
 
 
 class Routes extends Component {	
-	render() {
+	render() {		
 		return (
 			<Switch>
 				<Route exact path="/" component={RedirectFromRoot}/>	
-				<Route path="/:langSlug([a-z]{2})/:worldSlug([a-z\-]+)?" component={App}/>		
+				<Route path="/:langSlug([a-z]{2})/:worldSlug?" component={App}/>		
 				<Route component={NotFound} />	
 			</Switch>
 		);
@@ -79,7 +79,7 @@ class Globals extends PureComponent {
 				<Layout langSlug={langSlug} worldSlug={worldSlug}>
 					{ROUTE.world ? 
 						<Match ROUTE={ROUTE} /> : 
-						<Overview ROUTE={ROUTE} />}
+						<Overview langSlug={langSlug} worldSlug={worldSlug} />}
 				</Layout>
 			);
 		}

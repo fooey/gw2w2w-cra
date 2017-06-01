@@ -39,6 +39,7 @@
 		"build:css": "gulp build:css",
 		"lint": "eslint src/**/*.js",
 		"dev:lint": "esw src --watch",
+		"reset": "rimraf node_modules && yarn && yarn dev",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
 	}

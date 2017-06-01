@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
@@ -6,65 +6,85 @@ import { getLangBySlug } from 'src/lib/lang';
 
 import STATIC from 'src/data/static';
 
-const Worlds = ({ ROUTE }) => (
-	<div className="row worlds">
-		{_.map(['na', 'eu'], region => (
-			<div key={region} className="col-lg">
-				{/* <h1 className="region-title">{region}</h1> */}
-				<RegionWorlds 
-					region={region} 
-					ROUTE={ROUTE} 
-				/>
+class Worlds extends PureComponent {
+	render() {
+		const { langSlug } = this.props;
+		
+		return (
+			<div className="row worlds">
+				{_.map(['na', 'eu'], region => (
+					<div key={region} className="col-lg">
+						{/* <h1 className="region-title">{region}</h1> */}
+						<RegionWorlds 
+							region={region} 
+							langSlug={langSlug} 
+						/>
+					</div>
+				))}
 			</div>
-		))}
-	</div>
-);
+		);
+	}
+}
 
-
-const RegionWorlds = ({ ROUTE, region }) => (
-	_.chain(STATIC.worlds)
-		.filter({ region })
-		.sortBy('id')
-		.groupBy('lang')
-		.map((langWorlds, langSlug) => {
-			const lang = getLangBySlug(langSlug);
-			
-			return (
-				<section key={langSlug} className="region-worlds">
-					<h4 className="card-title lang-title">{lang.name} <small className="text-muted">{region}</small></h4>
-					<LangWorlds 
-						langWorlds={langWorlds} 
-						ROUTE={ROUTE} 
-					/>
-				</section>
-			);
-		})
-		.value()
-
-);
-
-const LangWorlds = ({ langWorlds, ROUTE }) => (
-	<ul className="list-unstyled lang-worlds">
-		{_.chain(langWorlds)
-			.sortBy(world => {
-				return _.get(world, [ROUTE.lang.slug, 'name']);
+class RegionWorlds extends PureComponent {
+	render() {
+		const { langSlug, region } = this.props;
+		
+		return _.chain(STATIC.worlds)
+			.filter({ region })
+			.sortBy('id')
+			.groupBy('lang')
+			.map((langWorlds, regionLangSlug) => {
+				const lang = getLangBySlug(langSlug);
+				
+				return (
+					<section key={regionLangSlug} className="region-worlds">
+						<h4 className="card-title lang-title">{lang.name} <small className="text-muted">{region}</small></h4>
+						<LangWorlds 
+							langWorlds={langWorlds} 
+							langSlug={langSlug} 
+						/>
+					</section>
+				);
 			})
-			.map(world => {
-				const langWorld = _.get(world, [ROUTE.lang.slug]);
+			.value();
+	}
+}
 
-				return <World key={world.id} langWorld={langWorld} ROUTE={ROUTE} />;
-			})
-			.value()}
-	</ul>
-);
+class LangWorlds extends PureComponent {
+	render() {
+		const { langWorlds, langSlug } = this.props;
+		
+		return (
+			<ul className="list-unstyled lang-worlds">
+				{_.chain(langWorlds)
+					.sortBy(world => {
+						return _.get(world, [langSlug, 'name']);
+					})
+					.map(world => {
+						const langWorld = _.get(world, [langSlug]);
 
-const World = ({ langWorld, ROUTE }) => (
-	<li className="world">
-		<Link to={`/${ROUTE.lang.slug}/${langWorld.slug}`}>
-			{langWorld.name}
-		</Link>
-	</li>
-);
+						return <World key={world.id} langWorld={langWorld} langSlug={langSlug} />;
+					})
+					.value()}
+			</ul>
+		);
+	}
+}
+
+class World extends PureComponent {
+	render() {
+		const { langWorld, langSlug } = this.props;
+		
+		return (
+			<li className="world">
+				<Link to={`/${langSlug}/${langWorld.slug}`}>
+					{langWorld.name}
+				</Link>
+			</li>
+		);
+	}
+}
 
 
 export default Worlds;

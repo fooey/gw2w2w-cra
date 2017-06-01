@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
@@ -9,24 +9,41 @@ import { Loading } from 'src/components/Util';
 
 import OverviewQuery from 'src/gql/overview';
 
-class Overview extends PureComponent {
-	render() {
-		const { data, ROUTE } = this.props;
-		const { loading, matches } = data;
+class Overview extends Component {
+	shouldComponentUpdate(nextProps) {
+		if (_.isEmpty(this.props) || _.isEmpty(nextProps)) {
+			return true;
+		}
+		
+		const lastMod = _.chain(this.props).get('data.matches').maxBy('last_modified').get('last_modified', 0).value();
+		const nextLastMod = _.chain(nextProps).get('data.matches').maxBy('last_modified').get('last_modified', 0).value();
+		
+		const langSlugChanged = !_.isEqual(_.get(this.props, 'langSlug'), _.get(nextProps, 'langSlug'));
+		const loadingChanged = langSlugChanged || !_.isEqual(_.get(this.props, 'data.loading'), _.get(nextProps, 'data.loading'));
+		// const matchesChanged = loadingChanged || !_.isEqual(_.get(this.props, 'data.matches'), _.get(nextProps, 'data.matches'));
+		const matchesChanged = loadingChanged || lastMod !== nextLastMod;
+		
+		const shouldUpdate = (langSlugChanged || loadingChanged || matchesChanged);
 
-		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
-		if (_.isEmpty(matches)) return <h1>err, matchData not found</h1>;
+		console.log('Overview', { shouldUpdate, loadingChanged, matchesChanged, lastMod, nextLastMod });
+				
+		return shouldUpdate;
+	}
+	
+	render() {
+		const { data, langSlug } = this.props;
+		const { loading, matches } = data;
 
 		return (
 			<div className="overview container">
 				<div className="row">
 					<div className="col">
-						<Matches ROUTE={ROUTE} matches={matches} />
+						{loading ? <Loading /> : <Matches langSlug={langSlug} matches={matches} />}
 					</div>
 				</div>
 				<div className="row">
 					<div className="col">
-						<Worlds ROUTE={ROUTE} />
+						<Worlds langSlug={langSlug} />
 					</div>
 				</div>
 			</div>
@@ -38,7 +55,7 @@ const OverviewWithData = graphql(OverviewQuery, {
 	options: {
 		'network-only': true,
 		shouldBatch: true,
-		pollInterval: 1000 * 8,
+		pollInterval: 1000 * 1,
 	},
 })(Overview);
 

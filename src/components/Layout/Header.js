@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import _ from 'lodash';
@@ -36,14 +36,18 @@ class Langs extends PureComponent {
 	}
 }
 
-class Lang extends PureComponent {
+class Lang extends Component {
+	shouldComponentUpdate(nextProps) {
+		return _.get(this.props, 'langSlug') !== _.get(nextProps, 'langSlug');
+	}
+	
 	render() {	
 		const { lang, langSlug, worldSlug } = this.props;
-		
+
 		// console.log('Lang', { langSlug, worldSlug });
-		
+
 		const world = getWorldBySlug(worldSlug);
-		
+
 		const link = _.without([
 			'',
 			lang.slug,
