@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import _ from 'lodash';
 
-import Logo from 'src/img/logo/castle.svg.js';
+import Logo from 'src/components/svg/logo.js';
 
 import { getWorldBySlug } from 'src/lib/world';
 
