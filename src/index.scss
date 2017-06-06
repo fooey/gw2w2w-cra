@@ -2,18 +2,7 @@
 @import 'src/custom';
 @import 'src/mixins';
 
-.team-red {
-	color: $red;
-}
-
-.team-blue {
-	color: $blue;
-}
-
-.team-green {
-	color: $green;
-}
-
-
+@import 'src/components/Util/index';
+@import 'src/components/Layout/index';
 @import 'src/components/Overview/index';
 @import 'src/components/Match/index';

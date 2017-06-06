@@ -40,8 +40,8 @@ function generateGuild(objectives, guildId) {
 		.reverse()
 		.value();
 	
-	const lastFlippedMin = moment(_.minBy(guildObjectives, 'lastFlipped').lastFlipped);
-	const lastFlippedMax = moment(_.maxBy(guildObjectives, 'lastFlipped').lastFlipped);
+	const lastFlippedMin = _.minBy(guildObjectives, 'lastFlipped').lastFlipped;
+	const lastFlippedMax = _.maxBy(guildObjectives, 'lastFlipped').lastFlipped;
 	
 	return {
 		id: guildId,
@@ -151,7 +151,7 @@ class GuildObjective extends Component {
 			<li key={objective.id} className="guild-objective">
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
 				
-				<span className="objective-timer">{moment(guildObjective.lastFlipped).twitter()}</span>
+				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
 				<span className="objective-name">{_.get(objective, [ROUTE.lang.slug, 'name'])}</span>
 			</li>
 		);
