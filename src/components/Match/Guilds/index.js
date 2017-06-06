@@ -11,6 +11,11 @@ import { getObjective } from 'src/lib/objective';
 // import Matches from './Matches/index';
 // import Worlds from './Worlds/index';
 
+import Castle from 'src/components/svg/castle.js';
+import Keep from 'src/components/svg/keep.js';
+import Tower from 'src/components/svg/tower.js';
+import Camp from 'src/components/svg/camp.js';
+
 import { Loading } from 'src/components/Util';
 
 import GuildQuery from 'src/gql/guild';
@@ -111,7 +116,7 @@ class Guild extends PureComponent {
 						</h4>
 					) : <Loading />}
 					
-					<GuildObjectives guildObjectives={objectives} ROUTE={ROUTE}/>
+					<GuildObjectives color={color} guildObjectives={objectives} ROUTE={ROUTE}/>
 				</td>
 			</tr>
 		);
@@ -119,14 +124,43 @@ class Guild extends PureComponent {
 }
 
 
-const GuildObjectives = ({ guildObjectives, ROUTE }) => {	
+const GuildObjectives = ({ guildObjectives, color, ROUTE }) => {	
 	return (
 		<ul className="list-unstyled">
 			{_.map(guildObjectives, guildObjective =>
-				<GuildObjective key={guildObjective.id} ROUTE={ROUTE} guildObjective={guildObjective} />
+				<GuildObjective key={guildObjective.id} ROUTE={ROUTE} guildObjective={guildObjective} color={color} />
 			)}
 		</ul>
 	);
+};
+
+const ObjectiveIcon = ({ type, color }) => {
+	type = type.toLowerCase();
+	
+	const colorMap = {
+		red: '#a94442',
+		green: '#3c763d',
+		blue: '#31708f',
+	};
+	const fillColor = colorMap[color];
+	
+	const TypeMap = {
+		castle: Castle,
+		keep: Keep,
+		tower: Tower,
+		camp: Camp,
+	};
+	const Objective = TypeMap[type];
+	
+	const props = {
+		style: {
+			height: '24px',
+			width: '24px',
+		},	
+		fillColor,
+	};
+	
+	return <Objective {...props} />;	
 };
 
 
@@ -140,7 +174,7 @@ class GuildObjective extends Component {
 	} 
 	
 	render() {
-		const { guildObjective, ROUTE } = this.props;
+		const { guildObjective, color, ROUTE } = this.props;
 		const { now } = this.state;
 		
 		const objective = getObjective(guildObjective.id);
@@ -152,6 +186,7 @@ class GuildObjective extends Component {
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
 				
 				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
+				<span className="objective-icon"><ObjectiveIcon type={_.get(objective, ['type'])} color={color} /></span>
 				<span className="objective-name">{_.get(objective, [ROUTE.lang.slug, 'name'])}</span>
 			</li>
 		);
