@@ -5,7 +5,7 @@ import Header from './Header';
 class Layout extends PureComponent {
 	render() {
 		const { children, langSlug, worldSlug } = this.props;
-		
+
 		return (
 
 			<div className="layout">

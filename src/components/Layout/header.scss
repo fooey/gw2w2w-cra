@@ -5,7 +5,7 @@
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: space-between;
-	height: 60px;
+	height: 4rem;
 	padding: 0 1rem;
 	background-color: $gray-lightest;
 
@@ -23,12 +23,29 @@
 
 		svg {
 			display: block;
-			height: 32px;
+			height: 2rem;
 			margin-right: 4px;
 		}
 	}
 
-	.nav-item {
-		font-size: .8rem;
+	.page-nav {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+
+		.world-title {
+			margin: 0 2rem 0 0;
+			padding: 0;
+			font-size: 1.4rem;
+		}
+
+		.nav-item {
+			font-size: .8rem;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
+
 }

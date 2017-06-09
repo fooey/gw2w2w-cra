@@ -27,59 +27,59 @@ class App extends Component {
 	shouldComponentUpdate(nextProps) {
 		const params = _.get(this.props, 'match.params');
 		const nextParams = _.get(nextProps, 'match.params');
-		
+
 		return !_.isEqual(params, nextParams);
 	}
-	
+
 	render() {
 		const { match } = this.props;
-		
+
 		const { params } = match;
 		const { langSlug, worldSlug } = params;
-		
+
 		return <Globals langSlug={langSlug} worldSlug={worldSlug} />;
 	}
 }
 
 
-class Routes extends Component {	
-	render() {		
+class Routes extends Component {
+	render() {
 		return (
 			<Switch>
-				<Route exact path="/" component={RedirectFromRoot}/>	
-				<Route path="/:langSlug([a-z]{2})/:worldSlug?" component={App}/>		
-				<Route component={NotFound} />	
+				<Route exact path="/" component={RedirectFromRoot}/>
+				<Route path="/:langSlug([a-z]{2})/:worldSlug?" component={App}/>
+				<Route component={NotFound} />
 			</Switch>
 		);
 	}
 }
 
 
-class Globals extends PureComponent {	
+class Globals extends PureComponent {
 	render() {
 		const { langSlug, worldSlug } = this.props;
-		
+
 		const lang = getLangBySlug(langSlug);
 		const world = getWorldBySlug(worldSlug);
-		
+
 		const ROUTE = {
 			lang,
 			langSlug,
 			world,
 			worldSlug,
 		};
-		
+
 		console.log({ langSlug, lang });
 		console.log({ worldSlug, world });
-		
+
 		if (lang) {
 			window.localStorage.setItem('langSlug', langSlug); // save the current lang to local storage
-			
+
 			return (
 				<Layout langSlug={langSlug} worldSlug={worldSlug}>
-					{ROUTE.world ? 
-						<Match ROUTE={ROUTE} /> : 
-						<Overview langSlug={langSlug} worldSlug={worldSlug} />}
+					{ROUTE.world ?
+						<Match langSlug={langSlug} worldSlug={worldSlug} /> :
+						<Overview langSlug={langSlug} />}
 				</Layout>
 			);
 		}

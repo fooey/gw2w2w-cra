@@ -12,13 +12,15 @@ import MatchQuery from 'src/gql/match';
 class Match extends PureComponent {
 	render() {
 		console.log('Match');
-	
-		const { data, ROUTE } = this.props;
+
+		const { data, langSlug, worldSlug } = this.props;
 		const { loading, match } = data;
+
+		console.log({ data, langSlug, worldSlug });
 
 		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
 		if (_.isEmpty(match)) return <h1>err, matchData not found</h1>;
-		
+
 		const objectives = _.chain(match)
 			.get('maps')
 			.map('objectives')
@@ -29,7 +31,7 @@ class Match extends PureComponent {
 			<div className="overview container">
 				<div className="row">
 					<div className="col">
-						<Guilds ROUTE={ROUTE} objectives={objectives} />
+						<Guilds langSlug={langSlug} objectives={objectives} />
 					</div>
 				</div>
 				{/* <div className="row">
@@ -44,12 +46,12 @@ class Match extends PureComponent {
 }
 
 const MatchWithData = graphql(MatchQuery, {
-	options: ({ ROUTE }) => ({
+	options: ({ worldSlug }) => ({
 		shouldBatch: true,
 		'network-only': true,
 		pollInterval: 1000 * 8,
 		variables: {
-			worldId: ROUTE.world.id,
+			worldSlug: worldSlug,
 		},
 	}),
 })(Match);

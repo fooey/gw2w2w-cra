@@ -1,8 +1,8 @@
 import { gql } from 'react-apollo';
 
 export default gql`
-	query match($worldId: ID) {
-		match(world_id: $worldId) {
+	query match($worldSlug: String) {
+		match(world_slug: $worldSlug) {
 			id
 			region
 			world_ids

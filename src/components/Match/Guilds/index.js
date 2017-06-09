@@ -35,7 +35,7 @@ function generateGuildsFromObjectives(objectives) {
 
 function generateGuild(objectives, guildId) {
 	const color = objectives[0].owner.toLowerCase();
-	
+
 	const guildObjectives = _.chain(objectives)
 		.map(o => ({
 			id: o.id,
@@ -44,10 +44,10 @@ function generateGuild(objectives, guildId) {
 		.sortBy(o => o.lastFlipped)
 		.reverse()
 		.value();
-	
+
 	const lastFlippedMin = _.minBy(guildObjectives, 'lastFlipped').lastFlipped;
 	const lastFlippedMax = _.maxBy(guildObjectives, 'lastFlipped').lastFlipped;
-	
+
 	return {
 		id: guildId,
 		objectives: guildObjectives,
@@ -58,17 +58,17 @@ function generateGuild(objectives, guildId) {
 }
 
 
-class Guilds extends Component {	
+class Guilds extends Component {
 	render() {
-		const { objectives, ROUTE } = this.props;
+		const { objectives, langSlug } = this.props;
 
 		const guilds = generateGuildsFromObjectives(objectives);
 
 		return (
-			<div className="overview container">
+			<div className="match-guilds container">
 				<div className="row">
-					<div className="col"> 						
-						<GuildsList ROUTE={ROUTE} guilds={guilds} />
+					<div className="col">
+						<GuildsList langSlug={langSlug} guilds={guilds} />
 					</div>
 				</div>
 			</div>
@@ -79,18 +79,18 @@ class Guilds extends Component {
 
 class GuildsList extends PureComponent {
 	render() {
-		const { guilds, ROUTE } = this.props;
+		const { guilds, langSlug } = this.props;
 		// console.log('GuildsList');
 		// console.log('guild', guilds);
 		return (
 			<table className="table"><tbody>
-				{_.map(guilds, objectivesGuild => 
-					<GuildWithData 
-						key={objectivesGuild.id} 
-						ROUTE={ROUTE} 
-						id={objectivesGuild.id} 
-						color={objectivesGuild.color} 
-						objectives={objectivesGuild.objectives} 
+				{_.map(guilds, objectivesGuild =>
+					<GuildWithData
+						key={objectivesGuild.id}
+						langSlug={langSlug}
+						id={objectivesGuild.id}
+						color={objectivesGuild.color}
+						objectives={objectivesGuild.objectives}
 					/>)}
 			</tbody></table>
 		);
@@ -99,13 +99,13 @@ class GuildsList extends PureComponent {
 
 class Guild extends PureComponent {
 	render() {
-		const { data, id, color, objectives, ROUTE } = this.props; 		
+		const { data, id, color, objectives, langSlug } = this.props;
 		const { guild } = data;
-		
+
 		return (
 			<tr className={`row team-${color}`}>
 				<td className="text-center" style={{width: 172}}>
-					<img src={`https://guilds.gw2w2w.com/${id}.svg`} width="160" height="160" alt={id} /> 						
+					<img src={`https://guilds.gw2w2w.com/${id}.svg`} width="160" height="160" alt={id} />
 				</td>
 				<td className="" style={{verticalAlign: "center"}}>
 					{guild ? (
@@ -114,9 +114,9 @@ class Guild extends PureComponent {
 							{' '}
 							<small>[{guild.tag}]</small>
 						</h4>
-					) : <Loading />}
-					
-					<GuildObjectives color={color} guildObjectives={objectives} ROUTE={ROUTE}/>
+					) : <h4><Loading /></h4>}
+
+					<GuildObjectives color={color} guildObjectives={objectives} langSlug={langSlug}/>
 				</td>
 			</tr>
 		);
@@ -124,26 +124,26 @@ class Guild extends PureComponent {
 }
 
 
-const GuildObjectives = ({ guildObjectives, color, ROUTE }) => {	
+const GuildObjectives = ({ guildObjectives, color, langSlug }) => {
 	return (
 		<ul className="list-unstyled">
 			{_.map(guildObjectives, guildObjective =>
-				<GuildObjective key={guildObjective.id} ROUTE={ROUTE} guildObjective={guildObjective} color={color} />
+				<GuildObjective key={guildObjective.id} langSlug={langSlug} guildObjective={guildObjective} color={color} />
 			)}
 		</ul>
 	);
 };
 
-const ObjectiveIcon = ({ type, color }) => {
+const ObjectiveIcon = ({ type, color, size="32" }) => {
 	type = type.toLowerCase();
-	
+
 	const colorMap = {
 		red: '#a94442',
 		green: '#3c763d',
 		blue: '#31708f',
 	};
 	const fillColor = colorMap[color];
-	
+
 	const TypeMap = {
 		castle: Castle,
 		keep: Keep,
@@ -151,43 +151,41 @@ const ObjectiveIcon = ({ type, color }) => {
 		camp: Camp,
 	};
 	const Objective = TypeMap[type];
-	
+
 	const props = {
-		style: {
-			height: '24px',
-			width: '24px',
-		},	
+		width: size,
+		height: size,
 		fillColor,
 	};
-	
-	return <Objective {...props} />;	
+
+	return <Objective {...props} />;
 };
 
 
 class GuildObjective extends Component {
 	constructor() {
 		super();
-		
+
 		this.state = {
 			now: moment(),
 		};
-	} 
-	
+	}
+
 	render() {
-		const { guildObjective, color, ROUTE } = this.props;
+		const { guildObjective, color, langSlug } = this.props;
 		const { now } = this.state;
-		
+
 		const objective = getObjective(guildObjective.id);
-		const ageInSeconds = now.diff(guildObjective.lastFlipped, 'seconds');		
+		const ageInSeconds = now.diff(guildObjective.lastFlipped, 'seconds');
 		const refreshInterval = getRefreshInterval(ageInSeconds);
-		
+
 		return (
 			<li key={objective.id} className="guild-objective">
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
-				
-				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
+
 				<span className="objective-icon"><ObjectiveIcon type={_.get(objective, ['type'])} color={color} /></span>
-				<span className="objective-name">{_.get(objective, [ROUTE.lang.slug, 'name'])}</span>
+				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
+				<span className="objective-name">{_.get(objective, [langSlug, 'name'])}</span>
 			</li>
 		);
 	}
