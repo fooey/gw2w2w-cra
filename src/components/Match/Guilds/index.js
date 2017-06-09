@@ -167,7 +167,7 @@ class GuildObjective extends Component {
 		super();
 
 		this.state = {
-			now: moment(),
+			now: Date.now(),
 		};
 	}
 
@@ -176,15 +176,16 @@ class GuildObjective extends Component {
 		const { now } = this.state;
 
 		const objective = getObjective(guildObjective.id);
-		const ageInSeconds = now.diff(guildObjective.lastFlipped, 'seconds');
+		const ageInSeconds = now/1000 - guildObjective.lastFlipped;
 		const refreshInterval = getRefreshInterval(ageInSeconds);
 
 		return (
 			<li key={objective.id} className="guild-objective">
-				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: moment() })} />
+				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: Date.now() })} />
 
 				<span className="objective-icon"><ObjectiveIcon type={_.get(objective, ['type'])} color={color} /></span>
 				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
+				<span className="objective-name">{Date.now()}</span>
 				<span className="objective-name">{_.get(objective, [langSlug, 'name'])}</span>
 			</li>
 		);
