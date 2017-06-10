@@ -5,7 +5,7 @@ import moment from 'moment-twitter';
 import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
-import { getRefreshInterval } from 'src/lib/time';
+import { getRefreshInterval, getAboutNow } from 'src/lib/time';
 import { getObjective } from 'src/lib/objective';
 
 // import Matches from './Matches/index';
@@ -123,43 +123,49 @@ class Guild extends PureComponent {
 	}
 }
 
+class GuildObjectives extends PureComponent {
+	render() {
+		const { guildObjectives, color, langSlug } = this.props;
 
-const GuildObjectives = ({ guildObjectives, color, langSlug }) => {
-	return (
-		<ul className="list-unstyled">
-			{_.map(guildObjectives, guildObjective =>
-				<GuildObjective key={guildObjective.id} langSlug={langSlug} guildObjective={guildObjective} color={color} />
-			)}
-		</ul>
-	);
-};
+		return (
+			<ul className="list-unstyled">
+				{_.map(guildObjectives, guildObjective =>
+					<GuildObjective key={guildObjective.id} langSlug={langSlug} guildObjective={guildObjective} color={color} />
+				)}
+			</ul>
+		);
+	}
+}
 
-const ObjectiveIcon = ({ type, color, size="32" }) => {
-	type = type.toLowerCase();
+class ObjectiveIcon extends PureComponent {
+	render() {
+		const { type, color, size="32" } = this.props;
+		const typeKey = type.toLowerCase();
 
-	const colorMap = {
-		red: '#a94442',
-		green: '#3c763d',
-		blue: '#31708f',
-	};
-	const fillColor = colorMap[color];
+		const colorMap = {
+			red: '#a94442',
+			green: '#3c763d',
+			blue: '#31708f',
+		};
+		const fillColor = colorMap[color];
 
-	const TypeMap = {
-		castle: Castle,
-		keep: Keep,
-		tower: Tower,
-		camp: Camp,
-	};
-	const Objective = TypeMap[type];
+		const TypeMap = {
+			castle: Castle,
+			keep: Keep,
+			tower: Tower,
+			camp: Camp,
+		};
+		const Objective = TypeMap[typeKey];
 
-	const props = {
-		width: size,
-		height: size,
-		fillColor,
-	};
+		const props = {
+			width: size,
+			height: size,
+			fillColor,
+		};
 
-	return <Objective {...props} />;
-};
+		return <Objective {...props} />;
+	}
+}
 
 
 class GuildObjective extends Component {
@@ -167,7 +173,7 @@ class GuildObjective extends Component {
 		super();
 
 		this.state = {
-			now: Date.now(),
+			now: getAboutNow(),
 		};
 	}
 
@@ -176,16 +182,17 @@ class GuildObjective extends Component {
 		const { now } = this.state;
 
 		const objective = getObjective(guildObjective.id);
-		const ageInSeconds = now/1000 - guildObjective.lastFlipped;
+		const ageInSeconds = Math.floor(now - guildObjective.lastFlipped);
 		const refreshInterval = getRefreshInterval(ageInSeconds);
 
 		return (
 			<li key={objective.id} className="guild-objective">
-				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: Date.now() })} />
+				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
 
 				<span className="objective-icon"><ObjectiveIcon type={_.get(objective, ['type'])} color={color} /></span>
 				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
-				<span className="objective-name">{Date.now()}</span>
+				<span className="objective-timer">{ageInSeconds}</span>
+				<span className="objective-timer">{refreshInterval}</span>
 				<span className="objective-name">{_.get(objective, [langSlug, 'name'])}</span>
 			</li>
 		);
@@ -194,9 +201,10 @@ class GuildObjective extends Component {
 
 
 const GuildWithData = graphql(GuildQuery, {
-	options: {
+	options: ({ id }) => ({
 		shouldBatch: false,
-	},
+		variables: { id },
+	}),
 })(Guild);
 
 export default Guilds;
