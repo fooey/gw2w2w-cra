@@ -1,20 +1,21 @@
 import React, { Component, PureComponent } from 'react';
 // import moment from 'moment';
-import ReactInterval from 'react-interval';
-import moment from 'moment-twitter';
+// import ReactInterval from 'react-interval';
+// import moment from 'moment-twitter';
 import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
-import { getRefreshInterval, getAboutNow } from 'src/lib/time';
+// import { getRefreshInterval, getAboutNow } from 'src/lib/time';
 import { getObjective } from 'src/lib/objective';
 
 // import Matches from './Matches/index';
 // import Worlds from './Worlds/index';
 
-import Castle from 'src/components/svg/castle.js';
-import Keep from 'src/components/svg/keep.js';
-import Tower from 'src/components/svg/tower.js';
-import Camp from 'src/components/svg/camp.js';
+import {
+	Icon as ObjectiveIcon,
+	Name as ObjectiveName,
+	Duration as ObjectiveDuration,
+} from 'src/components/Util/objective.js';
 
 import { Loading } from 'src/components/Util';
 
@@ -137,63 +138,18 @@ class GuildObjectives extends PureComponent {
 	}
 }
 
-class ObjectiveIcon extends PureComponent {
-	render() {
-		const { type, color, size="32" } = this.props;
-		const typeKey = type.toLowerCase();
 
-		const colorMap = {
-			red: '#a94442',
-			green: '#3c763d',
-			blue: '#31708f',
-		};
-		const fillColor = colorMap[color];
-
-		const TypeMap = {
-			castle: Castle,
-			keep: Keep,
-			tower: Tower,
-			camp: Camp,
-		};
-		const Objective = TypeMap[typeKey];
-
-		const props = {
-			width: size,
-			height: size,
-			fillColor,
-		};
-
-		return <Objective {...props} />;
-	}
-}
-
-
-class GuildObjective extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			now: getAboutNow(),
-		};
-	}
-
+class GuildObjective extends PureComponent {
 	render() {
 		const { guildObjective, color, langSlug } = this.props;
-		const { now } = this.state;
 
 		const objective = getObjective(guildObjective.id);
-		const ageInSeconds = Math.floor(now - guildObjective.lastFlipped);
-		const refreshInterval = getRefreshInterval(ageInSeconds);
 
 		return (
 			<li key={objective.id} className="guild-objective">
-				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
-
-				<span className="objective-icon"><ObjectiveIcon type={_.get(objective, ['type'])} color={color} /></span>
-				<span className="objective-timer">{moment(guildObjective.lastFlipped * 1000).twitter()}</span>
-				<span className="objective-timer">{ageInSeconds}</span>
-				<span className="objective-timer">{refreshInterval}</span>
-				<span className="objective-name">{_.get(objective, [langSlug, 'name'])}</span>
+				<ObjectiveIcon type={objective.type} color={color} />
+				<ObjectiveDuration lastFlipped={guildObjective.lastFlipped} />
+				<ObjectiveName objective={objective} langSlug={langSlug} />
 			</li>
 		);
 	}
