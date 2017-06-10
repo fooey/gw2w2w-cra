@@ -14,10 +14,24 @@ const networkInterface = createBatchingNetworkInterface ({
 const client = new ApolloClient({ networkInterface });
 
 
+// if (process.env.NODE_ENV !== 'production') {
+// 	const { whyDidYouUpdate } = require('why-did-you-update');
+// 	whyDidYouUpdate(React, {
+// 		exclude: [
+// 			/.*Apollo.*/gi,
+// 			/.*fetchMore.*/gi,
+// 			/.*refetch.*/gi,
+// 			/.*startPolling.*/gi,
+// 			/.*stopPolling.*/gi,
+// 			/.*subscribeToMore.*/gi,
+// 			/.*updateQuery.*/gi,
+// 		],
+// 	});
+// }
 
 ReactDOM.render(
 	<ApolloProvider client={client}>
-		<Router>			
+		<Router>
 			<App />
 		</Router>
 	</ApolloProvider>,
