@@ -5,9 +5,9 @@
 	"dependencies": {
 		"bootstrap": "^4.0.0-alpha.6",
 		"classnames": "^2.2.5",
-		"cross-env": "^4.0.0",
+		"cross-env": "^5.0.1",
 		"gulp": "^3.9.1",
-		"gulp-autoprefixer": "^3.1.1",
+		"gulp-autoprefixer": "^4.0.0",
 		"gulp-rename": "^1.2.2",
 		"gulp-sass": "^3.1.0",
 		"gulp-sourcemaps": "^2.5.0",
@@ -22,7 +22,7 @@
 		"react-dom": "^15.5.4",
 		"react-interval": "^2.0.1",
 		"react-router-dom": "^4.1.1",
-		"react-scripts": "1.0.2"
+		"react-scripts": "^1.0.7"
 	},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",
