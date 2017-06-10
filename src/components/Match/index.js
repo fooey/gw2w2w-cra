@@ -49,7 +49,7 @@ const MatchWithData = graphql(MatchQuery, {
 	options: ({ worldSlug }) => ({
 		shouldBatch: true,
 		'network-only': true,
-		pollInterval: 1000 * 8,
+		pollInterval: 1000 * 4,
 		variables: { worldSlug },
 	}),
 })(Match);

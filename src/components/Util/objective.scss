@@ -1,0 +1,19 @@
+
+// use em's to be relative to parent
+
+.objective-duration {
+	width: 2.5em;
+	text-align: center;
+}
+
+.objective-icon {
+	display: flex;
+	justify-content: center;
+	width: 2em;
+
+	svg {
+		display: block;
+		width: 1.5em;
+		height: 1.5rem;
+	}
+}

@@ -85,14 +85,12 @@ export class Duration extends Component {
 		const ageInSeconds = Math.floor(now - lastFlipped);
 		const refreshInterval = getRefreshInterval(ageInSeconds);
 
-		return <span className="objective-timer">
-			<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
+		return (
+			<span className="objective-duration">
+				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
 
-			{moment(lastFlipped * 1000).twitter()}
-			{/* {' '}
-			{refreshInterval}
-			{' '}
-			{ageInSeconds} */}
-		</span>;
+				{moment(lastFlipped * 1000).twitter()}
+			</span>
+		);
 	}
 }
