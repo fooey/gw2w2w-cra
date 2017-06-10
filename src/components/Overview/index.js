@@ -14,22 +14,33 @@ class Overview extends Component {
 		if (_.isEmpty(this.props) || _.isEmpty(nextProps)) {
 			return true;
 		}
-		
-		const lastMod = _.chain(this.props).get('data.matches').maxBy('last_modified').get('last_modified', 0).value();
-		const nextLastMod = _.chain(nextProps).get('data.matches').maxBy('last_modified').get('last_modified', 0).value();
-		
+
+		// const lastMod = _.chain(this.props).get('data.matches').maxBy('last_modified').get('last_modified', 0).value();
+		// const nextLastMod = _.chain(nextProps).get('data.matches').maxBy('last_modified').get('last_modified', 0).value();
+
+		// const matches = _.get(this.props, 'data.matches');
+		// const nextMatches = _.get(nextProps, 'data.matches');
+
+		const scores = _.chain(this.props).get('data.matches').map('scores').value();
+		const nextScores = _.chain(nextProps).get('data.matches').map('scores').value();
+
+		// console.log('scores', scores);
+		// console.log('nextScores', nextScores);
+
 		const langSlugChanged = !_.isEqual(_.get(this.props, 'langSlug'), _.get(nextProps, 'langSlug'));
 		const loadingChanged = langSlugChanged || !_.isEqual(_.get(this.props, 'data.loading'), _.get(nextProps, 'data.loading'));
 		// const matchesChanged = loadingChanged || !_.isEqual(_.get(this.props, 'data.matches'), _.get(nextProps, 'data.matches'));
-		const matchesChanged = loadingChanged || lastMod !== nextLastMod;
-		
-		const shouldUpdate = (langSlugChanged || loadingChanged || matchesChanged);
+		// const lastModChanged = loadingChanged || lastMod !== nextLastMod;
+		// const matchesChanged = loadingChanged || !_.isEqual(matches, nextMatches);
+		const scoresChanged = loadingChanged || !_.isEqual(scores, nextScores);
 
-		console.log('Overview', { shouldUpdate, loadingChanged, matchesChanged, lastMod, nextLastMod });
-				
+		const shouldUpdate = (langSlugChanged || loadingChanged || scoresChanged);
+
+		// console.log('Overview', { shouldUpdate, loadingChanged, scoresChanged });
+
 		return shouldUpdate;
 	}
-	
+
 	render() {
 		const { data, langSlug } = this.props;
 		const { loading, matches } = data;
