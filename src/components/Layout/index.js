@@ -10,14 +10,9 @@ class Layout extends PureComponent {
 
 			<div className="layout">
 				<Header langSlug={langSlug} worldSlug={worldSlug} />
-
-				{/* <div className="row">
-					<div className="col text-center">
-						<a href="/"><img src={logo} alt="logo" height="128" /></a>
-					</div>
-				</div> */}
-
-				{ children }
+				<div className="content">
+					{ children }
+				</div>
 			</div>
 		);
 	}

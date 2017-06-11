@@ -45,6 +45,10 @@ class Overview extends Component {
 		const { data, langSlug } = this.props;
 		const { loading, matches } = data;
 
+		document.body.classList.toggle('match-team-red', false);
+		document.body.classList.toggle('match-team-green', false);
+		document.body.classList.toggle('match-team-blue', false);
+
 		return (
 			<div className="overview container">
 				<div className="row">

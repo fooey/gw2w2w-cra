@@ -149,6 +149,7 @@ class GuildObjective extends PureComponent {
 			<li key={objective.id} className="guild-objective">
 				<ObjectiveIcon type={objective.type} color={color} />
 				<ObjectiveDuration lastFlipped={guildObjective.lastFlipped} />
+				<div className="objective-map">{objective.map_type} {' - '}</div>
 				<ObjectiveName objective={objective} langSlug={langSlug} />
 			</li>
 		);

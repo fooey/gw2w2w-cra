@@ -1,13 +1,17 @@
 
 
 #navbar {
+	// @extend %paper-shadow-1;
+
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: space-between;
 	height: 4rem;
 	padding: 0 1rem;
-	background-color: $gray-lightest;
+	// transition: background-color linear 1s;
+	background-color: transparent;
+
 
 	.brand {
 		display: flex;
@@ -47,5 +51,40 @@
 			}
 		}
 	}
+}
 
+.match-team-red {
+	#navbar {
+		// background-color: $red-bg;
+
+		.world-title {
+			a {
+				color: $red;
+			}
+		}
+	}
+}
+
+.match-team-green {
+	#navbar {
+		// background-color: $green-bg;
+
+		.world-title {
+			a {
+				color: $green;
+			}
+		}
+	}
+}
+
+.match-team-blue {
+	#navbar {
+		// background-color: $blue-bg;
+
+		.world-title {
+			a {
+				color: $blue;
+			}
+		}
+	}
 }

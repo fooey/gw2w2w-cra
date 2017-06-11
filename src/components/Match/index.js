@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import _ from 'lodash';
 
+import { getWorldBySlug } from 'src/lib/world';
+import { getTeamColor } from 'src/lib/match';
+
 // import Matches from './Matches/index';
 import Guilds from './Guilds/index';
+import Scoreboards from './Scoreboards/index';
 
 import { Loading } from 'src/components/Util';
 
@@ -35,16 +39,12 @@ class Match extends Component {
 		const langSlug = _.get(this.props, 'langSlug');
 		const nextLangSlug = _.get(nextProps, 'langSlug');
 
-		// console.log({ langSlug, nextLangSlug }, langSlug !== nextLangSlug);
-
 		return langSlug !== nextLangSlug;
 	}
 
 	didWorldChange(nextProps) {
 		const worldSlug = _.get(this.props, 'worldSlug');
 		const nextWorldSlug = _.get(nextProps, 'worldSlug');
-
-		// console.log({ worldSlug, nextWorldSlug }, worldSlug !== nextWorldSlug);
 
 		return worldSlug !== nextWorldSlug;
 	}
@@ -53,16 +53,12 @@ class Match extends Component {
 		const loading = _.get(this.props, 'data.loading');
 		const nextLoading = _.get(nextProps, 'data.loading');
 
-		// console.log({ loading, nextLoading }, loading !== nextLoading);
-
 		return loading !== nextLoading;
 	}
 
 	didLastModChange(nextProps) {
 		const lastMod = _.get(this.props, 'data.match.last_modified', 0);
 		const nextLastMod = _.get(nextProps, 'data.match.last_modified', 0);
-
-		// console.log({ lastMod, nextLastMod }, lastMod !== nextLastMod);
 
 		return lastMod !== nextLastMod;
 	}
@@ -71,8 +67,6 @@ class Match extends Component {
 		const scores = _.get(this.props, 'data.match.scores', {});
 		const nextScores = _.get(nextProps, 'data.match.scores', {});
 
-		// console.log({ scores, nextScores }, !_.isEqual(scores, nextScores));
-
 		return !_.isEqual(scores, nextScores);
 	}
 
@@ -80,12 +74,18 @@ class Match extends Component {
 		console.log('Match');
 
 		const { data, langSlug, worldSlug } = this.props;
-		const { loading, match } = data;
+		const { /*loading,*/ match } = data;
 
-		console.log({ data, langSlug, worldSlug });
+		if (_.isEmpty(match)) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
+		// if (_.isEmpty(match)) return <h1>err, matchData not found</h1>;
 
-		if (loading) return <div className="overview container"><div className="row"><div className="col"><Loading /></div></div></div>;
-		if (_.isEmpty(match)) return <h1>err, matchData not found</h1>;
+
+		const world = getWorldBySlug(worldSlug);
+		const teamColor = getTeamColor(match.all_worlds, world.id);
+
+		document.body.classList.toggle('match-team-red', teamColor === 'red');
+		document.body.classList.toggle('match-team-green', teamColor === 'green');
+		document.body.classList.toggle('match-team-blue', teamColor === 'blue');
 
 		const objectives = _.chain(match)
 			.get('maps')
@@ -95,6 +95,11 @@ class Match extends Component {
 
 		return (
 			<div className="overview container">
+				<div className="row">
+					<div className="col">
+						<Scoreboards langSlug={langSlug} worldSlug={worldSlug} match={match} />
+					</div>
+				</div>
 				<div className="row">
 					<div className="col">
 						<Guilds langSlug={langSlug} objectives={objectives} />

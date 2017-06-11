@@ -11,3 +11,11 @@ export function getWorldBySlug(worldSlug) {
 	return getWorld(worldId);
 	// return _.find(STATIC.worlds, world => _.includes(world.slugs, worldSlug));
 }
+
+export function getWorldLink(world, langSlug) {
+	return _.without([
+		'',
+		langSlug,
+		world ? _.get(world, [langSlug, 'slug']) : null,
+	], null).join('/');
+}

@@ -1,2 +1,34 @@
 
 @import './header';
+
+.layout {
+	padding: .25rem;
+	transition: border-color linear 1s, background-color linear 1s;
+
+	.content {
+		@extend %paper-shadow-1;
+
+		background-color: #fff;
+	}
+}
+
+.match-team-red {
+	.layout {
+		background-color: lighten($red-bg, 0);
+		// border: 1px solid $red;
+	}
+}
+
+.match-team-green {
+	.layout {
+		background-color: lighten($green-bg, 0);
+		// border: 1px solid $green;
+	}
+}
+
+.match-team-blue {
+	.layout {
+		background-color: lighten($blue-bg, 0);
+		// border: 1px solid $blue;
+	}
+}

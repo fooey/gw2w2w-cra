@@ -1,0 +1,35 @@
+
+.match-scoreboards {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	margin-bottom: 1rem;
+
+	.match-scoreboard {
+		@extend %paper-shadow-1;
+		flex-basis: 1;
+		flex-grow: 1;
+		flex-shrink: 0;
+		margin: .5rem;
+		padding: .5em;
+		text-align: center;
+
+		h2 {
+			font-size: 2vw;
+		}
+
+		h3 {
+			font-size: 1.5vw;
+		}
+
+
+		&.active {
+			// @extend %paper-shadow-2;
+		}
+
+		&:hover {
+			@extend %paper-shadow-2;
+		}
+
+	}
+}
