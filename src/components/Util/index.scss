@@ -1,13 +1,9 @@
 @import './objective';
 
-.team-red {
-	color: $red;
-}
+.team-red { color: $red; }
+.team-blue { color: $blue; }
+.team-green { color: $green; }
 
-.team-blue {
-	color: $blue;
-}
-
-.team-green {
-	color: $green;
-}
+.team-red-bg { background-color: $red-bg; }
+.team-green-bg { background-color: $green-bg; }
+.team-blue-bg { background-color: $blue-bg; }
