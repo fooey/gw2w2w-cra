@@ -13,6 +13,9 @@ class Layout extends PureComponent {
 				<div className="content">
 					{ children }
 				</div>
+				<footer>
+					asdf
+				</footer>
 			</div>
 		);
 	}

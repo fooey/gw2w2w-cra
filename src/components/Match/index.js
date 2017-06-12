@@ -94,23 +94,24 @@ class Match extends Component {
 			.value();
 
 		return (
-			<div className="overview container">
-				<div className="row">
-					<div className="col">
-						<Scoreboards langSlug={langSlug} worldSlug={worldSlug} match={match} />
+			<div className="match">
+				<header>
+					<Scoreboards langSlug={langSlug} worldSlug={worldSlug} match={match} />
+				</header>
+
+				<div className="container-fluid">
+					<div className="row">
+						<div className="col">
+							<Guilds langSlug={langSlug} objectives={objectives} />
+						</div>
 					</div>
+					{/* <div className="row">
+						<div className="col">
+							<pre>{JSON.stringify(match, null, '\t')}</pre>
+							<pre>{JSON.stringify(ROUTE)}</pre>
+						</div>
+					</div> */}
 				</div>
-				<div className="row">
-					<div className="col">
-						<Guilds langSlug={langSlug} objectives={objectives} />
-					</div>
-				</div>
-				{/* <div className="row">
-					<div className="col">
-						<pre>{JSON.stringify(match, null, '\t')}</pre>
-						<pre>{JSON.stringify(ROUTE)}</pre>
-					</div>
-				</div> */}
 			</div>
 		);
 	}

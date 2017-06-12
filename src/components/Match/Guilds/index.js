@@ -66,7 +66,7 @@ class Guilds extends Component {
 		const guilds = generateGuildsFromObjectives(objectives);
 
 		return (
-			<div className="match-guilds container">
+			<div className="match-guilds">
 				<div className="row">
 					<div className="col">
 						<GuildsList langSlug={langSlug} guilds={guilds} />
@@ -104,7 +104,7 @@ class Guild extends PureComponent {
 		const { guild } = data;
 
 		return (
-			<tr className={`row team-${color}`}>
+			<tr className={`team-${color}`}>
 				<td className="text-center" style={{width: 172}}>
 					<img src={`https://guilds.gw2w2w.com/${id}.svg`} width="160" height="160" alt={id} />
 				</td>

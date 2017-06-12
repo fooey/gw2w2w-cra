@@ -2,11 +2,12 @@
 @import './header';
 
 .layout {
-	padding: .25rem;
+	padding: .4rem;
 	transition: border-color linear 1s, background-color linear 1s;
+	background-color: $gray-lightest;
 
 	.content {
-		@extend %paper-shadow-1;
+		@extend %paper-shadow-5;
 
 		background-color: #fff;
 	}
@@ -31,4 +32,8 @@
 		background-color: lighten($blue-bg, 0);
 		// border: 1px solid $blue;
 	}
+}
+
+footer {
+	margin: 3rem 0;
 }
