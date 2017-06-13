@@ -1,0 +1,8 @@
+
+.card {
+	@extend %paper-shadow-1;
+
+	margin: 0 .2rem 1rem;
+	padding: 1rem;
+	background-color: #fff;
+}
