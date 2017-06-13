@@ -10,7 +10,7 @@ class Layout extends PureComponent {
 
 			<div className="layout">
 				<Header langSlug={langSlug} worldSlug={worldSlug} />
-				<div className="content">
+				<div>
 					{ children }
 				</div>
 				<footer>

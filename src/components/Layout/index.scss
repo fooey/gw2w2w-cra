@@ -1,16 +1,11 @@
 
 @import './header';
+@import './card';
 
 .layout {
 	padding: .4rem;
 	transition: border-color linear 1s, background-color linear 1s;
 	background-color: $gray-lightest;
-
-	.content {
-		@extend %paper-shadow-5;
-
-		background-color: #fff;
-	}
 }
 
 .match-team-red {
@@ -35,5 +30,5 @@
 }
 
 footer {
-	margin: 3rem 0;
+	margin: 5rem 0 2rem;
 }

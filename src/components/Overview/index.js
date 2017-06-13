@@ -6,6 +6,7 @@ import Matches from './Matches/index';
 import Worlds from './Worlds/index';
 
 import { Loading } from 'src/components/Util';
+import Card from 'src/components/Layout/Card';
 
 import OverviewQuery from 'src/gql/overview';
 
@@ -50,17 +51,13 @@ class Overview extends Component {
 		document.body.classList.toggle('match-team-blue', false);
 
 		return (
-			<div className="overview container">
-				<div className="row">
-					<div className="col">
-						{loading ? <Loading /> : <Matches langSlug={langSlug} matches={matches} />}
-					</div>
-				</div>
-				<div className="row">
-					<div className="col">
-						<Worlds langSlug={langSlug} />
-					</div>
-				</div>
+			<div className="overview">
+				<Card>
+					{loading ? <Loading /> : <Matches langSlug={langSlug} matches={matches} />}
+				</Card>
+				<Card>
+					<Worlds langSlug={langSlug} />
+				</Card>
 			</div>
 		);
 	}

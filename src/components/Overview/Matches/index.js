@@ -13,18 +13,14 @@ class Matches extends PureComponent {
 		const { matches, langSlug } = this.props;
 
 		return (
-			<div className="row">
+			<div className="matches">
 				{_.map(STATIC.regions, region => (
-					<div className="col-md" key={region}>
-						<table className="matches">
-							<tbody>
-								{_.chain(matches)
-									.filter({ region })
-									.sortBy('id')
-									.map((match, i) => <Match key={match.id} i={i} match={match} langSlug={langSlug} />)
-									.value()}
-							</tbody>
-						</table>
+					<div className="matches-region" key={region}>
+						{_.chain(matches)
+							.filter({ region })
+							.sortBy('id')
+							.map((match, i) => <Match key={match.id} i={i} match={match} langSlug={langSlug} />)
+							.value()}
 					</div>
 				))}
 			</div>
@@ -56,11 +52,13 @@ class Match extends Component {
 		const { match, langSlug } = this.props;
 
 		return (
-			<tr key={match.id} className={`match`}>
-				<td className="match-pie"><Pie matchScores={match.scores} /></td>
-				<td className="match-worlds"><MatchWorlds matchWorlds={match.worlds} langSlug={langSlug} /></td>
-				<td className="match-scores"><MatchScores matchScores={match.scores} /></td>
-			</tr>
+			<div key={match.id} className="match">
+				<div className="match-pie"><Pie matchScores={match.scores} /></div>
+				<div className="match-worlds">
+					<MatchWorlds matchWorlds={match.worlds} langSlug={langSlug} />
+					<MatchScores matchScores={match.scores} />
+				</div>
+			</div>
 		);
 	}
 }
@@ -71,7 +69,7 @@ class MatchWorlds extends PureComponent {
 		const { matchWorlds, langSlug } = this.props;
 
 		return  (
-			<div className="match-worlds">{
+			<div className="match-worlds-names">{
 				_.map(STATIC.colors, color => {
 					const worldId = _.get(matchWorlds, `${color}_id`);
 					const world = _.find(STATIC.worlds, { id: worldId });
@@ -96,8 +94,6 @@ class MatchWorld extends PureComponent {
 		const { color, world, langSlug } = this.props;
 
 		const className = classnames({
-			"d-block": true,
-			"match-worlds-world": true,
 			[`team-${color}`]: true,
 		});
 
@@ -106,7 +102,9 @@ class MatchWorld extends PureComponent {
 		const worldLink = ['', langSlug, worldSlug].join('/');
 
 		return (
-			<Link to={worldLink} className={className}>{worldName}</Link>
+			<div className="match-world-name">
+				<Link to={worldLink} className={className}>{worldName}</Link>
+			</div>
 		);
 	}
 }
@@ -121,7 +119,7 @@ class MatchScores extends Component {
 		const { matchScores } = this.props;
 
 		return (
-			<div className="match-scores">{
+			<div className="match-worlds-scores">{
 				_.map(STATIC.colors, (color) => {
 					const className = classnames({
 						"match-scores-world": true,
@@ -152,7 +150,7 @@ class Pie extends Component {
 		const pielySrc = `https://www.piely.net/${scores.join()}.svg`;
 
 		return (
-			<img className="match-scores-pie" src={pielySrc} width="64" alt={scores.join('/')} title={scores.join('/')} />
+			<img className="match-scores-pie" src={pielySrc} width="72" alt={scores.join('/')} title={scores.join('/')} />
 		);
 	}
 }

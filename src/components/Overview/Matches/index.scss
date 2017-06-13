@@ -1,19 +1,62 @@
 .matches {
-	width: 100%;
+	// width: 100%;
+	// display: flex;
+	// flex-flow: row nowrap;
+	// justify-content: center;
+	text-align: center;
+
+	.matches-region {
+		display: inline-block;
+		columns: 20em auto;
+		text-align: left;
+		vertical-align: top;
+	}
 
 	.match {
-		.match-pie {
-			img {
-				margin: 12px 24px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+
+		&:hover {
+			background-color: $gray-lightest;
+		}
+
+		& + .match {
+			.match-worlds {
+				border-top: 1px solid $gray-lighter;
 			}
 		}
 
-		.match-worlds {
-			width: 100%;
+		.match-pie {
+			padding: .5rem;
 		}
 
-		.match-scores {
-			text-align: right;
+		.match-worlds {
+			display: flex;
+			flex-flow: row nowrap;
+			flex-grow: 1;
+			justify-content: space-between;
+			margin: 0 .5rem;
+			padding: 1rem .5rem;
+			font-size: 1rem;
+			// width: 100%;
+
+			.match-worlds-names {
+				.match-world-name {
+					a {
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+				}
+			}
+
+			.match-worlds-scores {
+				width: 5em;
+				text-align: right;
+			}
 		}
+
 	}
 }
