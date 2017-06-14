@@ -16,6 +16,7 @@ import {
 	Name as ObjectiveName,
 	Duration as ObjectiveDuration,
 } from 'src/components/Util/objective.js';
+import Card from 'src/components/Layout/Card';
 
 import { Loading } from 'src/components/Util';
 
@@ -66,13 +67,11 @@ class Guilds extends Component {
 		const guilds = generateGuildsFromObjectives(objectives);
 
 		return (
-			<div className="match-guilds">
-				<div className="row">
-					<div className="col">
-						<GuildsList langSlug={langSlug} guilds={guilds} />
-					</div>
+			<Card>
+				<div className="match-guilds">
+					<GuildsList langSlug={langSlug} guilds={guilds} />
 				</div>
-			</div>
+			</Card>
 		);
 	}
 }

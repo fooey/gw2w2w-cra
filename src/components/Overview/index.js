@@ -6,7 +6,6 @@ import Matches from './Matches/index';
 import Worlds from './Worlds/index';
 
 import { Loading } from 'src/components/Util';
-import Card from 'src/components/Layout/Card';
 
 import OverviewQuery from 'src/gql/overview';
 
@@ -52,12 +51,8 @@ class Overview extends Component {
 
 		return (
 			<div className="overview">
-				<Card>
-					{loading ? <Loading /> : <Matches langSlug={langSlug} matches={matches} />}
-				</Card>
-				<Card>
-					<Worlds langSlug={langSlug} />
-				</Card>
+				{loading ? <Loading /> : <Matches langSlug={langSlug} matches={matches} />}
+				<Worlds langSlug={langSlug} />
 			</div>
 		);
 	}

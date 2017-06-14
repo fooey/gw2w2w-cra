@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
+import Card from 'src/components/Layout/Card';
+
 import { getLangBySlug } from 'src/lib/lang';
 
 import STATIC from 'src/data/static';
@@ -11,15 +13,13 @@ class Worlds extends PureComponent {
 		const { langSlug } = this.props;
 
 		return (
-			<div className="row worlds">
+			<div className="worlds">
 				{_.map(['na', 'eu'], region => (
-					<div key={region} className="col-lg">
-						{/* <h1 className="region-title">{region}</h1> */}
-						<RegionWorlds
-							region={region}
-							langSlug={langSlug}
-						/>
-					</div>
+					<RegionWorlds
+						key={region}
+						region={region}
+						langSlug={langSlug}
+					/>
 				))}
 			</div>
 		);
@@ -37,15 +37,16 @@ class RegionWorlds extends PureComponent {
 				.sortBy('id')
 				.groupBy('lang')
 				.map((langWorlds, regionLangSlug) => {
-					const lang = getLangBySlug(langSlug);
+					const lang = getLangBySlug(regionLangSlug);
 
 					return (
 						<section key={regionLangSlug} className="region-worlds">
-							<h4 className="card-title lang-title">{lang.name} <small className="text-muted">{region}</small></h4>
-							<LangWorlds
-								langWorlds={langWorlds}
-								langSlug={langSlug}
-							/>
+							<Card title={lang.name} subtitle={region}>
+								<LangWorlds
+									langWorlds={langWorlds}
+									langSlug={langSlug}
+								/>
+							</Card>
 						</section>
 					);
 				})
@@ -60,7 +61,7 @@ class LangWorlds extends PureComponent {
 		const { langWorlds, langSlug } = this.props;
 
 		return (
-			<ul className="list-unstyled lang-worlds">
+			<ul className="list-unstyled overview-lang-worlds">
 				{_.chain(langWorlds)
 					.sortBy(world => {
 						return _.get(world, [langSlug, 'name']);
@@ -81,7 +82,7 @@ class World extends PureComponent {
 		const { langWorld, langSlug } = this.props;
 
 		return (
-			<li className="world">
+			<li className="overview-world">
 				<Link to={`/${langSlug}/${langWorld.slug}`}>
 					{langWorld.name}
 				</Link>

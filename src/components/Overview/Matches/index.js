@@ -4,6 +4,7 @@ import _ from 'lodash';
 import classnames from 'classnames';
 import numeral from 'numeral';
 
+import Card from 'src/components/Layout/Card';
 
 import STATIC from 'src/data/static';
 
@@ -16,11 +17,13 @@ class Matches extends PureComponent {
 			<div className="matches">
 				{_.map(STATIC.regions, region => (
 					<div className="matches-region" key={region}>
-						{_.chain(matches)
-							.filter({ region })
-							.sortBy('id')
-							.map((match, i) => <Match key={match.id} i={i} match={match} langSlug={langSlug} />)
-							.value()}
+						<Card level="1">
+							{_.chain(matches)
+								.filter({ region })
+								.sortBy('id')
+								.map((match, i) => <Match key={match.id} i={i} match={match} langSlug={langSlug} />)
+								.value()}
+						</Card>
 					</div>
 				))}
 			</div>

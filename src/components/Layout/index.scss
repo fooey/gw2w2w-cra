@@ -2,6 +2,12 @@
 @import './header';
 @import './card';
 
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .layout {
 	padding: .4rem;
 	transition: border-color linear 1s, background-color linear 1s;

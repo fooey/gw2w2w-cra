@@ -78,8 +78,8 @@ class Globals extends PureComponent {
 			return (
 				<Layout langSlug={langSlug} worldSlug={worldSlug}>
 					{ROUTE.world ?
-						<Match langSlug={langSlug} worldSlug={worldSlug} /> :
-						<Overview langSlug={langSlug} />}
+						<Match key={'match'} langSlug={langSlug} worldSlug={worldSlug} /> :
+						<Overview key={'overview'} langSlug={langSlug} />}
 				</Layout>
 			);
 		}

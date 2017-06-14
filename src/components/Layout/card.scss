@@ -1,8 +1,43 @@
 
 .card {
-	@extend %paper-shadow-1;
-
 	margin: 0 .2rem 1rem;
-	padding: 1rem;
+	border-radius: .25rem;
 	background-color: #fff;
+
+	.card-content {
+		padding: 1rem;
+	}
+
+	&.level-1 {
+		@extend %paper-shadow-1;
+	}
+
+	&.level-2 {
+		@extend %paper-shadow-2;
+	}
+
+	&.level-3 {
+		@extend %paper-shadow-3;
+	}
+
+	&.level-4 {
+		@extend %paper-shadow-4;
+	}
+
+	&.level-5 {
+		@extend %paper-shadow-5;
+	}
+
+	.card-title {
+		margin: 0;
+		padding: 1rem;
+		// background-color: $gray-lighter;
+		font: 100 1.6rem/1 'Roboto';
+	}
+
+	.card-subtitle {
+		padding-left: .5rem;
+		color: rgba(0, 0, 0, .5);
+		font-size: .8em;
+	}
 }

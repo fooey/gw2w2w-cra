@@ -1,16 +1,38 @@
 .worlds {
 	// margin-top: 4rem;
+	max-width: 17rem * 4;
+	margin: 0 auto;
+	columns: 24rem auto;
+	column-gap: 1rem;
+	column-fill: auto;
 }
 
 .region-worlds {
-	margin-bottom: 1rem;
+	padding: .25rem 0;
+	page-break-inside: avoid;
+
+	.card-content {
+		padding: 0;
+	}
 }
 
-.lang-worlds {
-	column-width: 12rem;
+.overview-lang-worlds {
+	columns: 12rem auto;
+	column-fill: auto;
 }
 
-.worlds-lang {
-	padding-bottom: .5rem;
-	border-bottom: 1px solid $gray-lighter;
+.overview-world {
+	a {
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+		height: 4rem;
+		padding: 0 1rem;
+		font-size: 1.1rem;
+		page-break-inside: avoid;
+
+		&:hover {
+			background-color: $gray-lightest;
+		}
+	}
 }
