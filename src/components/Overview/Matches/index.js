@@ -1,12 +1,12 @@
 import React, { Component, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
-import classnames from 'classnames';
 import numeral from 'numeral';
 
 import Card from 'src/components/Layout/Card';
 
 import STATIC from 'src/data/static';
+import { getWorld } from 'src/lib/world';
 
 
 class Matches extends PureComponent {
@@ -16,15 +16,13 @@ class Matches extends PureComponent {
 		return (
 			<div className="matches">
 				{_.map(STATIC.regions, region => (
-					<div className="matches-region" key={region}>
-						<Card level="1">
-							{_.chain(matches)
-								.filter({ region })
-								.sortBy('id')
-								.map((match, i) => <Match key={match.id} i={i} match={match} langSlug={langSlug} />)
-								.value()}
-						</Card>
-					</div>
+					<Card level="1" className="matches-region" key={region}>
+						{_.chain(matches)
+							.filter({ region })
+							.sortBy('id')
+							.map((match, i) => <Match key={match.id} i={i} match={match} langSlug={langSlug} />)
+							.value()}
+					</Card>
 				))}
 			</div>
 		);
@@ -54,39 +52,47 @@ class Match extends Component {
 	render() {
 		const { match, langSlug } = this.props;
 
+		const scores = _.pick(match.scores, ['red', 'blue', 'green']);
+
 		return (
 			<div key={match.id} className="match">
-				<div className="match-pie"><Pie matchScores={match.scores} /></div>
-				<div className="match-worlds">
+				<div className="match-pie"><Pie {...scores} /></div>
+				<div className="match-worlds">{
+					_.map(STATIC.colors, color => {
+						const worldId = _.get(match.worlds, `${color}_id`);
+						const world = getWorld(worldId);
+						const score = _.get(match, ['scores', color]);
+
+						return (
+							<MatchWorld
+								key={color}
+								color={color}
+								langSlug={langSlug}
+								score={score}
+								world={world}
+							/>
+						);
+					})
+				}</div>
+				{/* <div className="match-worlds">
 					<MatchWorlds matchWorlds={match.worlds} langSlug={langSlug} />
-					<MatchScores matchScores={match.scores} />
-				</div>
+					<MatchScores {...scores} />
+				</div> */}
 			</div>
 		);
 	}
 }
 
 
-class MatchWorlds extends PureComponent {
+class Pie extends PureComponent {
 	render() {
-		const { matchWorlds, langSlug } = this.props;
+		const { red, blue, green } = this.props;
+		const arr = [red, blue, green];
 
-		return  (
-			<div className="match-worlds-names">{
-				_.map(STATIC.colors, color => {
-					const worldId = _.get(matchWorlds, `${color}_id`);
-					const world = _.find(STATIC.worlds, { id: worldId });
+		const pielySrc = `https://www.piely.net/${arr.join(',')}.svg`;
 
-					return (
-						<MatchWorld
-							key={color}
-							color={color}
-							langSlug={langSlug}
-							world={world}
-						/>
-					);
-				})
-			}</div>
+		return (
+			<img className="match-scores-pie" src={pielySrc} alt={arr.join('/')} title={arr.join('/')} />
 		);
 	}
 }
@@ -94,69 +100,76 @@ class MatchWorlds extends PureComponent {
 
 class MatchWorld extends PureComponent {
 	render() {
-		const { color, world, langSlug } = this.props;
-
-		const className = classnames({
-			[`team-${color}`]: true,
-		});
+		const { color, world, langSlug, score } = this.props;
 
 		const worldName = _.get(world, [langSlug, 'name'], 'ERR');
 		const worldSlug = _.get(world, [langSlug, 'slug'], 'ERR');
 		const worldLink = ['', langSlug, worldSlug].join('/');
 
 		return (
-			<div className="match-world-name">
-				<Link to={worldLink} className={className}>{worldName}</Link>
-			</div>
+			<Link key={color} to={worldLink} className={`match-world team-${color}`}>
+				<span className="match-world-name">{worldName}</span>
+				<span className="match-world-score">{numeral(score).format(',')}</span>
+			</Link>
 		);
 	}
 }
+//
+//
+// class MatchScore extends PureComponent {
+// 	render() {
+// 		const { score } = this.props;
+//
+// 		return (
+// 			<div className="match-world-score"></div>
+// 		);
+// 	}
+// }
 
 
-class MatchScores extends Component {
-	shouldComponentUpdate(nextProps) {
-		return !_.isEqual(this.props.matchScores, nextProps.matchScores);
-	}
-
-	render() {
-		const { matchScores } = this.props;
-
-		return (
-			<div className="match-worlds-scores">{
-				_.map(STATIC.colors, (color) => {
-					const className = classnames({
-						"match-scores-world": true,
-						[`team-${color}`]: true,
-					});
-
-					return (
-						<div key={color} className={className}>
-							{numeral(matchScores[color]).format(',')}
-						</div>
-					);
-				})
-			}</div>
-		);
-	}
-}
 
 
-class Pie extends Component {
-	shouldComponentUpdate(nextProps) {
-		return !_.isEqual(this.props.matchScores, nextProps.matchScores);
-	}
+// class MatchWorlds extends PureComponent {
+// 	render() {
+// 		const { matchWorlds, langSlug } = this.props;
+//
+// 		return  (
+// 			<div className="match-worlds-names">{
+// 				_.map(STATIC.colors, color => {
+// 					const worldId = _.get(matchWorlds, `${color}_id`);
+// 					const world = _.find(STATIC.worlds, { id: worldId });
+//
+// 					return (
+// 						<MatchWorld
+// 							key={color}
+// 							color={color}
+// 							langSlug={langSlug}
+// 							world={world}
+// 						/>
+// 					);
+// 				})
+// 			}</div>
+// 		);
+// 	}
+// }
 
-	render() {
-		const { matchScores } = this.props;
 
-		const scores = _.values(_.pick(matchScores, ['red', 'blue', 'green']));
-		const pielySrc = `https://www.piely.net/${scores.join()}.svg`;
-
-		return (
-			<img className="match-scores-pie" src={pielySrc} width="72" alt={scores.join('/')} title={scores.join('/')} />
-		);
-	}
-}
+// class MatchScores extends PureComponent {
+// 	render() {
+// 		// const { red, blue, green } = this.props;
+//
+// 		return (
+// 			<div className="match-worlds-scores">{
+// 				_.map(STATIC.colors, color =>
+// 					<MatchScore
+// 						key={color}
+// 						color={color}
+// 						score={this.props[color]} />
+// 				)
+// 			}</div>
+// 		);
+// 	}
+// }
 
 
 
