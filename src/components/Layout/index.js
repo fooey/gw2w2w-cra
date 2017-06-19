@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import Header from './Header';
+import Card from 'src/components/Layout/Card';
 
 class Layout extends PureComponent {
 	render() {
@@ -14,7 +15,9 @@ class Layout extends PureComponent {
 					{ children }
 				</div>
 				<footer>
-					asdf
+					<Card>
+						asdf
+					</Card>
 				</footer>
 			</div>
 		);
