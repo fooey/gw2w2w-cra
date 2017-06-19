@@ -14,11 +14,12 @@ class Worlds extends PureComponent {
 
 		return (
 			<div className="worlds">
-				{_.map(['na', 'eu'], region => (
+				{_.map(['na', 'eu'], regionSlug => (
 					<RegionWorlds
-						key={region}
-						region={region}
+						key={regionSlug}
+						regionWorlds={STATIC.worldsByRegion[regionSlug]}
 						langSlug={langSlug}
+						regionSlug={regionSlug}
 					/>
 				))}
 			</div>
@@ -26,22 +27,31 @@ class Worlds extends PureComponent {
 	}
 }
 
+// function getRegionWorlds(region) {
+// 	return _.chain(STATIC.worldsByRegion)
+// 		.get(region)
+// 		// .sortBy('id')
+// 		.groupBy('lang')
+// 		.value();
+// }
+
+function getWorldsByLang(worlds) {
+	return _.groupBy(worlds, 'lang');
+}
+
 class RegionWorlds extends PureComponent {
 	render() {
-		const { langSlug, region } = this.props;
+		const { langSlug, regionWorlds, regionSlug } = this.props;
+		const worldsByLang = getWorldsByLang(regionWorlds);
 
 		return (
-			<div>{
-				_.chain(STATIC.worlds)
-				.filter({ region })
-				.sortBy('id')
-				.groupBy('lang')
-				.map((langWorlds, regionLangSlug) => {
+			<div className="worlds-regions">{
+				_.map(worldsByLang, (langWorlds, regionLangSlug) => {
 					const lang = getLangBySlug(regionLangSlug);
 
 					return (
 						<section key={regionLangSlug} className="region-worlds">
-							<Card title={lang.name} subtitle={region}>
+							<Card title={lang.name} subtitle={regionSlug}>
 								<LangWorlds
 									langWorlds={langWorlds}
 									langSlug={langSlug}
@@ -50,7 +60,6 @@ class RegionWorlds extends PureComponent {
 						</section>
 					);
 				})
-				.value()
 			}</div>
 		);
 	}
@@ -84,7 +93,8 @@ class World extends PureComponent {
 		return (
 			<li className="overview-world">
 				<Link to={`/${langSlug}/${langWorld.slug}`}>
-					{langWorld.name}
+					<i className="fa fa-caret-right" aria-hidden="true"></i>
+					<span>{langWorld.name}</span>
 				</Link>
 			</li>
 		);
