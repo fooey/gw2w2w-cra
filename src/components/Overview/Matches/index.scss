@@ -11,7 +11,7 @@
 	// }
 
 	.matches-region {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			display: inline-block;
 			width: 47vw;
 			max-width: 40em;
@@ -96,9 +96,40 @@
 
 			.match-world-score {
 				// width: 6em;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
 				margin-left: auto;
+
+				.match-world-score-diff {
+					padding-right: .5rem;
+					font-size: .75rem;
+					opacity: 0;
+
+					&.active {
+						animation: fadeinout 4s linear forwards;
+					}
+				}
 			}
 		}
 
+	}
+}
+
+@keyframes fadeinout  {
+	0% {
+		opacity: 0;
+	}
+
+	5% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }

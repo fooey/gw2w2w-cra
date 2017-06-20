@@ -2,6 +2,7 @@ import React, { Component, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import numeral from 'numeral';
+import classnames from 'classnames';
 
 import Card from 'src/components/Layout/Card';
 
@@ -31,6 +32,7 @@ class Matches extends PureComponent {
 
 
 class Match extends Component {
+
 	shouldComponentUpdate(nextProps) {
 		if (_.isEmpty(this.props) || _.isEmpty(nextProps)) {
 			return true;
@@ -98,9 +100,43 @@ class Pie extends PureComponent {
 }
 
 
-class MatchWorld extends PureComponent {
+class MatchWorld extends Component {
+	constructor() {
+		super();
+
+		this._isMounted = true;
+
+		this.state = {
+			scoreDiff: 0,
+			showDiff: false,
+		};
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { score } = this.props;
+		const { score: nextScore } = nextProps;
+
+		if (score !== nextScore) {
+			this.setState({
+				scoreDiff: nextScore - score,
+				showDiff: true,
+			}, () => {
+				setTimeout(() => {
+					if (this._isMounted) {
+						this.setState({ showDiff: false });
+					}
+				}, 4 * 1000);
+			});
+		}
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
+	}
+
 	render() {
 		const { color, world, langSlug, score } = this.props;
+		const { scoreDiff, showDiff } = this.state;
 
 		const worldName = _.get(world, [langSlug, 'name'], 'ERR');
 		const worldSlug = _.get(world, [langSlug, 'slug'], 'ERR');
@@ -109,7 +145,12 @@ class MatchWorld extends PureComponent {
 		return (
 			<Link key={color} to={worldLink} className={`match-world team-${color}`}>
 				<span className="match-world-name">{worldName}</span>
-				<span className="match-world-score">{numeral(score).format(',')}</span>
+				<span className="match-world-score">
+					<span className={classnames('match-world-score-diff', { active: showDiff })}>
+						+{scoreDiff}
+					</span>
+					<span>{numeral(score).format(',')}</span>
+				</span>
 			</Link>
 		);
 	}
