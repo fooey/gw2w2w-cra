@@ -1,5 +1,7 @@
 
 .card {
+	@extend %paper-shadow-1;
+
 	margin: 0 .2rem 1rem;
 	border-radius: .25rem;
 	background-color: #fff;
