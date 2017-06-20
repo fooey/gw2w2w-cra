@@ -1,20 +1,30 @@
 
 .match-scoreboards {
+	@extend .card;
+
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	margin: 0 0 2rem;
+
 
 	.match-scoreboard {
 		// @extend %paper-shadow-1;
 		display: flex;
+		// flex-basis: 1;
 		flex-flow: column nowrap;
+		// flex-grow: 0;
+		// flex-shrink: 1;
 		justify-content: space-between;
-		width: 33%;
-		padding: 1rem .5rem .25rem;
+		width: 33.333%;
+		padding: 1rem 0;
 		text-align: center;
 
+		& + .match-scoreboard {
+			border-left: 1px solid $gray-lightest;
+		}
+
 		h2 {
+			max-width: 100%;
 			font-size: 1.4rem;
 			text-overflow: ellipsis;
 			white-space: nowrap;
@@ -38,6 +48,7 @@
 
 		&.active {
 			// @extend %paper-shadow-1;
+			font-weight: 700;
 		}
 
 		&:hover {
@@ -47,15 +58,24 @@
 		}
 
 		&.team-red {
-			border-bottom: .1rem solid $red;
+			// border-bottom: .1rem solid $red;
+			&:hover {
+				// background-color: $red-bg;
+			}
 		}
 
 		&.team-blue {
-			border-bottom: .1rem solid $blue;
+			// border-bottom: .1rem solid $blue;
+			&:hover {
+				// background-color: $blue-bg;
+			}
 		}
 
 		&.team-green {
-			border-bottom: .1rem solid $green;
+			// border-bottom: .1rem solid $green;
+			&:hover {
+				// background-color: $green-bg;
+			}
 		}
 
 	}

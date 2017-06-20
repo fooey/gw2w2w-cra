@@ -18,49 +18,67 @@ class Scoreboards extends Component {
 		// const teamColor = getTeamColor(match.all_worlds, world.id);
 
 		return (
-			<Card>
-				<div className="match-scoreboards">
-					{_.map(['red', 'blue', 'green'], color => {
-						const worldId = _.get(match.worlds, `${color}_id`);
-						const world = getWorld(worldId);
-						const allWorldIds = _.without(_.get(match.all_worlds, `${color}_ids`), worldId);
-						const score = _.get(match, ['scores', color]);
+			<div className="match-scoreboards level-1">
+				{_.map(['red', 'blue', 'green'], color => (
+					<Scoreboard
+						key={color}
+						color={color}
+						langSlug={langSlug}
+						match={match}
+						matchWorld={matchWorld}
+						worldSlug={langSlug}
+					/>
+				))}
+			</div>
+		);
+	}
+}
+class Scoreboard extends Component {
+	render() {
+		const {
+			color,
+			langSlug,
+			match,
+			matchWorld,
+			worldSlug,
+		} = this.props;
 
-						const classes = classnames({
-							"match-scoreboard": true,
-							active: world.id === matchWorld.id,
-							[`team-${color}`]: true,
-							// [`team-${color}-bg`]: true,
-						});
+		const worldId = _.get(match.worlds, `${color}_id`);
+		const world = getWorld(worldId);
+		const allWorldIds = _.without(_.get(match.all_worlds, `${color}_ids`), worldId);
+		const score = _.get(match, ['scores', color]);
+
+		const classes = classnames({
+			"match-scoreboard": true,
+			active: world.id === matchWorld.id,
+			[`team-${color}`]: true,
+			// [`team-${color}-bg`]: true,
+		});
+
+		return (
+			<div className={classes}>
+				<h2 className={``}>
+					<Link to={getWorldLink(world, langSlug)} className={`team-${color}`}>
+						{_.get(world, [langSlug, 'name'])}
+					</Link>
+				</h2>
+
+				<h3 key={worldId} className={``}>
+					{_.map(allWorldIds, worldId => {
+						const world = getWorld(worldId);
 
 						return (
-							<div key={color} className={classes}>
-								<h2 className={``}>
-									<Link to={getWorldLink(world, langSlug)} className={`team-${color}`}>
-										{_.get(world, [langSlug, 'name'])}
-									</Link>
-								</h2>
-
-								<h3 key={worldId} className={``}>
-									{_.map(allWorldIds, worldId => {
-										const world = getWorld(worldId);
-
-										return (
-											<Link key={worldId} to={getWorldLink(world, langSlug)} className={`team-${color}`}>
-												{_.get(world, [langSlug, 'name'])}
-											</Link>
-										);
-									})}
-								</h3>
-
-								<div className='team-score'>
-									{numeral(score).format('0,0')}
-								</div>
-							</div>
+							<Link key={worldId} to={getWorldLink(world, langSlug)} className={`team-${color}`}>
+								{_.get(world, [langSlug, 'name'])}
+							</Link>
 						);
 					})}
+				</h3>
+
+				<div className='team-score'>
+					{numeral(score).format('0,0')}
 				</div>
-			</Card>
+			</div>
 		);
 	}
 }
