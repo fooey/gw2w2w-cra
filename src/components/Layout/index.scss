@@ -16,21 +16,21 @@ body {
 
 .match-team-red {
 	.layout {
-		background-color: lighten($red-bg, 0);
+		background-color: desaturate(lighten($red-bg, 5), 10);
 		// border: 1px solid $red;
 	}
 }
 
 .match-team-green {
 	.layout {
-		background-color: lighten($green-bg, 0);
+		background-color: desaturate(lighten($green-bg, 5), 10);
 		// border: 1px solid $green;
 	}
 }
 
 .match-team-blue {
 	.layout {
-		background-color: lighten($blue-bg, 0);
+		background-color: desaturate(lighten($blue-bg, 5), 10);
 		// border: 1px solid $blue;
 	}
 }
