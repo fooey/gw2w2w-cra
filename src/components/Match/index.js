@@ -7,8 +7,9 @@ import { getTeamColor } from 'src/lib/match';
 import { didAnyPropUpdate } from 'src/lib/util';
 
 // import Matches from './Matches/index';
-import Guilds from './Guilds/index';
 import Scoreboards from './Scoreboards/index';
+import Objectives from './Objectives/index';
+import Guilds from './Guilds/index';
 
 import { Loading } from 'src/components/Util';
 
@@ -56,6 +57,8 @@ class Match extends Component {
 				<header>
 					<Scoreboards langSlug={langSlug} worldSlug={worldSlug} match={match} />
 				</header>
+
+				<Objectives langSlug={langSlug} objectives={objectives} />
 
 				<Guilds langSlug={langSlug} objectives={objectives} />
 			</div>

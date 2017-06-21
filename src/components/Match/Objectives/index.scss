@@ -1,0 +1,12 @@
+
+.match-maps {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	max-width: 100%;
+}
+
+.match-map {
+	display: block;
+	overflow: hidden;
+}

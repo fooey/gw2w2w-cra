@@ -4,7 +4,7 @@ import _ from 'lodash';
 import classnames from 'classnames';
 import numeral from 'numeral';
 
-import Card from 'src/components/Layout/Card';
+// import Card from 'src/components/Layout/Card';
 
 import { getWorldBySlug, getWorld, getWorldLink } from 'src/lib/world';
 // import { getTeamColor } from 'src/lib/match';
@@ -40,7 +40,7 @@ class Scoreboard extends Component {
 			langSlug,
 			match,
 			matchWorld,
-			worldSlug,
+			// worldSlug,
 		} = this.props;
 
 		const worldId = _.get(match.worlds, `${color}_id`);
