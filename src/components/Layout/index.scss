@@ -16,22 +16,28 @@ body {
 
 .match-team-red {
 	.layout {
-		background-color: desaturate(lighten($red-bg, 5), 10);
-		// border: 1px solid $red;
+		$bgColor: desaturate(lighten($red-bg, 5), 10);
+		$bgColor2: $red-bg;
+
+		background-image: linear-gradient( 135deg, $bgColor 0%, $bgColor2 100% );
 	}
 }
 
 .match-team-green {
 	.layout {
-		background-color: desaturate(lighten($green-bg, 5), 10);
-		// border: 1px solid $green;
+		$bgColor: desaturate(lighten($green-bg, 5), 10);
+		$bgColor2: $green-bg;
+
+		background-image: linear-gradient( 135deg, $bgColor 0%, $bgColor2 100% );
 	}
 }
 
 .match-team-blue {
 	.layout {
-		background-color: desaturate(lighten($blue-bg, 5), 10);
-		// border: 1px solid $blue;
+		$bgColor: desaturate(lighten($blue-bg, 5), 10);
+		$bgColor2: $blue-bg;
+
+		background-image: linear-gradient( 135deg, $bgColor 0%, $bgColor2 100% );
 	}
 }
 
