@@ -1,12 +1,78 @@
 
 .match-maps {
+	@include media-breakpoint-up(xl) {
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+
 	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	max-width: 100%;
+	flex-flow: column nowrap;
 }
 
 .match-map {
-	display: block;
-	overflow: hidden;
+	width: 100%;
+
+	.match-map-objectives {
+		@include media-breakpoint-up(xl) {
+			columns: 1 auto;
+		}
+
+		columns: auto 20rem;
+		column-fill: auto;
+	}
+
+	.objectives-type {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+		// width: 100%;
+		padding:  .5rem 0;
+		break-inside: avoid;
+	}
+
+	.objectives {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.objective {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 20rem;
+		margin: 0 auto;
+		padding: .1rem 0;
+		font-size: .8rem;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+
+		.duration {
+			width: 2rem;
+			font-size: .6rem;
+			text-align: right;
+		}
+
+		.objective-name {
+			max-width: 10rem;
+			margin-right: auto;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		.guild {
+			// margin-left: auto;
+			.guild-icon {
+				img {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
 }

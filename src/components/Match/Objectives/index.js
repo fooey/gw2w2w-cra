@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import moment from 'moment-twitter';
 // import classnames from 'classnames';
 // import numeral from 'numeral';
 
@@ -8,7 +9,7 @@ import Card from 'src/components/Layout/Card';
 import {
 	Icon as ObjectiveIcon,
 	Name as ObjectiveName,
-	Duration as ObjectiveDuration,
+	// Duration as ObjectiveDuration,
 } from 'src/components/Util/objective.js';
 
 import { getObjective } from 'src/lib/objective';
@@ -19,6 +20,14 @@ const MAP_TYPES = [
 	'RedHome',
 	'BlueHome',
 	'GreenHome',
+];
+
+const OBJECTIVE_TYPES = [
+	'Castle',
+	'Keep',
+	'Tower',
+	'Camp',
+	// 'Ruins',
 ];
 
 class Objectives extends Component {
@@ -51,35 +60,46 @@ class Objectives extends Component {
 	}
 }
 
+
 class MatchMap extends Component {
 	render() {
 		const { objectives, mapType, langSlug } = this.props;
 
 		return (
 			<Card className="match-map">
-				<h1>{mapType}</h1>
-				{/* <pre>objectives: </pre> */}
-				<ul className="list-unstyled">{
-					_.map(objectives, objective => {
-						const owner = _.get(objective, 'owner').toLowerCase();
-						const type = _.get(objective, 'type').toLowerCase();
-						const claimedBy = _.get(objective, 'claimed_by');
+				{/* <h1>{mapType}</h1> */}
+				<ul className="match-map-objectives list-unstyled">{
+					_.map(OBJECTIVE_TYPES, type => {
+						const typeObjectives = _.chain(objectives)
+							.filter({ type })
+							.sortBy([(o => _.get(o, [langSlug, 'name']))])
+							.value();
 
-						return (
-							// <li key={objective.id}>{JSON.stringify(objective, null, '\t')}</li>
-							<li key={objective.id} className={`team-${owner}`}>
-								<ObjectiveIcon type={type} color={owner} />
-								<div>{_.get(objective, [langSlug, 'name'])}</div>
-								<div>{_.get(objective, 'id')}</div>
-								<div>{_.get(objective, 'type')}</div>
-								<div>{owner}</div>
-								<div>{_.get(objective, 'last_flipped')}</div>
-								<div>{_.get(objective, 'claimed_by')}</div>
-								{claimedBy ? <div><img src={`https://guilds.gw2w2w.com/${claimedBy}.svg`} width="16" height="16" alt={claimedBy} /></div> : null}
-								<div>{_.get(objective, 'points_tick')}</div>
-								<div>{_.get(objective, 'points_capture')}</div>
+						return (typeObjectives.length ?
+							<li key={type} className={`objectives-type objectives-type-${type}`}>
+
+								<ul className="objectives list-unstyled">{
+									_.map(typeObjectives, objective => {
+										const owner = _.get(objective, 'owner').toLowerCase();
+										const claimedBy = _.get(objective, 'claimed_by');
+
+										return (
+											// <li key={objective.id}>{JSON.stringify(objective, null, '\t')}</li>
+											<li key={objective.id} className={`objective team-${owner}`}>
+												{/* <ObjectiveIcon type={type} color={owner} /> */}
+												<div className='duration'>{moment(_.get(objective, 'last_flipped') * 1000).twitter()}</div>
+												<ObjectiveIcon type={type} color={owner} />
+												<ObjectiveName objective={objective} langSlug={langSlug} />
+												<div className="guild">
+													<div className='guild-icon'>{claimedBy ? <img src={`https://guilds.gw2w2w.com/${claimedBy}.svg`} alt={claimedBy} /> : null}</div>
+												</div>
+											</li>
+										);
+									})
+								}</ul>
+
 							</li>
-						);
+						: null);
 					})
 				}</ul>
 			</Card>
