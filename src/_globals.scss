@@ -1,0 +1,8 @@
+
+.team-red { color: $red; }
+.team-blue { color: $blue; }
+.team-green { color: $green; }
+
+.team-red-bg { @include gradient($red-bg); }
+.team-blue-bg { @include gradient($blue-bg); }
+.team-green-bg { @include gradient($green-bg); }

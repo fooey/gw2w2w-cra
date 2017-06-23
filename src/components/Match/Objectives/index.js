@@ -75,34 +75,50 @@ class MatchMap extends Component {
 							.sortBy([(o => _.get(o, [langSlug, 'name']))])
 							.value();
 
-						return (typeObjectives.length ?
-							<li key={type} className={`objectives-type objectives-type-${type}`}>
+						return (typeObjectives.length
+							? <li key={type} className={`objectives-type objectives-type-${type}`}>
 
 								<ul className="objectives list-unstyled">{
 									_.map(typeObjectives, objective => {
-										const owner = _.get(objective, 'owner').toLowerCase();
-										const claimedBy = _.get(objective, 'claimed_by');
-
 										return (
-											// <li key={objective.id}>{JSON.stringify(objective, null, '\t')}</li>
-											<li key={objective.id} className={`objective team-${owner}`}>
-												{/* <ObjectiveIcon type={type} color={owner} /> */}
-												<div className='duration'>{moment(_.get(objective, 'last_flipped') * 1000).twitter()}</div>
-												<ObjectiveIcon type={type} color={owner} />
-												<ObjectiveName objective={objective} langSlug={langSlug} />
-												<div className="guild">
-													<div className='guild-icon'>{claimedBy ? <img src={`https://guilds.gw2w2w.com/${claimedBy}.svg`} alt={claimedBy} /> : null}</div>
-												</div>
-											</li>
+											<Objective
+												langSlug={langSlug}
+												objective={objective}
+												type={type}
+											/>
 										);
 									})
 								}</ul>
 
 							</li>
-						: null);
+							: null
+						);
 					})
 				}</ul>
 			</Card>
+		);
+	}
+}
+
+
+class Objective extends Component {
+	render() {
+		const { objective, langSlug, type } = this.props;
+
+		const owner = _.get(objective, 'owner').toLowerCase();
+		const claimedBy = _.get(objective, 'claimed_by');
+
+		return (
+			// <li key={objective.id}>{JSON.stringify(objective, null, '\t')}</li>
+			<li key={objective.id} className={`objective team-${owner}`}>
+				{/* <ObjectiveIcon type={type} color={owner} /> */}
+				<div className='duration'>{moment(_.get(objective, 'last_flipped') * 1000).twitter()}</div>
+				<ObjectiveIcon type={type} color={owner} />
+				<ObjectiveName objective={objective} langSlug={langSlug} />
+				<div className="guild">
+					<div className='guild-icon'>{claimedBy ? <img src={`https://guilds.gw2w2w.com/${claimedBy}.svg`} alt={claimedBy} /> : null}</div>
+				</div>
+			</li>
 		);
 	}
 }
