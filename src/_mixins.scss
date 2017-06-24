@@ -20,7 +20,7 @@
 
 
 @mixin gradient($bg-color) {
-	$bg-color-2: desaturate(lighten($bg-color, 5), 10);
+	$bg-color-2: desaturate(darken($bg-color, 5), 10);
 
-	background-image: linear-gradient(135deg, $bg-color-2 0%, $bg-color 100%);
+	background-image: linear-gradient(135deg, $bg-color 0%, $bg-color-2 5%, $bg-color 15%);
 }
