@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import _ from 'lodash';
-import moment from 'moment-twitter';
+// import moment from 'moment-twitter';
 // import classnames from 'classnames';
 // import numeral from 'numeral';
 
@@ -9,7 +9,7 @@ import Card from 'src/components/Layout/Card';
 import {
 	Icon as ObjectiveIcon,
 	Name as ObjectiveName,
-	// Duration as ObjectiveDuration,
+	Cooldown as ObjectiveCooldown,
 } from 'src/components/Util/objective.js';
 
 import { getObjective } from 'src/lib/objective';
@@ -63,7 +63,7 @@ class Objectives extends Component {
 
 class MatchMap extends Component {
 	render() {
-		const { objectives, mapType, langSlug } = this.props;
+		const { objectives/*, mapType*/, langSlug } = this.props;
 
 		return (
 			<Card className="match-map">
@@ -82,6 +82,7 @@ class MatchMap extends Component {
 									_.map(typeObjectives, objective => {
 										return (
 											<Objective
+												key={objective.id}
 												langSlug={langSlug}
 												objective={objective}
 												type={type}
@@ -104,16 +105,27 @@ class MatchMap extends Component {
 class Objective extends Component {
 	render() {
 		const { objective, langSlug, type } = this.props;
+		const {
+			owner,
+			claimed_by: claimedBy,
+			last_flipped: lastFlipped,
+		} = objective;
 
-		const owner = _.get(objective, 'owner').toLowerCase();
-		const claimedBy = _.get(objective, 'claimed_by');
+		const team = owner.toLowerCase();
+		const expiration = lastFlipped + (60 * 5);
+
+		// const owner = objective.owner.toLowerCase();
+		// const claimedBy = objective.claimed_by;
+		// const lastFlipped = objective.last_flipped;
 
 		return (
 			// <li key={objective.id}>{JSON.stringify(objective, null, '\t')}</li>
-			<li key={objective.id} className={`objective team-${owner}`}>
-				{/* <ObjectiveIcon type={type} color={owner} /> */}
-				<div className='duration'>{moment(_.get(objective, 'last_flipped') * 1000).twitter()}</div>
-				<ObjectiveIcon type={type} color={owner} />
+			<li key={objective.id} className={`objective team-${team}`}>
+				{/* <ObjectiveIcon type={type} color={team} /> */}
+				{/* <div className='duration'>{moment(_.get(objective, 'last_flipped') * 1000).twitter()}</div> */}
+				{/* <ObjectiveDuration lastFlipped={lastFlipped} /> */}
+				<ObjectiveCooldown expiration={expiration} />
+				<ObjectiveIcon type={type} color={team} />
 				<ObjectiveName objective={objective} langSlug={langSlug} />
 				<div className="guild">
 					<div className='guild-icon'>{claimedBy ? <img src={`https://guilds.gw2w2w.com/${claimedBy}.svg`} alt={claimedBy} /> : null}</div>

@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from 'react';
 import _ from 'lodash';
+import classnames from 'classnames';
 import moment from 'moment-twitter';
 
 import ReactInterval from 'react-interval';
@@ -90,6 +91,42 @@ export class Duration extends Component {
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
 
 				{moment(lastFlipped * 1000).twitter()}
+			</span>
+		);
+	}
+}
+
+export class Cooldown extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			now: getAboutNow(),
+		};
+	}
+
+	render() {
+		const { expiration } = this.props;
+		const { now } = this.state;
+
+		// const ageInSeconds = Math.floor(now - lastFlipped);
+
+		// const buffExpiration = lastFlipped + (60 * 5);
+		const buffRemaining = expiration - now;
+		const refreshInterval = getRefreshInterval(buffRemaining);
+		const spotlight = (buffRemaining < 30 && buffRemaining > -10);
+
+		return (
+			<span className={classnames("objective-cooldown", { spotlight })}>
+				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
+
+				{/* {moment(lastFlipped * 1000).twitter()} */}
+				{/* {' '} */}
+				{(buffRemaining > -10 )
+					? (buffRemaining < 90)
+						? moment(expiration * 1000).diff(now * 1000, 'seconds')
+						: moment(expiration * 1000).twitter()
+					: null}
 			</span>
 		);
 	}

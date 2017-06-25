@@ -51,10 +51,14 @@
 		white-space: nowrap;
 		overflow: hidden;
 
-		.duration {
+		.objective-cooldown {
 			width: 2rem;
 			font-size: .6rem;
-			text-align: right;
+			text-align: center;
+
+			&.spotlight {
+				background-color: #ff0;
+			}
 		}
 
 		.objective-name {
