@@ -106,12 +106,12 @@ export class Cooldown extends Component {
 	}
 
 	render() {
-		const { expiration } = this.props;
+		const { lastFlipped } = this.props;
 		const { now } = this.state;
 
 		// const ageInSeconds = Math.floor(now - lastFlipped);
 
-		// const buffExpiration = lastFlipped + (60 * 5);
+		const expiration = lastFlipped + (60 * 5);
 		const buffRemaining = expiration - now;
 		const refreshInterval = getRefreshInterval(buffRemaining);
 		const spotlight = (buffRemaining < 30 && buffRemaining > -10);

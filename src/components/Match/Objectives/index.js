@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
+import { graphql } from 'react-apollo';
 // import { Link } from 'react-router-dom';
 import _ from 'lodash';
 // import moment from 'moment-twitter';
@@ -14,6 +15,8 @@ import {
 
 import { getObjective } from 'src/lib/objective';
 // import { getTeamColor } from 'src/lib/match';
+
+import GuildQuery from 'src/gql/guild';
 
 const MAP_TYPES = [
 	'Center',
@@ -112,11 +115,6 @@ class Objective extends Component {
 		} = objective;
 
 		const team = owner.toLowerCase();
-		const expiration = lastFlipped + (60 * 5);
-
-		// const owner = objective.owner.toLowerCase();
-		// const claimedBy = objective.claimed_by;
-		// const lastFlipped = objective.last_flipped;
 
 		return (
 			// <li key={objective.id}>{JSON.stringify(objective, null, '\t')}</li>
@@ -124,16 +122,63 @@ class Objective extends Component {
 				{/* <ObjectiveIcon type={type} color={team} /> */}
 				{/* <div className='duration'>{moment(_.get(objective, 'last_flipped') * 1000).twitter()}</div> */}
 				{/* <ObjectiveDuration lastFlipped={lastFlipped} /> */}
-				<ObjectiveCooldown expiration={expiration} />
+				<ObjectiveCooldown lastFlipped={lastFlipped} />
 				<ObjectiveIcon type={type} color={team} />
 				<ObjectiveName objective={objective} langSlug={langSlug} />
-				<div className="guild">
-					<div className='guild-icon'>{claimedBy ? <img src={`https://guilds.gw2w2w.com/${claimedBy}.svg`} alt={claimedBy} /> : null}</div>
-				</div>
+				{claimedBy ? <GuildWithData id={claimedBy} /> : null}
 			</li>
 		);
 	}
 }
+
+
+class Guild extends Component {
+	render() {
+		const { id, data } = this.props;
+		const { guild } = data;
+
+		return (
+			<a href={`#${id}`} className="guild">
+				{guild ? <GuildText name={guild.name} tag={guild.tag} /> : null}
+				<GuildIcon id={id} />
+			</a>
+		);
+	}
+}
+
+
+class GuildText extends PureComponent {
+	render() {
+		const { name, tag } = this.props;
+
+		return (
+			<div className="guild-text">
+				{/* <span className='guild-name'>{name}</span> */}
+				<span className="guild-tag" title={name}>{tag}</span>
+			</div>
+		);
+	}
+}
+
+
+class GuildIcon extends PureComponent {
+	render() {
+		const { id } = this.props;
+
+		return (
+			<div className='guild-icon'>
+				<img src={`https://guilds.gw2w2w.com/${id}.svg`} alt={id} />
+			</div>
+		);
+	}
+}
+
+const GuildWithData = graphql(GuildQuery, {
+	options: ({ id }) => ({
+		shouldBatch: true,
+		variables: { id },
+	}),
+})(Guild);
 
 
 

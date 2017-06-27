@@ -103,7 +103,7 @@ class Guild extends PureComponent {
 		const { guild } = data;
 
 		return (
-			<tr className={`team-${color}`}>
+			<tr className={`team-${color}`} id={id}>
 				<td className="text-center" style={{width: 172}}>
 					<img src={`https://guilds.gw2w2w.com/${id}.svg`} width="160" height="160" alt={id} />
 				</td>
@@ -158,7 +158,7 @@ class GuildObjective extends PureComponent {
 
 const GuildWithData = graphql(GuildQuery, {
 	options: ({ id }) => ({
-		shouldBatch: false,
+		shouldBatch: true,
 		variables: { id },
 	}),
 })(Guild);

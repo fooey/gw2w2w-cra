@@ -70,7 +70,21 @@
 		}
 
 		.guild {
-			// margin-left: auto;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+
+			.guild-text {
+				display: flex;
+				flex-flow: row nowrap;
+				padding-right: .2rem;
+				// width: 3rem;
+				font-size: .6rem;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
 			.guild-icon {
 				img {
 					width: 24px;
