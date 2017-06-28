@@ -117,14 +117,14 @@ export class Cooldown extends Component {
 		const spotlight = (buffRemaining < 30 && buffRemaining > -10);
 
 		return (
-			<span className={classnames("objective-cooldown", { spotlight })}>
+			<span className={classnames("objective-cooldown", { spotlight })} title={`${buffRemaining} seconds remaining`}>
 				<ReactInterval timeout={refreshInterval} enabled={true} callback={() => this.setState({ now: getAboutNow() })} />
 
 				{/* {moment(lastFlipped * 1000).twitter()} */}
 				{/* {' '} */}
 				{(buffRemaining > -10 )
-					? (buffRemaining < 90)
-						? moment(expiration * 1000).diff(now * 1000, 'seconds')
+					? (buffRemaining < 99)
+						? buffRemaining
 						: moment(expiration * 1000).twitter()
 					: null}
 			</span>
