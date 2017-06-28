@@ -58,7 +58,7 @@ class Match extends Component {
 					<Scoreboards langSlug={langSlug} worldSlug={worldSlug} match={match} />
 				</header>
 
-				<Objectives langSlug={langSlug} objectives={objectives} />
+				<Objectives langSlug={langSlug} match={match} objectives={objectives} />
 
 				<Guilds langSlug={langSlug} objectives={objectives} />
 			</div>

@@ -4,7 +4,7 @@ import { graphql } from 'react-apollo';
 import _ from 'lodash';
 // import moment from 'moment-twitter';
 // import classnames from 'classnames';
-// import numeral from 'numeral';
+import numeral from 'numeral';
 
 import Card from 'src/components/Layout/Card';
 import {
@@ -17,6 +17,12 @@ import { getObjective } from 'src/lib/objective';
 // import { getTeamColor } from 'src/lib/match';
 
 import GuildQuery from 'src/gql/guild';
+
+const COLORS = [
+	'red',
+	'blue',
+	'green',
+];
 
 const MAP_TYPES = [
 	'Center',
@@ -35,7 +41,7 @@ const OBJECTIVE_TYPES = [
 
 class Objectives extends Component {
 	render() {
-		const { objectives, langSlug } = this.props;
+		const { objectives, match, langSlug } = this.props;
 		// const teamColor = getTeamColor(match.all_worlds, world.id);
 
 		const objectivesMeta = _.map(objectives, os => getObjective(os.id));
@@ -54,6 +60,7 @@ class Objectives extends Component {
 					<MatchMap
 						key={mapType}
 						langSlug={langSlug}
+						match={match}
 						mapType={mapType}
 						objectives={mapObjectives}
 					/>
@@ -66,11 +73,19 @@ class Objectives extends Component {
 
 class MatchMap extends Component {
 	render() {
-		const { objectives/*, mapType*/, langSlug } = this.props;
+		const { objectives, match, mapType, langSlug } = this.props;
+
+		const matchMap = match.maps.find(m => m.type === mapType);
+		console.log({matchMap});
 
 		return (
 			<Card className="match-map">
-				{/* <h1>{mapType}</h1> */}
+				<header>
+					<h1>{matchMap.type}</h1>
+					<Scores label="Score" scores={matchMap.scores} />
+					<Scores label="Deaths" scores={matchMap.deaths} />
+					<Scores label="Kills" scores={matchMap.kills} />
+				</header>
 				<ul className="match-map-objectives list-unstyled">{
 					_.map(OBJECTIVE_TYPES, type => {
 						const typeObjectives = _.chain(objectives)
@@ -105,6 +120,22 @@ class MatchMap extends Component {
 }
 
 
+class Scores extends Component {
+	render() {
+		const { label, scores } = this.props;
+
+		return (
+			<div className="match-scores">
+				<div className="match-scores-label">{label}</div>
+				{_.map(COLORS, color => (
+					<div key={color} className={`team-${color}`}>{numeral(scores[color]).format('0,0')}</div>
+				))}
+			</div>
+		);
+	}
+}
+
+
 class Objective extends Component {
 	render() {
 		const { objective, langSlug, type } = this.props;
@@ -131,6 +162,7 @@ class Objective extends Component {
 	}
 }
 
+//https://adobe.ly/2sddEqD
 
 class Guild extends Component {
 	render() {
